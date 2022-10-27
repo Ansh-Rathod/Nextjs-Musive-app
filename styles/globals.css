@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ProximaNova Regular";
+  src: url("../public/ProximaNova/Proxima Nova Reg.otf");
+}
+@font-face {
+  font-family: "ProximaNova Bold";
+  src: url("../public/ProximaNova/Proxima Nova Bold.otf");
+}
+
+@font-face {
+  font-family: "musive-icons";
+  src: url("../public/musive-icons.ttf?x716ww") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "musive-icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 22px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mute:before {
+  font-size: 22px;
+
+  content: "\e907";
+}
+.icon-about:before {
+  content: "\e908";
+}
+.icon-add-to-playlist:before {
+  content: "\e909";
+}
+.icon-add-to-queue:before {
+  content: "\e90a";
+}
+.icon-connect-to-a-device:before {
+  content: "\e90b";
+}
+.icon-full-screen:before {
+  content: "\e90c";
+}
+.icon-Go-to-radio:before {
+  content: "\e90d";
+}
+.icon-hide-song:before {
+  content: "\e90e";
+}
+.icon-Like:before {
+  content: "\e90f";
+}
+.icon-lyrics:before {
+  content: "\e910";
+}
+.icon-Next:before {
+  font-size: 14px;
+
+  content: "\e911";
+}
+.icon-pause:before {
+  content: "\e912";
+}
+.icon-Previous:before {
+  content: "\e913";
+  font-size: 14px;
+}
+.icon-queue:before {
+  content: "\e914";
+}
+.icon-repeat:before {
+  content: "\e915";
+  font-size: 14px;
+}
+.icon-report-abuse:before {
+  content: "\e916";
+}
+.icon-share:before {
+  content: "\e917";
+}
+.icon-shuffle:before {
+  content: "\e918";
+  font-size: 14px;
+}
+.icon-sleep-timer:before {
+  content: "\e919";
+}
+.icon-song-credits:before {
+  content: "\e91a";
+}
+.icon-view-album:before {
+  content: "\e91b";
+}
+.icon-view-artist:before {
+  content: "\e91c";
+}
+.icon-volume:before {
+  content: "\e91d";
+  font-size: 20px;
+}
+.icon-create_new:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-home-filled:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-home:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-library-filled:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-library:before {
+  content: "\e904";
+  color: #fff;
+}
+.icon-search-filled:before {
+  content: "\e905";
+  color: #fff;
+}
+.icon-search:before {
+  content: "\e906";
+  color: #fff;
+}
+.icon-play3:before {
+  content: "\ea1c";
+}
+.icon-pause2:before {
+  content: "\ea1d";
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 50%;
+}
