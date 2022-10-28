@@ -18,10 +18,10 @@ module.exports = {
     screens: {
       mobile: {
         min: "100px",
-        max: "500px",
+        max: "550px",
       },
       tablet: {
-        min: "500px",
+        min: "550px",
         max: "750px",
       },
       "mini-laptop": {

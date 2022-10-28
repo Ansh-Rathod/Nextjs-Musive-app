@@ -34,11 +34,6 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-mute:before {
-  font-size: 22px;
-
-  content: "\e907";
-}
 .icon-about:before {
   content: "\e908";
 }
@@ -67,8 +62,6 @@ i {
   content: "\e910";
 }
 .icon-Next:before {
-  font-size: 14px;
-
   content: "\e911";
 }
 .icon-pause:before {
@@ -76,14 +69,12 @@ i {
 }
 .icon-Previous:before {
   content: "\e913";
-  font-size: 14px;
 }
 .icon-queue:before {
   content: "\e914";
 }
 .icon-repeat:before {
   content: "\e915";
-  font-size: 14px;
 }
 .icon-report-abuse:before {
   content: "\e916";
@@ -93,7 +84,6 @@ i {
 }
 .icon-shuffle:before {
   content: "\e918";
-  font-size: 14px;
 }
 .icon-sleep-timer:before {
   content: "\e919";
@@ -109,8 +99,8 @@ i {
 }
 .icon-volume:before {
   content: "\e91d";
-  font-size: 20px;
 }
+
 .icon-create_new:before {
   content: "\e900";
   color: #fff;
@@ -139,11 +129,18 @@ i {
   content: "\e906";
   color: #fff;
 }
-.icon-play3:before {
-  content: "\ea1c";
+
+.icon-close:before {
+  content: "\e91e";
 }
-.icon-pause2:before {
-  content: "\ea1d";
+.icon-volume-x:before {
+  content: "\e907";
+}
+.icon-volume-1:before {
+  content: "\e91d";
+}
+.icon-volume-2:before {
+  content: "\e91f";
 }
 
 input[type="range"] {

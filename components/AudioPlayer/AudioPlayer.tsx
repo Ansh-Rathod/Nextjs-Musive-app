@@ -12,8 +12,15 @@ import {
 import { useEffect } from "react";
 import Controls from "./Controls";
 import Image from "next/image";
+import SeekBar from "./SeekBar";
+import Buttons from "./Buttons";
+import { useRouter } from "next/router";
+import VolumeControls from "./VolumeControls";
+import classNames from "classnames";
+import FullScreenPlayer from "./FullScreenPlayer";
 
 function AudioPlayer() {
+  const router = useRouter();
   const {
     isPlaying,
     activeSong,
@@ -104,112 +111,109 @@ function AudioPlayer() {
   }, []);
 
   // get formated time in 0:00
-  const getTime = (time: any) =>
-    `${Math.floor(time / 60)}:${`0${Math.floor(time % 60)}`.slice(-2)}`;
 
   // update volume function
   const updateVolume = (e: any) => {
     setVolume(e);
     audioRef.current!.volume = e;
   };
+
+  const currentPercentage = activeSong!.duration
+    ? `${(trackProgress / activeSong!.duration) * 100}%`
+    : "0%";
+  const trackStyling = `
+    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #2bb540), color-stop(${currentPercentage}, #777))
+  `;
+  if (router.pathname === "/playing") {
+    return (
+      <FullScreenPlayer
+        isShuffle={isShuffle}
+        isRepeat={isRepeat}
+        isPlaying={isPlaying}
+        toNextTrack={toNextTrack}
+        toPrevTrack={toPrevTrack}
+        trackProgress={trackProgress}
+        trackBarStyling={trackStyling}
+        audioRef={audioRef}
+        activeSong={activeSong!}
+        onScrubEnd={onScrubEnd}
+        onScrub={onScrub}
+        updateVolume={updateVolume}
+        volume={volume}
+        trackStyling={trackStyling}
+      />
+    );
+  }
+
   return (
     <div
-      className="font-ProximaRegular flex flex-row 
-      items-center justify-between 
-    bg-[#121212]  w-screen max-w-full 
+      className="font-ProximaRegular 
       fixed bottom-0 left-0 right-0 py-3 px-4 pb-4
      border-t-[#242424] border-t
+      bg-[#121212]
       select-none"
     >
-      <div className="flex flex-row items-center w-full ">
-        <Image
-          src={activeSong!.cover_image.urls.small}
-          alt="album"
-          width={55}
-          height={55}
-          className="rounded-sm mx-3  "
-          unoptimized
-        />
-        <div className="mx-4">
-          <p className="text-gray-300 hover:underline cursor-pointer line-clamp-1 ">
-            {activeSong!.name}
-          </p>
-          <p className="text-gray-400 text-sm">Ansh Rathod</p>
+      <div
+        className="flex flex-row 
+      items-center justify-between 
+      w-screen max-w-full mini-laptop:px-2 mobile:p-2 mobile:pb-0"
+      >
+        <div className="flex flex-row items-center w-full ">
+          <div
+            onClick={() => router.push("/playing")}
+            className="w-[50px] h-[50px] min-w-[50px]
+         relative mini-laptop:w-[40px] mini-laptop:h-[40px]
+          mini-laptop:min-w-[40px] mobile:min-w-[35px] mobile:w-[35px]
+           mobile:h-[35px] cursor-pointer"
+          >
+            <Image
+              src={activeSong!.cover_image.urls.small}
+              alt="album"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-sm  w-[50px] h-[50px]"
+              unoptimized
+            />
+          </div>
+
+          <div className="mx-4 mobile:mx-3">
+            <p
+              className="text-gray-300 hover:underline 
+          cursor-pointer line-clamp-1 mobile:text-sm"
+            >
+              {activeSong!.name}
+            </p>
+            <p className="text-gray-400 text-sm mobile:text-xs">Ansh Rathod</p>
+          </div>
         </div>
-        <i className="icon-Like text-gray-400 mr-6 ml-2 text-[16px]"></i>
-      </div>
-
-      <div>
-        <Controls
-          isShuffle={isShuffle}
-          isRepeat={isRepeat}
-          onRepeat={() => dispatch(onRepeat(!isRepeat))}
-          onShuffle={() => dispatch(onShuffle(!isShuffle))}
-          playPause={() => dispatch(playPause(!isPlaying))}
-          isPlaying={isPlaying}
-          nextSong={toNextTrack}
-          prevSong={toPrevTrack}
-        />
-        <div
-          className="flex flex-row justify-center items-center
-       text-gray-300 text-xs"
-        >
-          <p className="w-6">
-            {audioRef.current ? getTime(trackProgress) : "0:00"}
-          </p>
-
-          <input
-            type="range"
-            value={trackProgress}
-            step="1"
-            min="0"
-            max={activeSong!.duration}
-            onMouseUp={onScrubEnd}
-            onKeyUp={onScrubEnd}
-            className="max-h-1 cursor-pointer w-[26rem] bg-gray-600 mx-2"
-            onChange={(e) => onScrub(e.target.value)}
+        <div>
+          <Controls
+            isFullScreen={false}
+            isShuffle={isShuffle}
+            isRepeat={isRepeat}
+            onRepeat={() => dispatch(onRepeat(!isRepeat))}
+            onShuffle={() => dispatch(onShuffle(!isShuffle))}
+            playPause={() => dispatch(playPause(!isPlaying))}
+            isPlaying={isPlaying}
+            nextSong={toNextTrack}
+            prevSong={toPrevTrack}
           />
-          <p className="w-6">{getTime(activeSong!.duration)}</p>
-        </div>
-      </div>
-      <div className="w-full flex flex-row justify-end items-end">
-        <div className="flex flex-row items-center">
-          <i
-            className="icon-share text-gray-400 text-[16px]
-           hover:text-white cursor-pointer mx-2"
-          ></i>
-          <i
-            className="icon-queue text-gray-400 text-[14px]
-           hover:text-white cursor-pointer mx-2"
-          ></i>
-          {volume <= 1 && volume > 0.5 && (
-            <i
-              className=" cursor-pointer icon-volume text-gray-400 hover:text-white"
-              onClick={() => updateVolume(0)}
-            ></i>
-          )}
-          {volume <= 0.5 && volume > 0 && (
-            <i
-              className=" cursor-pointer icon-volume text-gray-400 hover:text-white"
-              onClick={() => updateVolume(0)}
-            ></i>
-          )}
-          {volume === 0 && (
-            <i
-              className="  cursor-pointer icon-mute text-gray-400 hover:text-white"
-              onClick={() => updateVolume(1)}
-            ></i>
-          )}
-          <input
-            type="range"
-            value={volume}
-            step="any"
-            min={0}
-            max={1}
-            className="max-h-1 cursor-pointer w-[8rem] bg-gray-600 mx-2"
-            onChange={(e) => updateVolume(e.target.value)}
+          <SeekBar
+            trackProgress={trackProgress}
+            trackBarStyling={trackStyling}
+            audioRef={audioRef}
+            isFullScreen={false}
+            activeSong={activeSong!}
+            onScrubEnd={onScrubEnd}
+            onScrub={onScrub}
           />
         </div>
+        <Buttons
+          updateVolume={updateVolume}
+          showVolumeSeekBar
+          volume={volume}
+          className="tablet:hidden mobile:hidden"
+        />
       </div>
     </div>
   );
