@@ -9,6 +9,7 @@ interface IProps {
   onScrub: (e: any) => void;
   trackBarStyling: any;
   isFullScreen: boolean;
+  changeSeekBarColor: (e: string) => void;
 }
 function SeekBar({
   trackProgress,
@@ -18,6 +19,7 @@ function SeekBar({
   onScrub,
   trackBarStyling,
   isFullScreen,
+  changeSeekBarColor,
 }: IProps) {
   const getTime = (time: any) =>
     `${Math.floor(time / 60)}:${`0${Math.floor(time % 60)}`.slice(-2)}`;
@@ -38,6 +40,8 @@ function SeekBar({
           value={trackProgress}
           step="1"
           min="0"
+          onMouseEnter={() => changeSeekBarColor("#2bb540")}
+          onMouseLeave={() => changeSeekBarColor("#fff")}
           style={{ background: trackBarStyling }}
           max={activeSong!.duration}
           onMouseUp={onScrubEnd}

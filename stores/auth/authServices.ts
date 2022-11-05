@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { getCookies, getCookie, setCookie, deleteCookie } from "cookies-next";
+import { setCookie } from "cookies-next";
 
 const API_URL = "http://localhost:4444/api/auth/";
 

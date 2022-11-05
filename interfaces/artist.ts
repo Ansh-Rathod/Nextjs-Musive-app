@@ -1,14 +1,12 @@
-export interface TrackProps {
+export interface Artists {
   id: number;
-  duration: number;
-  track_name: string;
-  src: string;
-  cover_image: CoverImage;
-  artist_name: string;
-  artist_id: number;
+  username: string;
+  display_name: string;
+  avatar: Avatar;
+  songs_count: string;
 }
 
-export interface CoverImage {
+export interface Avatar {
   urls: Urls;
   color: string;
   blur_hash: string;

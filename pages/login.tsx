@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register, AuthStatus, login, reset } from "../stores/auth/authSlice";
+import { AuthStatus, login, reset } from "../stores/auth/authSlice";
 
 interface FormDataType {
   username: string;
@@ -30,6 +30,9 @@ const Login: NextPage = () => {
     if (user || status == AuthStatus.Success) {
       router.push("/");
     }
+    return () => {
+      dispatch(reset());
+    };
   }, [router, user, dispatch, status]);
 
   // set username

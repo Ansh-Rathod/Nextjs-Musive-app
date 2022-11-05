@@ -3,322 +3,254 @@ import { TrackProps } from "../../interfaces/Track";
 
 const tracks: TrackProps[] = [
   {
+    id: 24886,
+    duration: 132.022844,
+    track_name: "Space Popcorn",
+    src: "https://cdn.pixabay.com/audio/2022/03/09/audio_7ba1c4c9bb.mp3",
     cover_image: {
-      unsplash_photo_id: "U5fTKJAC6xM",
-      color: "#735940",
-      blur_hash: "LmG7I.V_EO%0%0bHazs.10t5$$Rl",
       urls: {
-        raw: "https://images.unsplash.com/photo-1634761441066-af14cf2e70ee?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjR8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1634761441066-af14cf2e70ee?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjR8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80",
-        regular:
-          "https://images.unsplash.com/photo-1634761441066-af14cf2e70ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjR8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80&w=1080",
+        raw: "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80",
         small:
-          "https://images.unsplash.com/photo-1634761441066-af14cf2e70ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjR8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80&w=400",
+          "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=400",
         thumb:
-          "https://images.unsplash.com/photo-1634761441066-af14cf2e70ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjR8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80&w=200",
+          "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=1080",
         small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1634761441066-af14cf2e70ee",
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1436397543931-01c4a5162bdb",
       },
+      color: "#c04026",
+      blur_hash: "LDLB9Ct,9ZM0y@IoXStlCSv~fiO?",
+      unsplash_photo_id: "HALe2SmkWAI",
     },
-    id: 118817,
-    tags: [
-      "children's music",
-      "baby songs",
-      "kids songs",
-      "songs for kids",
-      "children songs",
-      "kid songs",
-      "kids song",
-      "kids music",
-      "music for kids",
-      "children",
-      "cocomelon",
-      "kid",
-      "kids",
-      "child",
-    ],
-    user_id: 22579021,
-    user: "Lesfm",
-    src: "https://cdn.pixabay.com/audio/2022/09/01/audio_7cb6e7f6f1.mp3",
-    download_url:
-      "https://cdn.pixabay.com/download/audio/2022/09/01/audio_7cb6e7f6f1.mp3?filename=happy-song-118817.mp3",
-    name: "Happy Song",
-    duration: 134.478344,
-    moods: [
-      "Euphoric",
-      "Restless",
-      "Bright",
-      "Happy",
-      "Quirky",
-      "Uplifting",
-      "Funny",
-      "Dreamy",
-      "Laid Back",
-    ],
-    genres: ["Happy Childrens Tunes", "Upbeat", "Cartoons"],
-    movements: ["Chasing", "Running", "Fast", "Elegant"],
-    keywords:
-      "children songs, kid songs, fast, vlog music, upbeat, music for kids, children, music for videos, kid, children's music, happy childrens tunes, kids song, elegant, podcast music, bright, cartoons, cocomelon, kids songs, dreamy, kids music, chasing, songs for kids, happy, euphoric, child, running, uplifting, kids, quirky, funny, background music, restless, laid back, music for youtube videos, baby songs",
+    artist_name: "Stacey Witting",
+    artist_id: 25235210,
   },
   {
+    id: 121456,
+    duration: 182.98775,
+    track_name: "Beautiful Corporate Inspiration",
+    src: "https://cdn.pixabay.com/audio/2022/10/01/audio_3155385c87.mp3",
     cover_image: {
-      unsplash_photo_id: "lLt-t98_0xE",
-      color: "#c0d9d9",
-      blur_hash: "LlI$ECVsj@oK?wW?j[a}x]kDWBa}",
       urls: {
-        raw: "https://images.unsplash.com/photo-1629194966610-80c79c1154af?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjV8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1629194966610-80c79c1154af?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjV8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80",
-        regular:
-          "https://images.unsplash.com/photo-1629194966610-80c79c1154af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjV8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80&w=1080",
+        raw: "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80",
         small:
-          "https://images.unsplash.com/photo-1629194966610-80c79c1154af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjV8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80&w=400",
+          "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80&w=400",
         thumb:
-          "https://images.unsplash.com/photo-1629194966610-80c79c1154af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw0MjV8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjI4MDAxMQ&ixlib=rb-4.0.3&q=80&w=200",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1629194966610-80c79c1154af",
-      },
-    },
-    id: 15813,
-    tags: [
-      "trailer",
-      "intro",
-      "adventure",
-      "cinematic",
-      "dramatic",
-      "emotional",
-      "action",
-      "background",
-      "block buster",
-      "energetic",
-      "credits",
-      "hollywood",
-      "stinger",
-      "fight",
-      "advertising",
-    ],
-    user_id: 17654080,
-    user: "LiteSaturation",
-    src: "https://cdn.pixabay.com/audio/2022/01/27/audio_ca2a1900ec.mp3",
-    download_url:
-      "https://cdn.pixabay.com/download/audio/2022/01/27/audio_ca2a1900ec.mp3?filename=hybrid-trailer-full-version-15813.mp3",
-    name: "Hybrid Trailer - Full version",
-    duration: 134.426094,
-    moods: [
-      "Dark",
-      "Mysterious",
-      "Dreamy",
-      "Restless",
-      "Epic",
-      "Energetic",
-      "Suspense",
-    ],
-    genres: [
-      "Main Title",
-      "Action",
-      "Adventure",
-      "Mystery",
-      "Electronic",
-      "Build Up Scenes",
-      "Upbeat",
-    ],
-    movements: ["Running", "Chasing", "Medium Fast", "Heavy & Ponderous"],
-    keywords:
-      "main title, adventure, emotional, upbeat, drive, film music, advertising, mystery, music for videos, stinger, trailer, intro, block buster, driving, action, credits, bright, heavy & ponderous, dreamy, build up scenes, chasing, tv, energetic, dark, cinematic music, fighting, pathos, medium fast, cinematic, epic, running, modern, electronic, hollywood, fight, restless, sound track, background, dramatic, promo, suspense, mysterious",
-  },
-  {
-    cover_image: {
-      unsplash_photo_id: "DFtjXYd5Pto",
-      color: "#f3f3f3",
-      blur_hash: "L$IF6.t7M{of~qofWBkCxuj[fkj[",
-      urls: {
-        raw: "https://images.unsplash.com/photo-1499728603263-13726abce5fd?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1499728603263-13726abce5fd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80",
+          "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80&w=200",
         regular:
-          "https://images.unsplash.com/photo-1499728603263-13726abce5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80&w=1080",
-        small:
-          "https://images.unsplash.com/photo-1499728603263-13726abce5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1499728603263-13726abce5fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80&w=200",
+          "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80&w=1080",
         small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1499728603263-13726abce5fd",
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1519225254375-0217eaa536c8",
       },
-    },
-    id: 122592,
-    tags: [
-      "background",
-      "corporate",
-      "promo",
-      "soft",
-      "tutorial",
-      "vlog",
-      "vlogging",
-      "youtube",
-      "music for youtube",
-      "background music",
-      "good mood",
-      "good feel",
-      "relaxing",
-      "saxophone",
-      "laid back",
-    ],
-    user_id: 29184718,
-    user: "DayFox",
-    src: "https://cdn.pixabay.com/audio/2022/10/12/audio_061cead49a.mp3",
-    download_url:
-      "https://cdn.pixabay.com/download/audio/2022/10/12/audio_061cead49a.mp3?filename=weeknds-122592.mp3",
-    name: "Weeknds",
-    duration: 208.979594,
-    moods: [
-      "Laid Back",
-      "Bright",
-      "Dreamy",
-      "Romantic",
-      "Glamorous",
-      "Relaxing",
-    ],
-    genres: [
-      "Beats",
-      "Cafe",
-      "Alternative Hip Hop",
-      "Rnb",
-      "Electronic",
-      "Beautiful Plays",
-    ],
-    movements: ["Floating", "Smooth", "Elegant", "Medium"],
-    keywords:
-      "urban, alternative hip hop, elegant, vlog music, electronic, romantic, background music, vlogging, dreamy, youtube, music for youtube, beats, corporate, rnb, lobby music, vlog, glamorous, cafe, promo, good feel, music for youtube videos, relaxing, music for videos, bright, hip-hop, soft, funk, downbeat, jazz lounge, smooth, medium, tutorial, saxophone, lo-fi, background, low beat, beautiful plays, floating, podcast music, laid back, jazz, good mood",
-  },
-  {
-    cover_image: {
-      unsplash_photo_id: "6CLBoiWuzSU",
       color: "#d9d9d9",
-      blur_hash: "LXLgkUjE^*kC_4WVNIj?sSkCM{oL",
-      urls: {
-        raw: "https://images.unsplash.com/photo-1592895792095-85fa785192a9?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1592895792095-85fa785192a9?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80",
-        regular:
-          "https://images.unsplash.com/photo-1592895792095-85fa785192a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80&w=1080",
-        small:
-          "https://images.unsplash.com/photo-1592895792095-85fa785192a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1592895792095-85fa785192a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-4.0.3&q=80&w=200",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1592895792095-85fa785192a9",
-      },
+      blur_hash: "LTKw,[IV-=t6_4a{baj[MxofD%WB",
+      unsplash_photo_id: "mjtc0khBqls",
     },
-    id: 118766,
-    tags: [
-      "future bass",
-      "epic",
-      "mysterious",
-      "electronic",
-      "dark",
-      "scary",
-      "horror",
-      "thriller",
-      "energetic",
-      "beats",
-      "build up scenes",
-      "action",
-      "intro outro",
-      "podcast",
-      "suspense",
-    ],
-    user_id: 2264996,
-    user: "LeonellCassio",
-    src: "https://cdn.pixabay.com/audio/2022/08/31/audio_419263fc12.mp3",
-    download_url:
-      "https://cdn.pixabay.com/download/audio/2022/08/31/audio_419263fc12.mp3?filename=leonell-cassio-the-blackest-bouquet-118766.mp3",
-    name: "Leonell Cassio - The Blackest Bouquet",
-    duration: 221.309375,
-    moods: [
-      "Restless",
-      "Laid Back",
-      "Hopeful",
-      "Dreamy",
-      "Energetic",
-      "Suspense",
-      "Epic",
-      "Bright",
-    ],
-    genres: ["Future Bass", "Beats", "Electronic"],
-    movements: [
-      "Smooth",
-      "Chasing",
-      "Heavy & Ponderous",
-      "Medium",
-      "Floating",
-      "Elegant",
-    ],
-    keywords:
-      "epic, elegant, mysterious, vlog music, electronic, build up scenes, intro outro, background music, synthwave, scary, dreamy, horror scene, beats, hopeful, horror, podcast, dance, supernatural, dark, main title, heavy & ponderous, crime scene, lullabies, restless, music for youtube videos, music for videos, bright, video games, energetic, smooth, sat, suspense, chasing, medium, future bass, floating, action, laid back, thriller, dubstep",
+    artist_name: "Laura Konopelski",
+    artist_id: 24397640,
   },
   {
+    id: 115479,
+    duration: 139.493875,
+    track_name: "Crazy Energy",
+    src: "https://cdn.pixabay.com/audio/2022/07/23/audio_5cf955aff9.mp3",
     cover_image: {
-      unsplash_photo_id: "ktPKyUs3Qjs",
-      color: "#262626",
-      blur_hash: "LWF#dm-V0ft7%0s:s;s:0eR+-:ae",
       urls: {
-        raw: "https://images.unsplash.com/photo-1505455184862-554165e5f6ba?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-1.2.1",
-        full: "https://images.unsplash.com/photo-1505455184862-554165e5f6ba?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-1.2.1&q=80",
-        regular:
-          "https://images.unsplash.com/photo-1505455184862-554165e5f6ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-1.2.1&q=80&w=1080",
+        raw: "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80",
         small:
-          "https://images.unsplash.com/photo-1505455184862-554165e5f6ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-1.2.1&q=80&w=400",
+          "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80&w=400",
         thumb:
-          "https://images.unsplash.com/photo-1505455184862-554165e5f6ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzfHxtaW5kZnVsbmVzc3xlbnwwfHx8fDE2NjYxNzM1MTg&ixlib=rb-1.2.1&q=80&w=200",
+          "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80&w=1080",
         small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1505455184862-554165e5f6ba",
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1635007920037-fde83e0d8dc4",
       },
+      color: "#73c0d9",
+      blur_hash: "LcAo+_ysRiRPyERkemozR5R5e-g3",
+      unsplash_photo_id: "GWx_jaQ5rc4",
     },
-    id: 116199,
-    tags: [
-      "prostration",
-      "slow motion",
-      "dream",
-      "melancholy",
-      "sadness",
-      "drama",
-      "sad documentary",
-      "hypnotic",
-      "calm",
-      "inspirational",
-      "tragic",
-      "cinematic guitar",
-      "landscape",
-      "catastrophe",
-      "east",
-    ],
-    user_id: 28841948,
-    user: "Lexin_Music",
-    src: "https://cdn.pixabay.com/audio/2022/08/02/audio_884fe92c21.mp3",
-    download_url:
-      "https://cdn.pixabay.com/download/audio/2022/08/02/audio_884fe92c21.mp3?filename=inspiring-cinematic-ambient-116199.mp3",
-    name: "Inspiring Cinematic Ambient",
-    duration: 189.910188,
-    moods: [
-      "Hopeful",
-      "Restless",
-      "Bright",
-      "Dreamy",
-      "Uplifting",
-      "Suspense",
-      "Epic",
-      "Sentimental",
-    ],
-    genres: [
-      "Beautiful Plays",
-      "Build Up Scenes",
-      "Adventure",
-      "Ambient",
-      "Pulses",
-      "Nostalgia",
-      "Modern Classical",
-      "Small Emotions",
-    ],
-    movements: ["Elegant", "Floating", "Chasing", "Medium", "Fast", "Running"],
-    keywords:
-      "air, modern classical, epic, drama, elegant, uplifting, world, build up scenes, nostalgia, background music, sad documentary, calm, dreamy, travel, small emotions, fast, dream, adventure, tragic, prayer, hopeful, pulses, cinematic music, contemplative, inspirational, restless, music for youtube videos, landscape, music for videos, bright, melancholy, war, ethnic, slow motion, cinematic guitar, film music, running, ambient, suspense, chasing, medium, hope, sentimental, sadness, hypnotic, beautiful plays, floating, catastrophe, east, sorrow, prostration",
+    artist_name: "Veronica Homenick",
+    artist_id: 22579021,
+  },
+  {
+    id: 9716,
+    duration: 136.437531,
+    track_name: "Heroic Story - Inspiring Theme",
+    src: "https://cdn.pixabay.com/audio/2021/10/22/audio_5c12de550d.mp3",
+    cover_image: {
+      urls: {
+        raw: "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80",
+        small:
+          "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80&w=400",
+        thumb:
+          "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80&w=1080",
+        small_s3:
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1454982523318-4b6396f39d3a",
+      },
+      color: "#26260c",
+      blur_hash: "LRCsXBN1D$sj%%R-RNV?%OWUn#jZ",
+      unsplash_photo_id: "mWRR1xj95hg",
+    },
+    artist_name: "Veronica Homenick",
+    artist_id: 22579021,
+  },
+  {
+    id: 11545,
+    duration: 200.280813,
+    track_name: "Endless Beauty (Main)",
+    src: "https://cdn.pixabay.com/audio/2021/12/01/audio_2fe16fd258.mp3",
+    cover_image: {
+      urls: {
+        raw: "https://images.unsplash.com/photo-1557592923-9f721b5daa29?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1",
+        full: "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80",
+        small:
+          "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80&w=400",
+        thumb:
+          "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80&w=1080",
+        small_s3:
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1557592923-9f721b5daa29",
+      },
+      color: "#d9d9d9",
+      blur_hash: "LkNv[7E1M{Rj*0t7WBWB?Hxtt7t7",
+      unsplash_photo_id: "7-4cIpUbgtQ",
+    },
+    artist_name: "Leah Blick",
+    artist_id: 22836301,
+  },
+  {
+    id: 21921,
+    duration: 195.265281,
+    track_name: "Phenix",
+    src: "https://cdn.pixabay.com/audio/2022/03/02/audio_39fc06ca6c.mp3",
+    cover_image: {
+      urls: {
+        raw: "https://images.unsplash.com/photo-1559608622-d443df453289?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80",
+        small:
+          "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80&w=400",
+        thumb:
+          "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80&w=1080",
+        small_s3:
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1559608622-d443df453289",
+      },
+      color: "#d9d9d9",
+      blur_hash: "L#HU%y%MxaR*~pozofWVx]RjWBs:",
+      unsplash_photo_id: "SrunqRT0A34",
+    },
+    artist_name: "Jan Johnston",
+    artist_id: 25958799,
+  },
+  {
+    id: 116035,
+    duration: 201.552,
+    track_name: "Caribbean Travel Vacation Music",
+    src: "https://cdn.pixabay.com/audio/2022/07/31/audio_af6afcd502.mp3",
+    cover_image: {
+      urls: {
+        raw: "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80",
+        small:
+          "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80&w=400",
+        thumb:
+          "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80&w=1080",
+        small_s3:
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1509210459313-17feefdff5cd",
+      },
+      color: "#f3f3f3",
+      blur_hash: "LGP?{wWA-=kBt7D%WB?b~Xj[-;t7",
+      unsplash_photo_id: "INjdgkCwHp0",
+    },
+    artist_name: "Pamela Swaniawski",
+    artist_id: 23180933,
+  },
+  {
+    id: 20567,
+    duration: 158.6155,
+    track_name: "Dragon",
+    src: "https://cdn.pixabay.com/audio/2022/02/11/audio_f42e8263b9.mp3",
+    cover_image: {
+      urls: {
+        raw: "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80",
+        small:
+          "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80&w=400",
+        thumb:
+          "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80&w=1080",
+        small_s3:
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1469406396016-013bfae5d83e",
+      },
+      color: "#f3f3f3",
+      blur_hash: "LVHLF:-.4.Mxl8E2RPMy~Dr^InNY",
+      unsplash_photo_id: "SAHBl2UpXco",
+    },
+    artist_name: "Jacquelyn Collins",
+    artist_id: 24653570,
+  },
+  {
+    id: 16525,
+    duration: 121.626094,
+    track_name: "Positive Hopeful Upbeat Fun Ukulele Hope Pleasure Music",
+    src: "https://cdn.pixabay.com/audio/2022/02/05/audio_3289942575.mp3",
+    cover_image: {
+      urls: {
+        raw: "https://images.unsplash.com/photo-1516617442634-75371039cb3a?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80",
+        small:
+          "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=400",
+        thumb:
+          "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=1080",
+        small_s3:
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1516617442634-75371039cb3a",
+      },
+      color: "#262626",
+      blur_hash: "LH9j$MiwMwM{V@a{ofay4mg4tRs;",
+      unsplash_photo_id: "wuc-KEIBrdE",
+    },
+    artist_name: "Elmer Stamm",
+    artist_id: 970568,
+  },
+  {
+    id: 20744,
+    duration: 169.639156,
+    track_name: "Michael Ihde - R.B.T.Y - Pop Pophouse Synthwave",
+    src: "https://cdn.pixabay.com/audio/2022/02/12/audio_341c7e5d12.mp3",
+    cover_image: {
+      urls: {
+        raw: "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3",
+        full: "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80",
+        small:
+          "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80&w=400",
+        thumb:
+          "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80&w=200",
+        regular:
+          "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80&w=1080",
+        small_s3:
+          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1610120310588-99bcffc7bf09",
+      },
+      color: "#404040",
+      blur_hash: "L37BAjRjIooy01a#j[t74-Rioej[",
+      unsplash_photo_id: "jbTQq7e2MDY",
+    },
+    artist_name: "Michele Nienow",
+    artist_id: 5962636,
   },
 ];
 
@@ -337,7 +269,7 @@ const initialState: IStateProps = {
   currentIndex: 0,
   isShuffle: false,
   isRepeat: false,
-  showBanner: true,
+  showBanner: false,
   isPlaying: false,
   activeSong: tracks[0],
   trackProgress: 0,
@@ -348,7 +280,11 @@ const playerSlice = createSlice({
   initialState,
   reducers: {
     setActiveSong: (state, action) => {
-      console.log(action.payload);
+      state.showBanner = true;
+
+      state.tracks = action.payload.tracks;
+      state.currentIndex = action.payload.index;
+      state.activeSong = action.payload.tracks[action.payload.index];
     },
 
     nextSong: (state, action) => {

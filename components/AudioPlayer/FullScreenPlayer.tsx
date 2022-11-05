@@ -10,7 +10,9 @@ import {
   onShuffle,
   playPause,
 } from "../../stores/player/currentAudioPlayer";
-import { TrackProps } from "../../interfaces/Track";
+import { TrackProps, CoverImage } from "../../interfaces/Track";
+import Link from "next/link";
+import CustomImage from "../CustomImage";
 
 interface IProps {
   trackProgress: number;
@@ -27,6 +29,7 @@ interface IProps {
   updateVolume: (e: any) => void;
   volume: number;
   trackStyling: any;
+  changeSeekBarColor: (e: any) => void;
 }
 
 function FullScreenPlayer({
@@ -41,6 +44,7 @@ function FullScreenPlayer({
   isPlaying,
   toPrevTrack,
   toNextTrack,
+  changeSeekBarColor,
   updateVolume,
   volume,
 }: IProps) {
@@ -54,7 +58,7 @@ function FullScreenPlayer({
         select-none overflow-hidden h-screen w-screen max-w-full"
     >
       <div
-        className="bg-gradient-to-t from-[#000]
+        className="bg-gradient-to-t from-[#121212]
            via-[#1a1919b8] to-[#0000006b]
           w-full h-full"
       >
@@ -109,23 +113,25 @@ function FullScreenPlayer({
               />
               <div className="flex flex-col justify-center items-center mobile:pb-14">
                 <div
-                  className="mb-10
+                  className="mb-10 mini-laptop:w-[320px] laptop:w-[350px] desktop:w-[28rem]
                     w-full tablet:w-[400px] mobile:w-[320px] flex flex-row justify-between items-center"
                 >
                   <div>
                     <p
                       className="text-gray-300 hover:underline font-ProximaBold
                         cursor-pointer line-clamp-1 mobile:text-sm text-lg mini-laptop:text-base 
-                        tablet:text-base "
+                        tablet:text-base"
                     >
-                      {activeSong!.name}
+                      {activeSong!.track_name}
                     </p>
-                    <p
-                      className="text-gray-400 text-base mini-laptop:text-sm
-                       tablet:text-sm mobile:text-xs"
-                    >
-                      Ansh Rathod
-                    </p>
+                    <Link href={`/artist/${activeSong.artist_id}`}>
+                      <p
+                        className="text-gray-400 text-sm mini-laptop:text-sm
+                       tablet:text-sm mobile:text-xs hover:underline cursor-pointer"
+                      >
+                        {activeSong.artist_name}
+                      </p>
+                    </Link>
                   </div>
                   <div className="w-10 h-10 flex items-center justify-center">
                     <i className="icon-Like text-gray-400 hover:text-white"></i>
@@ -133,6 +139,7 @@ function FullScreenPlayer({
                 </div>
                 <div>
                   <SeekBar
+                    changeSeekBarColor={changeSeekBarColor}
                     isFullScreen={true}
                     trackProgress={trackProgress}
                     audioRef={audioRef}
@@ -170,7 +177,7 @@ function FullScreenPlayer({
                     ></i>
                     <i
                       className="icon-queue text-gray-400 text-[18px]
-                hover:text-white cursor-pointer mx-3 mobile:text-[14px]"
+                hover:text-white cursor-pointer ml-3 mobile:text-[14px]"
                     ></i>
                   </div>
                 </div>
@@ -187,6 +194,11 @@ function FullScreenPlayer({
 function FullScreenCoverImage({ activeSong, className }: any) {
   return (
     <div
+      style={{
+        backgroundColor: activeSong!.cover_image.color,
+        boxShadow:
+          "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
+      }}
       className={
         `w-[450px] h-[450px] min-w-[450px]
         relative mx-10 mini-laptop:mx-4
@@ -194,17 +206,12 @@ function FullScreenCoverImage({ activeSong, className }: any) {
         tablet:w-[400px] tablet:h-[400px] tablet:min-w-[400px] tablet:min-h-[400px]
         mobile:w-[320px] mobile:h-[320px] mobile:min-w-[320px] mobile:min-h-[320px]
         mini-laptop:w-[370px] mini-laptop:h-[370px] 
-        mini-laptop:min-w-[370px]
-        ` + className
+        mini-laptop:min-w-[370px] rounded-md ` + className
       }
     >
-      <Image
+      <CustomImage
         src={activeSong!.cover_image.urls.regular}
-        alt="album"
-        layout="fill"
-        objectFit="cover"
         className="rounded-md shadow-2xl"
-        unoptimized
       />
     </div>
   );

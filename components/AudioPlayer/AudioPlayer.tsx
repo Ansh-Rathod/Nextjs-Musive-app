@@ -18,6 +18,8 @@ import { useRouter } from "next/router";
 import VolumeControls from "./VolumeControls";
 import classNames from "classnames";
 import FullScreenPlayer from "./FullScreenPlayer";
+import Link from "next/link";
+import CustomImage from "../CustomImage";
 
 function AudioPlayer() {
   const router = useRouter();
@@ -37,7 +39,9 @@ function AudioPlayer() {
   const isReady = useRef(false);
   const [volume, setVolume] = useState(0.5);
   const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>();
+  const [seekBarColor, setSeekBarColor] = useState("#fff");
 
+  const changeSeekBarColor = (color: string) => setSeekBarColor(color);
   useEffect(() => {
     if (isPlaying) {
       audioRef.current!.play();
@@ -122,11 +126,13 @@ function AudioPlayer() {
     ? `${(trackProgress / activeSong!.duration) * 100}%`
     : "0%";
   const trackStyling = `
-    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #2bb540), color-stop(${currentPercentage}, #777))
+    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, ${seekBarColor}), color-stop(${currentPercentage}, #777))
   `;
+
   if (router.pathname === "/playing") {
     return (
       <FullScreenPlayer
+        changeSeekBarColor={changeSeekBarColor}
         isShuffle={isShuffle}
         isRepeat={isRepeat}
         isPlaying={isPlaying}
@@ -150,6 +156,8 @@ function AudioPlayer() {
       className="font-ProximaRegular 
       fixed bottom-0 left-0 right-0 py-3 px-4 pb-4
      border-t-[#242424] border-t
+     mobile:py-1 mobile:px-2 z-20
+     mobile:bottom-12 tablet:bottom-12
       bg-[#121212]
       select-none"
     >
@@ -161,18 +169,15 @@ function AudioPlayer() {
         <div className="flex flex-row items-center w-full ">
           <div
             onClick={() => router.push("/playing")}
+            style={{ backgroundColor: activeSong!.cover_image.color }}
             className="w-[50px] h-[50px] min-w-[50px]
          relative mini-laptop:w-[40px] mini-laptop:h-[40px]
           mini-laptop:min-w-[40px] mobile:min-w-[35px] mobile:w-[35px]
-           mobile:h-[35px] cursor-pointer"
+           mobile:h-[35px] cursor-pointer rounded-sm"
           >
-            <Image
+            <CustomImage
               src={activeSong!.cover_image.urls.small}
-              alt="album"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-sm  w-[50px] h-[50px]"
-              unoptimized
+              className="rounded-sm w-[50px] h-[50px]"
             />
           </div>
 
@@ -181,9 +186,16 @@ function AudioPlayer() {
               className="text-gray-300 hover:underline 
           cursor-pointer line-clamp-1 mobile:text-sm"
             >
-              {activeSong!.name}
+              {activeSong!.track_name}
             </p>
-            <p className="text-gray-400 text-sm mobile:text-xs">Ansh Rathod</p>
+            <Link href={`/artist/${activeSong!.artist_id}`}>
+              <p
+                className="text-gray-400 text-sm mobile:text-xs 
+            hover:underline cursor-pointer"
+              >
+                {activeSong!.artist_name}
+              </p>
+            </Link>
           </div>
         </div>
         <div>
@@ -199,6 +211,7 @@ function AudioPlayer() {
             prevSong={toPrevTrack}
           />
           <SeekBar
+            changeSeekBarColor={changeSeekBarColor}
             trackProgress={trackProgress}
             trackBarStyling={trackStyling}
             audioRef={audioRef}

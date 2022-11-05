@@ -7,6 +7,10 @@ interface IProps {
 }
 
 function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
+  const currentPercentage = 1 ? `${(volume / 1) * 100}%` : "0%";
+  const trackStyling = `
+    -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, #fff), color-stop(${currentPercentage}, #777))
+  `;
   if (isFullScreen) {
     return (
       <div
@@ -41,6 +45,7 @@ function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
           step="any"
           min={0}
           max={1}
+          style={{ background: trackStyling }}
           className="max-h-1 cursor-pointer  w-[6rem] bg-gray-600
            mx-2 hidden group-hover:block"
           onChange={(e) => updateVolume(e.target.value)}
@@ -74,6 +79,7 @@ function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
         step="any"
         min={0}
         max={1}
+        style={{ background: trackStyling }}
         className="max-h-1 cursor-pointer w-[8rem] bg-gray-600 mx-2
             mini-laptop:w-[4rem]"
         onChange={(e) => updateVolume(e.target.value)}

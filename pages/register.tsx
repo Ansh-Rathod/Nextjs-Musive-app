@@ -31,6 +31,9 @@ const Register: NextPage = () => {
     if (user || status == AuthStatus.Success) {
       router.push("/");
     }
+    return () => {
+      dispatch(reset());
+    };
   }, [router, user, dispatch, status]);
 
   // set username

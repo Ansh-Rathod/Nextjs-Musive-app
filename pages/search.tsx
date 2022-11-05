@@ -4,7 +4,7 @@ import Image from "next/image";
 import AppLayout from "../layouts/appLayout";
 function Search() {
   return (
-    <AppLayout title="Search">
+    <AppLayout title="Search" color="#ffffff">
       <p>search</p>
     </AppLayout>
   );

@@ -5,6 +5,7 @@ import store from "../stores/store";
 import NextNProgress from "nextjs-progressbar";
 import { useRouter } from "next/router";
 import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
+import SidebarItem from "../components/sidebarItem";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -21,11 +22,24 @@ function AudioPlayerComponent() {
   const { showBanner } = useSelector((state: any) => state.player);
   return (
     <div>
-      {router.pathname !== "/login" && router.pathname !== "/register" ? (
+      {router.pathname !== "/login" &&
+      router.pathname !== "/register" &&
+      router.pathname !== "/_error" &&
+      showBanner ? (
         <AudioPlayer />
       ) : (
         <div></div>
       )}
+      <div
+        className="bg-[#121212] hidden mobile:block tablet:block 
+      fixed bottom-0 left-0 right-0 w-full pt-2 pb-1 z-20"
+      >
+        <div className="flex flex-row justify-center ">
+          <SidebarItem name="home" label="Home" />
+          <SidebarItem name="search" label="Search" />
+          <SidebarItem name="library" label="Library" />
+        </div>
+      </div>
     </div>
   );
 }
