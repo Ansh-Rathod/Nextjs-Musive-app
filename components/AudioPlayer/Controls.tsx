@@ -67,7 +67,13 @@ function Controls({
                 mobile:h-10 mobile:w-10
                 laptop:w-12 laptop:h-12"
               >
-                <Image src="/svgs/play.svg" width={40} height={40} alt="play" />
+                <Image
+                  priority
+                  src="/svgs/play.svg"
+                  width={40}
+                  height={40}
+                  alt="play"
+                />
               </div>
             ) : (
               <div
@@ -81,6 +87,7 @@ function Controls({
                 mini-laptop:w-10 laptop:w-12 laptop:h-12"
               >
                 <Image
+                  priority
                   src="/svgs/pause.svg"
                   width={40}
                   height={40}

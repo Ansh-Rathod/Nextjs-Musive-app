@@ -12,11 +12,7 @@ const SidebarItem = ({ name, label }: IProps) => {
   const router = useRouter();
 
   const isActive = () => {
-    if (router.pathname === "/" && name === "home") {
-      return true;
-    } else {
-      return router.pathname === `/${name.toLowerCase()}`;
-    }
+    return router.pathname === `/${name.toLowerCase()}`;
   };
   const iconName = () => {
     if (!isActive()) {
@@ -26,10 +22,10 @@ const SidebarItem = ({ name, label }: IProps) => {
     }
   };
   return (
-    <Link href={name === "home" ? "/" : `/${name.toLowerCase()}`}>
+    <Link href={`/${name.toLowerCase()}`}>
       <div
         className="cursor-pointer mt-5 flex flex-row items-center mobile:flex-col tablet:flex-col
-       mini-laptop:w-full mini-laptop:mt-6 mobile:mt-0 tablet:mt-0 mobile:mx-6 tablet:mx-8"
+       mini-laptop:w-full mini-laptop:mt-6 mobile:mt-0 tablet:mt-0 mobile:mx-8 tablet:mx-10"
       >
         <i
           className={classnames(

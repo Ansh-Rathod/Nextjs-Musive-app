@@ -3,8 +3,10 @@ import React from "react";
 import SidebarItem from "../components/sidebarItem";
 import Image from "next/image";
 import Head from "next/head";
+import { useLogin } from "../hooks/useLogin";
 
 function AppLayout({ children, title, color }: any) {
+  useLogin();
   return (
     <div>
       <Head>

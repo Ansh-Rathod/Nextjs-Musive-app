@@ -125,6 +125,7 @@ function AudioPlayer() {
   const currentPercentage = activeSong!.duration
     ? `${(trackProgress / activeSong!.duration) * 100}%`
     : "0%";
+
   const trackStyling = `
     -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(${currentPercentage}, ${seekBarColor}), color-stop(${currentPercentage}, #777))
   `;
@@ -169,7 +170,11 @@ function AudioPlayer() {
         <div className="flex flex-row items-center w-full ">
           <div
             onClick={() => router.push("/playing")}
-            style={{ backgroundColor: activeSong!.cover_image.color }}
+            style={{
+              backgroundColor: activeSong!.cover_image.color,
+              boxShadow:
+                "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
+            }}
             className="w-[50px] h-[50px] min-w-[50px]
          relative mini-laptop:w-[40px] mini-laptop:h-[40px]
           mini-laptop:min-w-[40px] mobile:min-w-[35px] mobile:w-[35px]

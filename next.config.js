@@ -7,6 +7,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  env: {
+    MUSIVE_API_URL: process.env.MUSIVE_API_URL,
+  },
 };
 
 module.exports = nextConfig;

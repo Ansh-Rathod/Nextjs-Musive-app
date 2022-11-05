@@ -11,6 +11,8 @@ export enum RequestStatus {
 }
 export interface HomePageState {
   recentUsers: Artists[];
+  trendingArtists: Artists[];
+  topArtists: Artists[];
   topHits: TrackProps[];
   popularHits: TrackProps[];
   status: RequestStatus;
@@ -18,6 +20,8 @@ export interface HomePageState {
 const initialState: HomePageState = {
   recentUsers: [],
   topHits: [],
+  topArtists: [],
+  trendingArtists: [],
   popularHits: [],
   status: RequestStatus.Initial,
 };
@@ -36,6 +40,8 @@ const homePageSlice = createSlice({
       state.recentUsers = action.payload.randomArtists;
       state.topHits = action.payload.topHits;
       state.popularHits = action.payload.popular;
+      state.trendingArtists = action.payload.trendingArtists;
+      state.topArtists = action.payload.topArtists;
     });
     builder.addCase(getRecentUsers.rejected, (state, action) => {
       state.status = RequestStatus.Error;

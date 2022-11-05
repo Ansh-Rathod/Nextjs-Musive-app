@@ -1,13 +1,12 @@
 import axios from "axios";
 
 import { setCookie } from "cookies-next";
-
-const API_URL = "http://localhost:4444/api/auth/";
+import API_URL from "../../configs/apiUrl";
 
 // Register user
 const register = async (userData: any) => {
   try {
-    const response = await axios.post(API_URL + "register", userData);
+    const response = await axios.post(API_URL + "/auth/register", userData);
 
     const user = {
       username: response.data.username,
@@ -32,7 +31,7 @@ const register = async (userData: any) => {
 };
 const login = async (userData: any) => {
   try {
-    const response = await axios.post(API_URL + "login", userData);
+    const response = await axios.post(API_URL + "/auth/login", userData);
 
     const user = {
       username: response.data.username,

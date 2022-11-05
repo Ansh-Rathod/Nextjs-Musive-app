@@ -19,13 +19,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 function AudioPlayerComponent() {
   const router = useRouter();
-  const { showBanner } = useSelector((state: any) => state.player);
   return (
     <div>
       {router.pathname !== "/login" &&
       router.pathname !== "/register" &&
       router.pathname !== "/_error" &&
-      showBanner ? (
+      router.pathname !== "/" ? (
         <AudioPlayer />
       ) : (
         <div></div>
@@ -33,7 +32,8 @@ function AudioPlayerComponent() {
       {router.pathname !== "/login" &&
         router.pathname !== "/register" &&
         router.pathname !== "/_error" &&
-        router.pathname !== "/playing" && (
+        router.pathname !== "/playing" &&
+        router.pathname !== "/" && (
           <div
             className="bg-[#121212] hidden mobile:block tablet:block 
       fixed bottom-0 left-0 right-0 w-full pt-2 pb-1 z-20"

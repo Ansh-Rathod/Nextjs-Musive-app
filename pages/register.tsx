@@ -29,13 +29,16 @@ const Register: NextPage = () => {
 
   useEffect(() => {
     if (user || status == AuthStatus.Success) {
-      router.push("/");
+      router.push("/home");
     }
-    return () => {
-      dispatch(reset());
-    };
   }, [router, user, dispatch, status]);
 
+  useEffect(() => {
+    if (status == AuthStatus.Error) {
+      dispatch(reset());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router]);
   // set username
   const onChange = (e: any) => {
     // trim username to don't let user to add space
@@ -124,7 +127,7 @@ const Register: NextPage = () => {
           justify-center items-center"
         >
           <div
-            className="select-none px-20 pt-14 pb-16 
+            className="select-none px-20 mobile:pt-8 mobile:pb-10 pt-14 pb-16 mini-laptop:px-10 tablet:px-10 mobile:px-6 
           flex flex-col items-center bg-black rounded-xl"
           >
             <div className="flex flex-row items-center">
@@ -137,7 +140,7 @@ const Register: NextPage = () => {
               </h1>
             </div>
 
-            <h1 className="text-3xl w-80 mt-10 font-extrabold font-ProximaBold">
+            <h1 className="mobile:text-xl text-3xl w-80 mobile:w-64 mobile:text-center mt-10 font-extrabold font-ProximaBold">
               Download & listen free music lifetime.
             </h1>
             {status == AuthStatus.Error && (
@@ -165,7 +168,7 @@ const Register: NextPage = () => {
                   onChange={onChange}
                   className={`bg-[#3B3B3B] p-2 rounded-3xl 
                   border-none text-white outline-none 
-                  px-4 py-2 mt-1  w-80
+                  px-4 py-2 mt-1  w-80 mobile:w-64
                     ${usernameError && "mb-2"}`}
                 />
                 {usernameError && (
@@ -193,7 +196,7 @@ const Register: NextPage = () => {
                   placeholder="!@#$#$@"
                   onChange={onChange}
                   className="bg-[#3B3B3B]  rounded-3xl border-none
-                   text-white outline-none py-2 px-4 w-80 mt-1 "
+                   text-white outline-none py-2 px-4 w-80 mt-1 mobile:w-64"
                 />
                 {passError && (
                   <p
