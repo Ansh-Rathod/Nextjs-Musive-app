@@ -19,12 +19,12 @@ const Home: NextPage = () => {
     <div>
       Musive landing page! work stil in progress.
       <ul>
-        <li>
+        <li className="text-blue-800 underline">
           <Link href="/login">
             <a>login</a>
           </Link>
         </li>
-        <li>
+        <li className="text-blue-800 underline">
           <Link href="/register">
             <a>register</a>
           </Link>
