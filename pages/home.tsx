@@ -15,7 +15,6 @@ import HorizontalTracksList from "../components/HorizontalTracksList";
 import HorizontalArtistsList from "../components/HorizontalArtistsList";
 
 const Home: NextPage = () => {
-  // useLogin();
   const {
     recentUsers,
     status,
@@ -47,12 +46,12 @@ const Home: NextPage = () => {
       ) : status == RequestStatus.Error ? (
         <div>error</div>
       ) : status == RequestStatus.Success ? (
-        <div className="mt-10 mini-laptop:mt-2 mobile:mt-1">
-          <h1 className="select-none pt-6 px-6 mobile:px-4 pb-6 text-3xl font-ProximaBold mini-laptop:text-2xl tablet:text-2xl mobile:text-xl">
+        <div className="pt-10 mini-laptop:mt-2 mobile:mt-1">
+          <h1 className="select-none pt-6 tablet:px-6 px-8 mobile:px-4 pb-6 text-3xl font-ProximaBold mini-laptop:text-2xl tablet:text-2xl mobile:text-xl">
             Good Morning
           </h1>
           <div
-            className="select-none px-6 mobile:px-4 grid grid-cols-3 gap-x-6 gap-y-5 mini-laptop:gap-x-3 
+            className="select-none px-8 tablet:px-6 mobile:px-4 grid grid-cols-3 gap-x-6 gap-y-5 mini-laptop:gap-x-3 
           mini-laptop:gap-y-4 tablet:gap-y-4 tablet:gap-x-3 mobile:grid-cols-2 mobile:gap-x-3 mobile:gap-y-3"
           >
             {recentUsers.map((e: Artists) => (
@@ -85,26 +84,26 @@ const Home: NextPage = () => {
             ))}
           </div>
           <div className="mt-12">
-            <h1 className="px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
+            <h1 className="px-8 tablet:px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
               Trending Artists
             </h1>
             <HorizontalArtistsList artists={trendingArtists} />
           </div>
 
           <div className="mt-12">
-            <h1 className="px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
+            <h1 className="px-8 tablet:px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
               Top Hits this Week
             </h1>
             <HorizontalTracksList tracks={topHits} />
           </div>
           <div className="mt-12">
-            <h1 className="px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
+            <h1 className="px-8 tablet:px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
               Top Artists
             </h1>
             <HorizontalArtistsList artists={topArtists} />
           </div>
           <div className="mt-6">
-            <h1 className="px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
+            <h1 className="px-8 tablet:px-6 mobile:px-4 text-xl font-ProximaBold mb-6 mobile:text-base">
               Popluar releases
             </h1>
             <HorizontalTracksList tracks={popularHits} />

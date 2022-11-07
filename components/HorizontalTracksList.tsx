@@ -11,8 +11,12 @@ function HorizontalTracksList({ tracks }: { tracks: TrackProps[] }) {
   const dispatch = useDispatch();
 
   return (
-    <ScrollContainer vertical={false} horizontal className="flex flex-row">
-      <div className="mx-3 mobile:mx-2"></div>
+    <ScrollContainer
+      vertical={false}
+      horizontal={true}
+      className="flex flex-row"
+    >
+      <div className="mx-4 mobile:mx-2 tablet:mx-6"></div>
       {tracks.map((track: TrackProps) => (
         <HorizontalTrackCard
           key={track.id}
