@@ -61,19 +61,21 @@ function Controls({
                 className="bg-white text-black 
                 rounded-full p-1 text-center h-14 w-14 flex 
                 items-center justify-center
-                cursor-pointer 
+                cursor-pointer
                 mini-laptop:h-10 mini-laptop:w-10
                 tablet:h-10 tablet:w-10
                 mobile:h-10 mobile:w-10
                 laptop:w-12 laptop:h-12"
               >
-                <Image
+                <i className="icon-play text-[26px] ml-1.5" />
+
+                {/* <Image
                   priority
                   src="/svgs/play.svg"
                   width={40}
                   height={40}
                   alt="play"
-                />
+                /> */}
               </div>
             ) : (
               <div
@@ -86,13 +88,14 @@ function Controls({
                 mobile:h-10 mobile:w-10
                 mini-laptop:w-10 laptop:w-12 laptop:h-12"
               >
-                <Image
+                <i className="icon-pause" />
+                {/* <Image
                   priority
                   src="/svgs/pause.svg"
                   width={40}
                   height={40}
                   alt="play"
-                />
+                /> */}
               </div>
             )}
           </div>
@@ -161,7 +164,7 @@ function Controls({
             items-center justify-center
             cursor-pointer"
           >
-            <Image src="/svgs/play.svg" width={30} height={30} alt="play" />
+            <i className="icon-play text-[16px] ml-0.5" />
           </div>
         ) : (
           <div
@@ -171,7 +174,7 @@ function Controls({
             items-center justify-center
              cursor-pointer"
           >
-            <Image src="/svgs/pause.svg" width={30} height={30} alt="play" />
+            <i className="icon-pause text-[16px]" />
           </div>
         )}
       </div>

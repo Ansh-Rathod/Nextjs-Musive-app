@@ -5,7 +5,7 @@ import AppLayout from "../layouts/appLayout";
 function Search() {
   return (
     <AppLayout title="Search" color="#ffffff">
-      <p>search</p>
+      <p>search page not build yet</p>
     </AppLayout>
   );
 }

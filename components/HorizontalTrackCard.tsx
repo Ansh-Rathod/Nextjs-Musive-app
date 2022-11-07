@@ -92,20 +92,13 @@ export function PlayPauseButton({
             className="mx-2 my-3 bg-[#2bb540] rounded-full cursor-pointer
                      w-[45px] h-[45px] flex justify-center items-center mobile:w-[30px] mobile:h-[30px]"
           >
-            <div className="relative w-[30px] h-[30px] mobile:w-[20px] mobile:h-[20px]">
-              <Image
-                priority
-                src={
-                  isHover
-                    ? "/svgs/play.svg"
-                    : !isPlaying
-                    ? "/svgs/play.svg"
-                    : "/svgs/pause.svg"
-                }
-                layout="fill"
-                alt="play"
-              />
-            </div>
+            {isHover ? (
+              <i className="icon-play text-[26px] ml-1 text-black mobile:text-[16px]" />
+            ) : !isPlaying ? (
+              <i className="icon-play text-[26px] ml-1 text-black mobile:text-[16px]" />
+            ) : (
+              <i className="icon-pause text-[26px] text-black mobile:text-[16px]" />
+            )}
           </div>
         </div>
       )}

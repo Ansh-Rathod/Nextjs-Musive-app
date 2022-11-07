@@ -6,10 +6,34 @@ import NextNProgress from "nextjs-progressbar";
 import { useRouter } from "next/router";
 import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
 import SidebarItem from "../components/sidebarItem";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
+      <Head>
+        <link
+          rel="preload"
+          href="/musive-icons.ttf"
+          as="font"
+          crossOrigin=""
+          type="font/ttf"
+        />
+        <link
+          rel="preload"
+          href="/ProximaNova/Proxima Nova Reg.otf"
+          as="font"
+          crossOrigin=""
+          type="font/otf"
+        />
+        <link
+          rel="preload"
+          href="/ProximaNova/Proxima Nova Bold.otf"
+          as="font"
+          crossOrigin=""
+          type="font/otf"
+        />
+      </Head>
       <NextNProgress color="#2bb540" options={{ showSpinner: false }} />
       <Component {...pageProps} />
       <AudioPlayerComponent />

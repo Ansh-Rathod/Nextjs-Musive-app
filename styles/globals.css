@@ -65,7 +65,7 @@ i {
   content: "\e911";
 }
 .icon-pause:before {
-  content: "\e912";
+  content: "\ea1d";
 }
 .icon-Previous:before {
   content: "\e913";
@@ -109,6 +109,7 @@ i {
   content: "\e901";
   color: #fff;
 }
+
 .icon-home:before {
   content: "\e902";
   color: #fff;
@@ -132,6 +133,10 @@ i {
 
 .icon-close:before {
   content: "\e91e";
+}
+
+.icon-play:before {
+  content: "\ea1c";
 }
 .icon-volume-x:before {
   content: "\e907";
