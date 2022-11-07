@@ -18,12 +18,18 @@ const Home: NextPage = () => {
   return (
     <div>
       Musive landing page! work stil in progress.
-      <Link href="/login">
-        <a>login</a>
-      </Link>
-      <Link href="/register">
-        <a>register</a>
-      </Link>
+      <ul>
+        <li>
+          <Link href="/login">
+            <a>login</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/register">
+            <a>register</a>
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };
