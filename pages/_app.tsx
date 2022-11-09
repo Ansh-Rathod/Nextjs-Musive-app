@@ -8,6 +8,8 @@ import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
 import SidebarItem from "../components/sidebarItem";
 import Head from "next/head";
 
+import useDetectKeyboardOpen from "use-detect-keyboard-open";
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
@@ -48,12 +50,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 function AudioPlayerComponent() {
   const router = useRouter();
+  const isKeyboardOpen = useDetectKeyboardOpen();
   return (
     <div>
       {router.pathname !== "/login" &&
       router.pathname !== "/register" &&
       router.pathname !== "/_error" &&
-      router.pathname !== "/" ? (
+      router.pathname !== "/" &&
+      !isKeyboardOpen ? (
         <AudioPlayer />
       ) : (
         <div></div>
@@ -62,7 +66,8 @@ function AudioPlayerComponent() {
         router.pathname !== "/register" &&
         router.pathname !== "/_error" &&
         router.pathname !== "/playing" &&
-        router.pathname !== "/" && (
+        router.pathname !== "/" &&
+        !isKeyboardOpen && (
           <div
             className="bg-[#121212] hidden mobile:block tablet:block 
       fixed bottom-0 left-0 right-0 w-full pt-2 pb-1 z-20"

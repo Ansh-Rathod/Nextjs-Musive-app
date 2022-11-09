@@ -71,17 +71,17 @@ function Search() {
     <AppLayout title="Search" color="#121212">
       <div className="w-full">
         <div
-          className="p-4 px-6 fixed z-10 bg-[#121212] flex flex-row 
+          className="p-4 px-6 mobile:px-4 tablet:px-4 fixed z-10 bg-[#121212] flex flex-row 
         w-[calc(100vw_-_14rem_-_5px)] mini-laptop:w-[calc(100vw_-_55px_-_5px)] 
         tablet:w-screen mobile:w-screen border-b-[#242424] border-b items-center
         "
         >
-          <div className="items-center flex bg-white rounded-3xl px-4 tablet:w-full mobile:w-full">
+          <div className="items-center flex bg-white rounded-3xl px-4 mobile:rounded-md tablet:w-full mobile:w-full">
             <i className="icon-search text-gray-500"></i>
             <input
               onChange={(e: any) => searchAlgolia(e.target.value)}
               type="text"
-              className="tablet:w-full mobile:w-full w-[300px] pr-6 pl-2 py-2 text-black border-none outline-none rounded-3xl"
+              className="tablet:w-full mobile:w-full w-[300px] pr-6 mobile:pr-8 pl-2 py-2 text-black border-none outline-none rounded-3xl"
               placeholder="Search Music.."
             />
           </div>
@@ -206,7 +206,7 @@ function TopResult({ object, onTap }: any) {
         className="h-[250px] flex flex-col bg-[#5f5d5d2f] relative
               hover:bg-[#5f5d5d72] rounded-md tablet:h-full mobile:h-full"
       >
-        <div className="tablet:flex mobile:flex ">
+        <div>
           {activeSong.id === object.id ? (
             <PlayPauseButton
               condition={activeSong.id === object.id}
@@ -219,7 +219,7 @@ function TopResult({ object, onTap }: any) {
               isPlaying={isPlaying}
             />
           ) : null}
-          <div className="p-6">
+          <div className="p-6 tablet:flex mobile:flex ">
             <div
               className="rounded-md relative w-24 h-24 "
               style={{
@@ -297,7 +297,7 @@ function ListItem({ track, showNumber, onTap }: any) {
         <div className="">
           <p
             className={`line-clamp-1 ${
-              activeSong.id == track.id && "text-[#2bb540]"
+              activeSong.id == track.id && "text-[#2bb540] font-ProximaBold"
             }`}
           >
             {track.track_name}
