@@ -46,7 +46,7 @@ const Home: NextPage = () => {
       ) : status == RequestStatus.Error ? (
         <div>error</div>
       ) : status == RequestStatus.Success ? (
-        <div className="pt-10 mini-laptop:mt-2 mobile:mt-1">
+        <div className="pt-10 mini-laptop:mt-2 mobile:pt-1 tablet:pt-2">
           <h1 className="select-none pt-6 tablet:px-6 px-8 mobile:px-4 pb-6 text-3xl font-ProximaBold mini-laptop:text-2xl tablet:text-2xl mobile:text-xl">
             Good Morning
           </h1>

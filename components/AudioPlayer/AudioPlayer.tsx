@@ -42,6 +42,7 @@ function AudioPlayer({ className }: { className: string }) {
   const [seekBarColor, setSeekBarColor] = useState("#fff");
 
   const changeSeekBarColor = (color: string) => setSeekBarColor(color);
+
   useEffect(() => {
     if (isPlaying) {
       audioRef.current!.play();

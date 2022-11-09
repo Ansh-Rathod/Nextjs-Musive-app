@@ -33,7 +33,7 @@ const SidebarItem = ({ name, label }: IProps) => {
             {
               "opacity-70": !isActive(),
             },
-            "mr-4 mobile:mr-0 tablet:mr-0 tablet:mt-1 mobile:mt-1 "
+            "mr-4 mobile:mr-0 tablet:mr-0 mobile:mb-1 tablet:mb-1"
           )}
         ></i>
         <p

@@ -56,8 +56,7 @@ function AudioPlayerComponent() {
       {router.pathname !== "/login" &&
       router.pathname !== "/register" &&
       router.pathname !== "/_error" &&
-      router.pathname !== "/" &&
-      !isKeyboardOpen ? (
+      router.pathname !== "/" ? (
         <AudioPlayer className={isKeyboardOpen ? "invisible" : "visible"} />
       ) : (
         <div></div>

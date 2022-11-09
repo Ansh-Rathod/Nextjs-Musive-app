@@ -71,7 +71,7 @@ function Search() {
     <AppLayout title="Search" color="#121212">
       <div className="w-full">
         <div
-          className="p-4 px-6 mobile:px-4 tablet:px-4 fixed z-10 bg-[#121212] flex flex-row 
+          className="py-4 px-6 mobile:py-2 mobile:px-4 tablet:px-4 fixed z-10 bg-[#121212] flex flex-row 
         w-[calc(100vw_-_14rem_-_5px)] mini-laptop:w-[calc(100vw_-_55px_-_5px)] 
         tablet:w-screen mobile:w-screen border-b-[#242424] border-b items-center
         "
@@ -90,14 +90,16 @@ function Search() {
 
       {isFocus ? (
         <div>
-          <div className="pt-24"></div>
+          <div className="pt-24 mobile:pt-14 tablet:pt-14"></div>
 
           <div
             className="flex px-8 mini-laptop:px-4 
           justify-items-stretch items-stretch tablet:flex-col mobile:flex-col mobile:px-4 tablet:px-6"
           >
             <div className="laptop:w-[26rem] w-[32rem] tablet:w-full mobile:w-full">
-              <h1 className="my-4 text-xl font-ProximaBold">Top Result</h1>
+              <h1 className="mobile:hidden tablet:hidden my-4 text-xl font-ProximaBold">
+                Top Result
+              </h1>
 
               {topResult && (
                 <TopResult
@@ -155,9 +157,9 @@ function Search() {
         </div>
       ) : (
         <div>
-          <div className="pt-28"></div>
+          <div className="pt-28 mobile:pt-20 tablet:pt-20"></div>
 
-          <h1 className="text-2xl font-ProximaBold px-8 mini-laptop:px-4 mobile:px-4 ">
+          <h1 className="mobile:text-xl text-2xl font-ProximaBold px-8 mini-laptop:px-4 mobile:px-4 ">
             Browse all
           </h1>
           <div
@@ -203,7 +205,7 @@ function TopResult({ object, onTap }: any) {
         onClick={onTap}
         onMouseEnter={() => setPlayButton(true)}
         onMouseLeave={() => setPlayButton(false)}
-        className="h-[250px] flex flex-col bg-[#5f5d5d2f] relative
+        className="mobile:hidden tablet:hidden h-[250px] flex flex-col bg-[#5f5d5d2f] relative
               hover:bg-[#5f5d5d72] rounded-md tablet:h-full mobile:h-full"
       >
         <div>
@@ -246,7 +248,7 @@ function TopResult({ object, onTap }: any) {
   } else {
     return (
       <div
-        className="h-[250px] flex flex-col p-6 bg-[#5f5d5d2f] 
+        className=" mobile:hidden tablet:hidden h-[250px] flex flex-col p-6 bg-[#5f5d5d2f] 
               hover:bg-[#5f5d5d72] rounded-md tablet:h-full mobile:h-full"
       >
         <div
