@@ -23,3 +23,17 @@ export interface Urls {
   regular: string;
   small_s3: string;
 }
+
+export const toTrackProps = (tracks: any): TrackProps[] => {
+  return tracks.map((track: any) => {
+    return {
+      id: track.id,
+      duration: track.duration,
+      track_name: track.track_name,
+      src: track.src,
+      cover_image: track.cover_image,
+      artist_name: track.artist_name,
+      artist_id: track.track_id,
+    };
+  });
+};

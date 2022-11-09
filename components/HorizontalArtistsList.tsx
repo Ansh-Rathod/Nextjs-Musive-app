@@ -10,7 +10,7 @@ function HorizontalArtistsList({ artists }: { artists: Artists[] }) {
       vertical={false}
       className="flex flex-row"
     >
-      <div className="mx-4 mobile:mx-2 tablet:mx-3"></div>
+      <div className="mx-4 mobile:mx-2 tablet:mx-3 mini-laptop:mx-2"></div>
       {artists.map((artist: Artists) => (
         <HorizontalArtistCard
           key={artist.id}

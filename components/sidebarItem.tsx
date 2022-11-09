@@ -24,7 +24,7 @@ const SidebarItem = ({ name, label }: IProps) => {
   return (
     <Link href={`/${name.toLowerCase()}`}>
       <div
-        className="cursor-pointer mt-5 flex flex-row items-center mobile:flex-col tablet:flex-col
+        className="select-none cursor-pointer mt-5 flex flex-row items-center mobile:flex-col tablet:flex-col
        mini-laptop:w-full mini-laptop:mt-6 mobile:mt-0 tablet:mt-0 mobile:mx-8 tablet:mx-10"
       >
         <i

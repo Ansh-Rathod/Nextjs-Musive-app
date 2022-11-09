@@ -59,7 +59,7 @@ function SeekBar({
     <div
       className="flex flex-row justify-center items-center 
           tablet:justify-end
-       text-gray-300 text-xs mobile:hidden"
+       text-gray-300 text-xs mobile:hidden tablet:hidden"
     >
       <p className="w-6">
         {audioRef.current ? getTime(trackProgress) : "0:00"}

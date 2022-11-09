@@ -128,11 +128,14 @@ i {
 }
 .icon-search:before {
   content: "\e906";
-  color: #fff;
 }
 
 .icon-close:before {
   content: "\e91e";
+}
+
+.icon-more:before {
+  content: "\e912";
 }
 
 .icon-play:before {

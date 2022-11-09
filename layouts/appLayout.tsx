@@ -45,7 +45,7 @@ function AppLayout({ children, title, color }: any) {
             </div>
           </div>
           <div
-            className="h-screen scroll overflow-y-scroll"
+            className="h-screen scroll overflow-y-scroll transition-all"
             style={{
               background: `linear-gradient(180deg, ${color} 0%, rgba(18,18,18,1) 60%)`,
             }}

@@ -86,10 +86,10 @@ export function PlayPauseButton({
   return (
     <div>
       {condition && (
-        <div className="absolute w-full h-full bg-black bg-opacity-70 z-10 flex justify-end items-end rounded-md">
+        <div className="absolute w-full h-full bg-black bg-opacity-10 z-10 flex justify-end items-end rounded-md">
           <div
             onClick={() => dispatch(playPause(!isPlaying))}
-            className="mx-2 my-3 bg-[#2bb540] rounded-full cursor-pointer
+            className="mx-2 my-3 bg-[#2bb540] rounded-full cursor-pointer hover:scale-110
                      w-[45px] h-[45px] flex justify-center items-center mobile:w-[30px] mobile:h-[30px]"
           >
             {isHover ? (

@@ -34,7 +34,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           type="font/otf"
         />
       </Head>
-      <NextNProgress color="#2bb540" options={{ showSpinner: false }} />
+      <NextNProgress
+        color="#2bb540"
+        stopDelayMs={50}
+        height={3}
+        options={{ showSpinner: false }}
+      />
       <Component {...pageProps} />
       <AudioPlayerComponent />
     </Provider>
