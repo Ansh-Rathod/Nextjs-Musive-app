@@ -21,7 +21,7 @@ import FullScreenPlayer from "./FullScreenPlayer";
 import Link from "next/link";
 import CustomImage from "../CustomImage";
 
-function AudioPlayer() {
+function AudioPlayer({ className }: { className: string }) {
   const router = useRouter();
   const {
     isPlaying,
@@ -154,13 +154,13 @@ function AudioPlayer() {
 
   return (
     <div
-      className="font-ProximaRegular 
+      className={`font-ProximaRegular 
       fixed bottom-0 left-0 right-0 py-3 px-4 pb-4
      border-t-[#242424] border-t
      mobile:py-1 mobile:px-2 z-20
      mobile:bottom-12 tablet:bottom-12
       bg-[#121212]
-      select-none"
+      select-none ${className}`}
     >
       <div
         className="flex flex-row 

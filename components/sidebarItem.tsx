@@ -16,7 +16,7 @@ const SidebarItem = ({ name, label }: IProps) => {
   };
   const iconName = () => {
     if (!isActive()) {
-      return `icon-${name.toLowerCase()} mobile:text-[20px]`;
+      return `icon-${name.toLowerCase()} mobile:text-[20px] text-white`;
     } else {
       return `icon-${name.toLowerCase()}-filled mobile:text-[20px]`;
     }
