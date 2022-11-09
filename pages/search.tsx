@@ -171,7 +171,7 @@ function Search() {
               return (
                 <div
                   key={tag.tag}
-                  className="cursor-pointer relative h-44 tablet:h-40 mobile:h-28 overflow-hidden rounded-md "
+                  className="hover:scale-105 transition-all cursor-pointer relative h-44 tablet:h-40 mobile:h-28 overflow-hidden rounded-md "
                   style={{ backgroundColor: "#" + tag.color.toString(16) }}
                 >
                   <div className="p-4 capitalize">
@@ -286,14 +286,16 @@ function ListItem({ track, showNumber, onTap }: any) {
     >
       <div className="flex-grow flex flex-row items-center">
         {showNumber && <p className="mx-2">{showNumber}</p>}
-        <div
-          className="relative w-12 h-12 min-w-12 mx-2 rounded"
-          style={{ backgroundColor: track.cover_image.color }}
-        >
-          <CustomImage
-            src={track.cover_image.urls.small_s3}
-            className="rounded w-12 min-w-12"
-          />
+        <div>
+          <div
+            className="relative w-12 h-12 min-w-12 mx-2 rounded"
+            style={{ backgroundColor: track.cover_image.color }}
+          >
+            <CustomImage
+              src={track.cover_image.urls.small_s3}
+              className="rounded w-12 min-w-12"
+            />
+          </div>
         </div>
 
         <div className="">

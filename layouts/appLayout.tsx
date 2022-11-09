@@ -10,7 +10,7 @@ function AppLayout({ children, title, color }: any) {
   return (
     <div>
       <Head>
-        <title>{title + " | Musive"}</title>
+        <title>{"Musive - " + title}</title>
       </Head>
       <div className="font-ProximaRegular text-white bg-[#121212]">
         <div className="flex flex-row h-screen ">
