@@ -67,7 +67,7 @@ function Controls({
                 mobile:h-10 mobile:w-10
                 laptop:w-12 laptop:h-12"
               >
-                <i className="icon-play text-[26px] ml-1.5" />
+                <i className="icon-play text-[20px] ml-1" />
 
                 {/* <Image
                   priority
@@ -88,7 +88,7 @@ function Controls({
                 mobile:h-10 mobile:w-10
                 mini-laptop:w-10 laptop:w-12 laptop:h-12"
               >
-                <i className="icon-pause" />
+                <i className="icon-pause text-[20px]" />
                 {/* <Image
                   priority
                   src="/svgs/pause.svg"
@@ -140,7 +140,10 @@ function Controls({
             `icon-shuffle text-[14px]`,
             isShuffle ? "text-[#2bb540]" : "text-gray-400 hover:text-white"
           )}
-          onClick={onShuffle}
+          onClick={(e) => {
+            e.stopPropagation();
+            onShuffle();
+          }}
         ></i>
         <div
           className={classNames(
@@ -151,43 +154,58 @@ function Controls({
       </div>
 
       <i
-        onClick={prevSong}
+        onClick={(e) => {
+          e.stopPropagation();
+          prevSong();
+        }}
         className="icon-Previous cursor-pointer text-gray-300 text-[14px]
          hover:text-white mobile:hidden"
       ></i>
       <div className="mx-6 scale-100 hover:scale-110">
         {!isPlaying ? (
           <div
-            onClick={playPause}
+            onClick={(e) => {
+              e.stopPropagation();
+              playPause();
+            }}
             className="bg-white text-black 
             rounded-full p-1 text-center h-8 w-8 flex 
             items-center justify-center
             cursor-pointer"
           >
-            <i className="icon-play text-[16px] ml-0.5" />
+            <i className="icon-play text-[14px] ml-0.5" />
           </div>
         ) : (
           <div
-            onClick={playPause}
+            onClick={(e) => {
+              e.stopPropagation();
+              playPause();
+            }}
             className="bg-white rounded-full p-1
              text-center h-8 w-8 flex
             items-center justify-center
              cursor-pointer"
           >
-            <i className="icon-pause text-[16px]" />
+            <i className="icon-pause text-[12px]" />
           </div>
         )}
       </div>
 
       <i
-        onClick={nextSong}
+        onClick={(e) => {
+          e.stopPropagation();
+          nextSong();
+        }}
         className="icon-Next cursor-pointer text-gray-300
          hover:text-white mobile:hidden text-[14px]"
       ></i>
 
       <div className="flex flex-col items-center mx-6 mobile:hidden">
         <i
-          onClick={onRepeat}
+          onClick={(e) => {
+            e.stopPropagation();
+            onRepeat();
+          }}
           className={classNames(
             "icon-repeat text-[14px]",
             isRepeat ? "text-[#2bb540]" : "text-gray-400 hover:text-white"

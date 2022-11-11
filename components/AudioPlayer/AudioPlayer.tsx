@@ -2,7 +2,10 @@
 import React, { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  addLike,
+  getLikedSongs,
   IStateProps,
+  LikedStatus,
   nextSong,
   onRepeat,
   onShuffle,
@@ -15,32 +18,31 @@ import Image from "next/image";
 import SeekBar from "./SeekBar";
 import Buttons from "./Buttons";
 import { useRouter } from "next/router";
-import VolumeControls from "./VolumeControls";
-import classNames from "classnames";
 import FullScreenPlayer from "./FullScreenPlayer";
 import Link from "next/link";
 import CustomImage from "../CustomImage";
 
 function AudioPlayer({ className }: { className: string }) {
   const router = useRouter();
+  const { user, status } = useSelector((state: any) => state.auth);
   const {
     isPlaying,
     activeSong,
     currentIndex,
     trackProgress,
+    fetchlikedStatus,
     tracks,
     isShuffle,
     isRepeat,
   }: IStateProps = useSelector((state: any) => state.player);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const audioRef = useRef(
     typeof Audio !== "undefined" ? new Audio(activeSong!.src) : null
   );
   const isReady = useRef(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>();
   const [seekBarColor, setSeekBarColor] = useState("#fff");
-
   const changeSeekBarColor = (color: string) => setSeekBarColor(color);
 
   useEffect(() => {
@@ -53,15 +55,23 @@ function AudioPlayer({ className }: { className: string }) {
   }, [isPlaying]);
 
   const toNextTrack = () => {
-    if (tracks.length - 1 !== currentIndex) {
+    if (isShuffle) {
+      dispatch(nextSong(Math.floor(Math.random() * tracks.length)));
+    } else if (tracks.length - 1 !== currentIndex) {
       dispatch(nextSong(currentIndex + 1));
     }
   };
   const toPrevTrack = () => {
-    if (currentIndex !== 0) {
+    if (isShuffle) {
+      dispatch(nextSong(Math.floor(Math.random() * tracks.length)));
+    } else if (currentIndex !== 0) {
       dispatch(nextSong(currentIndex - 1));
     }
   };
+
+  useEffect(() => {
+    audioRef.current!.loop = isRepeat;
+  }, [isRepeat]);
 
   useEffect(() => {
     audioRef.current!.pause();
@@ -108,7 +118,11 @@ function AudioPlayer({ className }: { className: string }) {
   };
 
   useEffect(() => {
-    // Pause and clean up on unmount
+    if (fetchlikedStatus == LikedStatus.Initial) {
+      if (user) {
+        dispatch(getLikedSongs(user.token));
+      }
+    } // Pause and clean up on unmount
     return () => {
       audioRef.current!.pause();
       clearInterval(intervalRef.current);
@@ -155,22 +169,22 @@ function AudioPlayer({ className }: { className: string }) {
 
   return (
     <div
+      onClick={() => router.push("/playing")}
       className={`font-ProximaRegular 
       fixed bottom-0 left-0 right-0 py-3 px-4 pb-4
      border-t-[#242424] border-t
      mobile:py-1 mobile:px-2 z-20
      mobile:bottom-12 tablet:bottom-12
-      bg-[#121212]
+      bg-[#121212] 
       select-none ${className}`}
     >
       <div
         className="flex flex-row 
       items-center justify-between 
-      w-screen max-w-full mini-laptop:px-2 mobile:p-2 mobile:pb-0"
+      w-screen max-w-full mini-laptop:px-2 mobile:p-2 mobile:pb-0 "
       >
-        <div className="flex flex-row items-center w-full ">
+        <div className="flex flex-row items-center w-full cursor-pointer">
           <div
-            onClick={() => router.push("/playing")}
             style={{
               backgroundColor: activeSong!.cover_image.color,
               boxShadow:
@@ -189,19 +203,22 @@ function AudioPlayer({ className }: { className: string }) {
 
           <div className="mx-4 mobile:mx-3">
             <p
-              className="text-gray-300 hover:underline 
+              className="text-gray-300 
           cursor-pointer line-clamp-1 mobile:text-sm"
             >
               {activeSong!.track_name}
             </p>
-            <Link href={`/artist/${activeSong!.artist_id}`}>
-              <p
-                className="text-gray-400 text-sm mobile:text-xs 
+
+            <p
+              className="text-gray-400 text-sm mobile:text-xs 
             hover:underline cursor-pointer"
-              >
-                {activeSong!.artist_name}
-              </p>
-            </Link>
+              onClick={(e) => {
+                e.stopPropagation();
+                router.push(`/artist/${activeSong?.artist_id}`);
+              }}
+            >
+              {activeSong!.artist_name}
+            </p>
           </div>
         </div>
         <div>
@@ -228,6 +245,7 @@ function AudioPlayer({ className }: { className: string }) {
           />
         </div>
         <Buttons
+          track_id={activeSong!.id}
           updateVolume={updateVolume}
           showVolumeSeekBar
           volume={volume}

@@ -57,6 +57,9 @@ function SeekBar({
   }
   return (
     <div
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
       className="flex flex-row justify-center items-center 
           tablet:justify-end
        text-gray-300 text-xs mobile:hidden tablet:hidden"
@@ -74,9 +77,15 @@ function SeekBar({
         max={activeSong!.duration}
         onMouseUp={onScrubEnd}
         onKeyUp={onScrubEnd}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
         className="max-h-1 cursor-pointer w-[26rem] laptop:w-[20rem]
              bg-gray-600 mx-2 mini-laptop:w-[16rem] tablet:w-[16rem]"
-        onChange={(e) => onScrub(e.target.value)}
+        onChange={(e) => {
+          e.stopPropagation();
+          onScrub(e.target.value);
+        }}
       />
       <p className="w-6">{getTime(activeSong!.duration)}</p>
     </div>

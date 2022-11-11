@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { TrackProps } from "../../interfaces/Track";
+import likeService from "./likeServices";
 
 const tracks: TrackProps[] = [
   {
@@ -253,9 +254,14 @@ const tracks: TrackProps[] = [
     artist_id: 5962636,
   },
 ];
-
+export enum LikedStatus {
+  Initial,
+  success,
+  error,
+}
 export interface IStateProps {
   tracks: TrackProps[];
+  liked: number[];
   currentIndex: number;
   showBanner: boolean;
   isPlaying: boolean;
@@ -263,10 +269,13 @@ export interface IStateProps {
   trackProgress: number;
   isShuffle: boolean;
   isRepeat: boolean;
+  fetchlikedStatus: LikedStatus;
 }
 const initialState: IStateProps = {
   tracks: tracks,
   currentIndex: 0,
+  liked: [],
+  fetchlikedStatus: LikedStatus.Initial,
   isShuffle: false,
   isRepeat: false,
   showBanner: false,
@@ -281,7 +290,6 @@ const playerSlice = createSlice({
   reducers: {
     setActiveSong: (state, action) => {
       state.showBanner = true;
-
       state.tracks = action.payload.tracks;
       state.currentIndex = action.payload.index;
       state.activeSong = action.payload.tracks[action.payload.index];
@@ -289,7 +297,6 @@ const playerSlice = createSlice({
 
     nextSong: (state, action) => {
       state.currentIndex = action.payload;
-
       state.activeSong = state.tracks[action.payload];
     },
     onShuffle: (state, action) => {
@@ -306,8 +313,64 @@ const playerSlice = createSlice({
     playPause: (state, action) => {
       state.isPlaying = action.payload;
     },
+    addLike: (state, action) => {
+      let liked = [...state.liked, action.payload.track_id];
+      state.liked = liked;
+    },
+    removeLike: (state, action) => {
+      let liked = state.liked.filter(
+        (value: number) => value != action.payload.track_id
+      );
+      state.liked = liked;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getLikedSongs.fulfilled, (state, action) => {
+      state.fetchlikedStatus = LikedStatus.success;
+      state.liked = action.payload.data;
+    });
+    builder.addCase(getLikedSongs.rejected, (state, action) => {
+      state.fetchlikedStatus = LikedStatus.success;
+    });
   },
 });
+
+export const getLikedSongs = createAsyncThunk(
+  "likeServices/idsOflikedSongs",
+  async (token: string, thunkAPI) => {
+    try {
+      return await likeService.idsOflikedTracks(token);
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
+export const Like = createAsyncThunk(
+  "likeServices/addlike",
+  async ({ track_id, token }: any, thunkAPI) => {
+    try {
+      return await likeService.like({
+        track_id,
+        token,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
+export const unLike = createAsyncThunk(
+  "likeServices/removelike",
+  async ({ track_id, token }: any, thunkAPI) => {
+    try {
+      return await likeService.unLike({
+        track_id,
+        token,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
 
 export const {
   setActiveSong,
@@ -317,6 +380,8 @@ export const {
   onShuffle,
   onRepeat,
   setTrackProgress,
+  addLike,
+  removeLike,
 } = playerSlice.actions;
 
 export default playerSlice.reducer;

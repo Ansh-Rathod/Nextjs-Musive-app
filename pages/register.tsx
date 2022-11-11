@@ -77,7 +77,6 @@ const Register: NextPage = () => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    console.log("df");
     if (formData.password.length == 0 || formData.username.length == 0) {
       setFormData((prevData) => ({
         ...prevData,

@@ -25,7 +25,7 @@ const user: CookieValueTypes = getCookie("user");
 
 // initalize state
 const initalState: StateProps = {
-  user: user ? JSON.parse(user?.toString()) : null,
+  user: user ? JSON.parse(user!.toString()) : null,
   status: AuthStatus.Initial,
   message: "",
 };
@@ -74,7 +74,7 @@ export const register = createAsyncThunk(
       const data = await authService.register(user);
       return data;
     } catch (error: any) {
-      console.log(error);
+      // console.log(error);
       if (error.message) {
         const message: string = error.message;
         return thunkAPI.rejectWithValue(message);
@@ -84,6 +84,7 @@ export const register = createAsyncThunk(
     }
   }
 );
+
 export const login = createAsyncThunk(
   "auth/login",
   async (user: any, thunkAPI) => {
@@ -91,7 +92,7 @@ export const login = createAsyncThunk(
       const data = await authService.login(user);
       return data;
     } catch (error: any) {
-      console.log(error);
+      // console.log(error);
       if (error.status) {
         const message: string = error.message;
         return thunkAPI.rejectWithValue(message);

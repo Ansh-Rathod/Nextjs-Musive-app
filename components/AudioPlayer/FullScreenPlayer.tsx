@@ -13,6 +13,7 @@ import {
 import { TrackProps, CoverImage } from "../../interfaces/Track";
 import Link from "next/link";
 import CustomImage from "../CustomImage";
+import LikeButton from "./LikeButton";
 
 interface IProps {
   trackProgress: number;
@@ -87,10 +88,10 @@ function FullScreenPlayer({
               >
                 <div
                   onClick={() => router.back()}
-                  className="w-8 h-8 bg-[#616161] hover:bg-white hover:text-black text-gray-100 shadow flex 
+                  className="w-8 h-8  hover:bg-white hover:text-black text-gray-100 shadow flex 
                     items-center justify-center rounded-full cursor-pointer mobile:w-6 mobile:h-6"
                 >
-                  <i className="icon-close text-[14px] mobile:text-[12px]"></i>
+                  <i className="icon-chevron-down text-[16px] mobile:text-[12px]"></i>
                 </div>
                 <div className="flex flex-row items-center">
                   <h1
@@ -104,7 +105,7 @@ function FullScreenPlayer({
                   className="w-8 h-8 shadow flex 
                     items-center justify-center rounded-full cursor-pointer"
                 >
-                  <i className="icon-share text-[22px] text-gray-400"></i>
+                  <i className="icon-more-horizontal text-[22px] text-gray-400"></i>
                 </div>
               </div>
               <FullScreenCoverImage
@@ -118,7 +119,7 @@ function FullScreenPlayer({
                 >
                   <div>
                     <p
-                      className="text-gray-300 hover:underline font-ProximaBold
+                      className="text-gray-300 font-ProximaBold
                         cursor-pointer line-clamp-1 mobile:text-sm text-lg mini-laptop:text-base 
                         tablet:text-base"
                     >
@@ -134,7 +135,7 @@ function FullScreenPlayer({
                     </Link>
                   </div>
                   <div className="w-10 h-10 flex items-center justify-center">
-                    <i className="icon-Like text-gray-400 hover:text-white"></i>
+                    <LikeButton track_id={activeSong.id} size={"text-[24px]"} />
                   </div>
                 </div>
                 <div>

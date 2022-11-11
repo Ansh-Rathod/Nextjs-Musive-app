@@ -34,6 +34,39 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-heart-o:before {
+  content: "\e923";
+}
+.icon-heart:before {
+  content: "\e924";
+}
+.icon-pause:before {
+  content: "\e920";
+}
+.icon-play:before {
+  content: "\e921";
+}
+.icon-chevron-down:before {
+  content: "\e922";
+}
+.icon-close:before {
+  content: "\e91e";
+}
+.icon-more-vertical:before {
+  content: "\e90b";
+}
+.icon-more-horizontal:before {
+  content: "\e90d";
+}
+.icon-volume-x:before {
+  content: "\e907";
+}
+.icon-volume-1:before {
+  content: "\e91d";
+}
+.icon-volume-2:before {
+  content: "\e91f";
+}
 .icon-about:before {
   content: "\e908";
 }
@@ -43,14 +76,8 @@ i {
 .icon-add-to-queue:before {
   content: "\e90a";
 }
-.icon-connect-to-a-device:before {
-  content: "\e90b";
-}
 .icon-full-screen:before {
   content: "\e90c";
-}
-.icon-Go-to-radio:before {
-  content: "\e90d";
 }
 .icon-hide-song:before {
   content: "\e90e";
@@ -64,9 +91,6 @@ i {
 .icon-Next:before {
   content: "\e911";
 }
-.icon-pause:before {
-  content: "\ea1d";
-}
 .icon-Previous:before {
   content: "\e913";
 }
@@ -75,9 +99,6 @@ i {
 }
 .icon-repeat:before {
   content: "\e915";
-}
-.icon-report-abuse:before {
-  content: "\e916";
 }
 .icon-share:before {
   content: "\e917";
@@ -88,19 +109,12 @@ i {
 .icon-sleep-timer:before {
   content: "\e919";
 }
-.icon-song-credits:before {
-  content: "\e91a";
-}
 .icon-view-album:before {
   content: "\e91b";
 }
 .icon-view-artist:before {
   content: "\e91c";
 }
-.icon-volume:before {
-  content: "\e91d";
-}
-
 .icon-create_new:before {
   content: "\e900";
   color: #fff;
@@ -109,7 +123,6 @@ i {
   content: "\e901";
   color: #fff;
 }
-
 .icon-home:before {
   content: "\e902";
   color: #fff;
@@ -128,27 +141,6 @@ i {
 }
 .icon-search:before {
   content: "\e906";
-}
-
-.icon-close:before {
-  content: "\e91e";
-}
-
-.icon-more:before {
-  content: "\e912";
-}
-
-.icon-play:before {
-  content: "\ea1c";
-}
-.icon-volume-x:before {
-  content: "\e907";
-}
-.icon-volume-1:before {
-  content: "\e91d";
-}
-.icon-volume-2:before {
-  content: "\e91f";
 }
 
 input[type="range"] {

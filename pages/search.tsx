@@ -10,6 +10,8 @@ import { tags } from "../interfaces/genres";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveSong } from "../stores/player/currentAudioPlayer";
 import { PlayPauseButton } from "../components/HorizontalTrackCard";
+import LikeButton from "../components/AudioPlayer/LikeButton";
+import ListItem from "../components/ListItem";
 
 function Search() {
   const [searchResult, setSearchResult] = useState<TrackProps[]>([]);
@@ -26,7 +28,6 @@ function Search() {
     }
     setFocus(true);
     const data = await algoliaClient.search(query);
-    console.log(data.hits);
     if (data.hits.length !== 0) {
       // @ts-ignore comment
 
@@ -134,8 +135,8 @@ function Search() {
             </h1>
             <HorizontalArtistsList artists={artists} />
           </div>
-          <div className="px-8 mini-laptop:px-4 mobile:px-4">
-            <h1 className="font-ProximaBold py-6 text-xl"> Top Tracks</h1>
+          <div className="px-8 mini-laptop:px-4 mobile:px-4 tablet:px-4">
+            <h1 className="font-ProximaBold py-6 text-xl ml-3"> Top Tracks</h1>
             {searchResult.slice(4).map((track: TrackProps, i: any) => {
               return (
                 <ListItem
@@ -177,8 +178,11 @@ function Search() {
                   <div className="p-4 capitalize">
                     <p className="font-ProximaBold text-xl">{tag.tag}</p>
                     <div className="absolute -right-4 -bottom-2">
-                      <div className="shadow-lg relative mobile:w-20 mobile:h-20 w-24 h-24 rotate-[30deg]">
-                        <CustomImage src={tag.coverImage} />
+                      <div className="shadow-xl relative mobile:w-[70px] rounded mobile:h-[70px] w-24 h-24 rotate-[30deg]">
+                        <CustomImage
+                          src={tag.coverImage}
+                          className="rounded-md"
+                        />
                       </div>
                     </div>
                   </div>
@@ -272,47 +276,4 @@ function TopResult({ object, onTap }: any) {
       </div>
     );
   }
-}
-
-function ListItem({ track, showNumber, onTap }: any) {
-  const { activeSong } = useSelector((state: any) => state.player);
-  const getTime = (time: any) =>
-    `${Math.floor(time / 60)}:${`0${Math.floor(time % 60)}`.slice(-2)}`;
-  return (
-    <div
-      onClick={onTap}
-      className="cursor-pointer hover:bg-[#5f5d5d60] flex flex-row justify-between 
-              items-center py-2 w-full rounded-md group"
-    >
-      <div className="flex-grow flex flex-row items-center">
-        {showNumber && <p className="mx-2">{showNumber}</p>}
-        <div>
-          <div
-            className="relative w-12 h-12 min-w-12 mx-2 rounded"
-            style={{ backgroundColor: track.cover_image.color }}
-          >
-            <CustomImage
-              src={track.cover_image.urls.small_s3}
-              className="rounded w-12 min-w-12"
-            />
-          </div>
-        </div>
-
-        <div className="">
-          <p
-            className={`line-clamp-1 ${
-              activeSong.id == track.id && "text-[#2bb540] font-ProximaBold"
-            }`}
-          >
-            {track.track_name}
-          </p>
-          <p className="text-sm text-gray-300">{track.artist_name}</p>
-        </div>
-      </div>
-      <div className="mx-2 flex flex-row items-center">
-        <p className="text-gray-300 text-sm">{getTime(track.duration)}</p>
-        <i className="group-hover:visible invisible mobile:visible tablet:visible icon-more ml-3 mr-2 text-[20px] text-gray-200"></i>
-      </div>
-    </div>
-  );
 }

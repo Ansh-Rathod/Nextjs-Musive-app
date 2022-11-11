@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'musive-icons';
-  src:  url('fonts/musive-icons.eot?g842yd');
-  src:  url('fonts/musive-icons.eot?g842yd#iefix') format('embedded-opentype'),
-    url('fonts/musive-icons.ttf?g842yd') format('truetype'),
-    url('fonts/musive-icons.woff?g842yd') format('woff'),
-    url('fonts/musive-icons.svg?g842yd#musive-icons') format('svg');
+  src:  url('fonts/musive-icons.eot?r3ghfj');
+  src:  url('fonts/musive-icons.eot?r3ghfj#iefix') format('embedded-opentype'),
+    url('fonts/musive-icons.ttf?r3ghfj') format('truetype'),
+    url('fonts/musive-icons.woff?r3ghfj') format('woff'),
+    url('fonts/musive-icons.svg?r3ghfj#musive-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-i, .icomoon-liga {
+i {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'musive-icons' !important;
   speak: never;
@@ -19,24 +19,44 @@ i, .icomoon-liga {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  
-  /* Enable Ligatures ================ */
-  letter-spacing: 0;
-  -webkit-font-feature-settings: "liga";
-  -moz-font-feature-settings: "liga=1";
-  -moz-font-feature-settings: "liga";
-  -ms-font-feature-settings: "liga" 1;
-  font-feature-settings: "liga";
-  -webkit-font-variant-ligatures: discretionary-ligatures;
-  font-variant-ligatures: discretionary-ligatures;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-mute:before {
+.icon-heart-o:before {
+  content: "\e923";
+}
+.icon-heart:before {
+  content: "\e924";
+}
+.icon-pause:before {
+  content: "\e920";
+}
+.icon-play:before {
+  content: "\e921";
+}
+.icon-chevron-down:before {
+  content: "\e922";
+}
+.icon-close:before {
+  content: "\e91e";
+}
+.icon-more-vertical:before {
+  content: "\e90b";
+}
+.icon-more-horizontal:before {
+  content: "\e90d";
+}
+.icon-volume-x:before {
   content: "\e907";
+}
+.icon-volume-1:before {
+  content: "\e91d";
+}
+.icon-volume-2:before {
+  content: "\e91f";
 }
 .icon-about:before {
   content: "\e908";
@@ -47,14 +67,8 @@ i, .icomoon-liga {
 .icon-add-to-queue:before {
   content: "\e90a";
 }
-.icon-connect-to-a-device:before {
-  content: "\e90b";
-}
 .icon-full-screen:before {
   content: "\e90c";
-}
-.icon-Go-to-radio:before {
-  content: "\e90d";
 }
 .icon-hide-song:before {
   content: "\e90e";
@@ -68,9 +82,6 @@ i, .icomoon-liga {
 .icon-Next:before {
   content: "\e911";
 }
-.icon-pause:before {
-  content: "\e912";
-}
 .icon-Previous:before {
   content: "\e913";
 }
@@ -79,9 +90,6 @@ i, .icomoon-liga {
 }
 .icon-repeat:before {
   content: "\e915";
-}
-.icon-report-abuse:before {
-  content: "\e916";
 }
 .icon-share:before {
   content: "\e917";
@@ -92,17 +100,11 @@ i, .icomoon-liga {
 .icon-sleep-timer:before {
   content: "\e919";
 }
-.icon-song-credits:before {
-  content: "\e91a";
-}
 .icon-view-album:before {
   content: "\e91b";
 }
 .icon-view-artist:before {
   content: "\e91c";
-}
-.icon-volume:before {
-  content: "\e91d";
 }
 .icon-create_new:before {
   content: "\e900";
@@ -131,10 +133,4 @@ i, .icomoon-liga {
 .icon-search:before {
   content: "\e906";
   color: #fff;
-}
-.icon-play3:before {
-  content: "\ea1c";
-}
-.icon-pause2:before {
-  content: "\ea1d";
 }

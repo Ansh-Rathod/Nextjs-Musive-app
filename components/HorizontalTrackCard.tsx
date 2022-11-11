@@ -93,11 +93,11 @@ export function PlayPauseButton({
                      w-[45px] h-[45px] flex justify-center items-center mobile:w-[30px] mobile:h-[30px]"
           >
             {isHover ? (
-              <i className="icon-play text-[26px] ml-1 text-black mobile:text-[16px]" />
+              <i className="icon-play text-[20px] ml-1 text-black mobile:text-[16px]" />
             ) : !isPlaying ? (
-              <i className="icon-play text-[26px] ml-1 text-black mobile:text-[16px]" />
+              <i className="icon-play text-[20px] ml-1 text-black mobile:text-[16px]" />
             ) : (
-              <i className="icon-pause text-[26px] text-black mobile:text-[16px]" />
+              <i className="icon-pause text-[20px] text-black mobile:text-[16px]" />
             )}
           </div>
         </div>

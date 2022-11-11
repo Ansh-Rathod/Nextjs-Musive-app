@@ -21,14 +21,21 @@ function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
           <i
             className="cursor-pointer icon-volume-2
             text-gray-400 hover:text-white text-[22px] mobile:text-[18px]"
-            onClick={() => updateVolume(0)}
+            onClick={(e) => {
+              e.stopPropagation();
+
+              updateVolume(0);
+            }}
           ></i>
         )}
         {volume <= 0.5 && volume > 0 && (
           <i
             className=" cursor-pointer icon-volume-1
             text-gray-400 hover:text-white text-[22px] mobile:text-[18px]"
-            onClick={() => updateVolume(0)}
+            onClick={(e) => {
+              e.stopPropagation();
+              updateVolume(0);
+            }}
           ></i>
         )}
         {volume === 0 && (
@@ -36,7 +43,10 @@ function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
             style={{ fontSize: "20px" }}
             className="cursor-pointer icon-volume-x
             text-gray-400 hover:text-white text-[22px] mobile:text-[18px]"
-            onClick={() => updateVolume(1)}
+            onClick={(e) => {
+              e.stopPropagation();
+              updateVolume(1);
+            }}
           ></i>
         )}
         <input
@@ -48,7 +58,10 @@ function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
           style={{ background: trackStyling }}
           className="max-h-1 cursor-pointer  w-[6rem] bg-gray-600
            mx-2 hidden group-hover:block"
-          onChange={(e) => updateVolume(e.target.value)}
+          onChange={(e) => {
+            e.stopPropagation();
+            updateVolume(e.target.value);
+          }}
         />
       </div>
     );
@@ -58,19 +71,29 @@ function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
       {volume <= 1 && volume > 0.5 && (
         <i
           className="cursor-pointer icon-volume-2 text-gray-400 hover:text-white"
-          onClick={() => updateVolume(0)}
+          onClick={(e) => {
+            e.stopPropagation();
+
+            updateVolume(0);
+          }}
         ></i>
       )}
       {volume <= 0.5 && volume > 0 && (
         <i
           className="cursor-pointer icon-volume-1 text-gray-400 hover:text-white"
-          onClick={() => updateVolume(0)}
+          onClick={(e) => {
+            e.stopPropagation();
+            updateVolume(0);
+          }}
         ></i>
       )}
       {volume === 0 && (
         <i
           className="cursor-pointer icon-volume-x text-gray-400 hover:text-white"
-          onClick={() => updateVolume(1)}
+          onClick={(e) => {
+            e.stopPropagation();
+            updateVolume(1);
+          }}
         ></i>
       )}
       <input
@@ -79,10 +102,16 @@ function VolumeControls({ volume, updateVolume, isFullScreen }: IProps) {
         step="any"
         min={0}
         max={1}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
         style={{ background: trackStyling }}
         className="max-h-1 cursor-pointer w-[8rem] bg-gray-600 mx-2
             mini-laptop:w-[4rem]"
-        onChange={(e) => updateVolume(e.target.value)}
+        onChange={(e) => {
+          e.stopPropagation();
+          updateVolume(e.target.value);
+        }}
       />
     </div>
   );

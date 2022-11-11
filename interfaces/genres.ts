@@ -51,7 +51,7 @@ export const tags = [
     tag: "peaceful",
     coverImage:
       "https://images.unsplash.com/photo-1519677584237-752f8853252e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw3OXx8YXVkaW98ZW58MHx8fHwxNjM0MzgwMTcz&ixlib=rb-1.2.1&q=80&w=400",
-    color: 971811060,
+    color: 971814060,
   },
   {
     tag: "positive",
@@ -77,12 +77,7 @@ export const tags = [
       "https://images.unsplash.com/photo-1553531384-397c80973a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw3Mnx8bmF0dXJlfGVufDB8fHx8MTYzNDM4MDExMw&ixlib=rb-1.2.1&q=80&w=400",
     color: 968268597,
   },
-  {
-    tag: "lo-fi",
-    coverImage:
-      "https://images.unsplash.com/photo-1594465919760-441fe5908ab0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw2OXx8ZmFjZXxlbnwwfHx8fDE2MzQzODAyNDI&ixlib=rb-1.2.1&q=80&w=400",
-    color: 3764410612,
-  },
+
   {
     tag: "remix",
     coverImage:
@@ -99,7 +94,7 @@ export const tags = [
     tag: "lofi",
     coverImage:
       "https://images.unsplash.com/photo-1509824227185-9c5a01ceba0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyfHxjb25jZXJ0fGVufDB8fHx8MTYzMjkxMDM4Nw&ixlib=rb-1.2.1&q=80&w=400",
-    color: 1144405542,
+    color: 1114202542,
   },
   {
     tag: "sad song",
@@ -153,7 +148,7 @@ export const tags = [
     tag: "dreamy",
     coverImage:
       "https://images.unsplash.com/photo-1523766775147-152d0d6e2adb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw3NXx8bmF0dXJlfGVufDB8fHx8MTYzNDM4MDExMw&ixlib=rb-1.2.1&q=80&w=400",
-    color: 2355587595,
+    color: 2355527595,
   },
   {
     tag: "easy",

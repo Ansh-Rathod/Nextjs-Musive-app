@@ -45,14 +45,14 @@ function AppLayout({ children, title, color }: any) {
             </div>
           </div>
           <div
-            className="h-screen scroll overflow-y-scroll transition-all"
+            className="h-screen scroll overflow-y-scroll transition-colors"
             style={{
               background: `linear-gradient(180deg, ${color} 0%, rgba(18,18,18,1) 60%)`,
             }}
           >
             <div
               className=" bg-gradient-to-t from-[#121212]
-                 via-[#121212f0] to-[#12121298] w-full"
+                 via-[#121212f0] to-[#12121298] w-full transition-colors"
             >
               <div
                 className="w-[calc(100vw_-_14rem)] 
