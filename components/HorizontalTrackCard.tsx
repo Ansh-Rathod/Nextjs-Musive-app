@@ -1,9 +1,8 @@
 import React from "react";
-import { playPause, setActiveSong } from "../stores/player/currentAudioPlayer";
+import { playPause } from "../stores/player/currentAudioPlayer";
 import CustomImage from "./CustomImage";
 import { TrackProps } from "../interfaces/Track";
 import { useDispatch, useSelector } from "react-redux";
-import Image from "next/image";
 import { useState } from "react";
 
 function HorizontalTrackCard({

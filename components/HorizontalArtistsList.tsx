@@ -1,5 +1,3 @@
-import "swiper/css";
-
 import ScrollContainer from "react-indiana-drag-scroll";
 import { Artists } from "../interfaces/artist";
 import HorizontalArtistCard from "./HorizontalArtistsCard";
