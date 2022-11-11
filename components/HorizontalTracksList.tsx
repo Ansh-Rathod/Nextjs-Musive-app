@@ -1,6 +1,4 @@
 import { TrackProps } from "../interfaces/Track";
-import CustomImage from "./CustomImage";
-import "swiper/css";
 
 import ScrollContainer from "react-indiana-drag-scroll";
 import { useDispatch } from "react-redux";
