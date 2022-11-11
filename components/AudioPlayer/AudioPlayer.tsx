@@ -40,7 +40,7 @@ function AudioPlayer({ className }: { className: string }) {
     typeof Audio !== "undefined" ? new Audio(activeSong!.src) : null
   );
   const isReady = useRef(false);
-  const [volume, setVolume] = useState(0);
+  const [volume, setVolume] = useState(1);
   const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>();
   const [seekBarColor, setSeekBarColor] = useState("#fff");
   const changeSeekBarColor = (color: string) => setSeekBarColor(color);
