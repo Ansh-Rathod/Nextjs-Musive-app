@@ -11,7 +11,7 @@ function CustomImage({ src, className }: any) {
       onError={() => {
         setError(true);
       }}
-      className={className + " select-none"}
+      className={className + " select-none noDrag"}
       layout="fill"
       objectFit="cover"
     />
