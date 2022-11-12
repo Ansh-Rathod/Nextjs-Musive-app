@@ -6,7 +6,10 @@ import CustomImage from "../../components/CustomImage";
 import { Artists } from "../../interfaces/artist";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
-import { playPause } from "../../stores/player/currentAudioPlayer";
+import {
+  playPause,
+  setActiveSong,
+} from "../../stores/player/currentAudioPlayer";
 import { TrackProps } from "../../interfaces/Track";
 import ListItem from "../../components/ListItem";
 import HorizontalTracksList from "../../components/HorizontalTracksList";
@@ -80,7 +83,8 @@ function ArtistProfile({
       >
         <div
           className="h-full bg-gradient-to-t from-[#121212]
-                 via-[#121212f0] to-[#12121298] w-full transition-colors px-8 pt-6"
+                 via-[#121212f0] to-[#12121298] w-full transition-colors
+                  px-8 pt-6 mini-laptop:px-6 tablet:px-6 mobile:px-4"
         >
           <div
             onClick={() => dispatch(playPause(!isPlaying))}
@@ -102,7 +106,14 @@ function ArtistProfile({
                   key={e.id}
                   track={e}
                   showNumber={i + 1}
-                  onTap={() => {}}
+                  onTap={() => {
+                    dispatch(
+                      setActiveSong({
+                        tracks: tracks,
+                        index: tracks.indexOf(e),
+                      })
+                    );
+                  }}
                 />
               ))}
             </div>
@@ -112,7 +123,7 @@ function ArtistProfile({
           </div>
         </div>
         <HorizontalTracksList tracks={tracks.slice(5, 15)} />
-        <div className="pt-6 px-8">
+        <div className="pt-6 px-8 tablet:px-6 mobile:px-4">
           <h1 className="text-2xl font-ProximaBold">All</h1>
           <div className="pt-4">
             {tracks.slice(15).map((e: TrackProps, i: number) => (
@@ -120,7 +131,14 @@ function ArtistProfile({
                 key={e.id}
                 track={e}
                 showNumber={i + 1}
-                onTap={() => {}}
+                onTap={() => {
+                  dispatch(
+                    setActiveSong({
+                      tracks: tracks,
+                      index: tracks.indexOf(e),
+                    })
+                  );
+                }}
               />
             ))}
           </div>
