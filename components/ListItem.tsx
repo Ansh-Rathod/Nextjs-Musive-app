@@ -44,10 +44,13 @@ function ListItem({ track, showNumber, onTap }: any) {
           <LikeButton track_id={track.id} />
         </div>
 
-        <p className="text-gray-300 text-sm w-[25px] text-right ml-3">
+        <p className="text-gray-300 text-sm w-[25px] text-right ml-3 mobile:hidden">
           {getTime(track.duration)}
         </p>
-        <i className="group-hover:visible invisible mobile:visible tablet:visible icon-more-horizontal ml-3 mr-2 text-[20px] text-gray-200"></i>
+        <i
+          className="group-hover:visible invisible mobile:visible
+         tablet:visible icon-more-horizontal mobile:icon-more-vertical text-[20px] ml-3 text-gray-200"
+        ></i>
       </div>
     </div>
   );
