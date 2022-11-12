@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 import ScrollContainer from "react-indiana-drag-scroll";
 import { Artists } from "../interfaces/artist";
 import HorizontalArtistCard from "./HorizontalArtistsCard";
 function HorizontalArtistsList({ artists }: { artists: Artists[] }) {
+  const router = useRouter();
   return (
     <ScrollContainer
       horizontal={true}
@@ -13,7 +15,7 @@ function HorizontalArtistsList({ artists }: { artists: Artists[] }) {
         <HorizontalArtistCard
           key={artist.id}
           artist={artist}
-          onClick={() => {}}
+          onClick={() => router.push(`/artist/${artist.id}`)}
         />
       ))}
     </ScrollContainer>

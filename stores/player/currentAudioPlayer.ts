@@ -323,6 +323,9 @@ const playerSlice = createSlice({
       );
       state.liked = liked;
     },
+    reorderQueue: (state, action) => {
+      state.tracks = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getLikedSongs.fulfilled, (state, action) => {
@@ -382,6 +385,7 @@ export const {
   setTrackProgress,
   addLike,
   removeLike,
+  reorderQueue,
 } = playerSlice.actions;
 
 export default playerSlice.reducer;

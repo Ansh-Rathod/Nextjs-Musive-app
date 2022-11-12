@@ -19,6 +19,7 @@
     "next": "12.3.1",
     "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "18.2.0",
     "react-indiana-drag-scroll": "^2.2.0",
     "react-redux": "^8.0.4",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
+    "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-dom": "18.0.6",
     "autoprefixer": "^10.4.12",
     "eslint": "8.25.0",

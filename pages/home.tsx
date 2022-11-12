@@ -13,6 +13,7 @@ import {
 import CustomImage from "../components/CustomImage";
 import HorizontalTracksList from "../components/HorizontalTracksList";
 import HorizontalArtistsList from "../components/HorizontalArtistsList";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   const {
@@ -38,7 +39,7 @@ const Home: NextPage = () => {
       }
     }
   }, []);
-
+  const router = useRouter();
   return (
     <AppLayout title="Home" color={color}>
       {status == RequestStatus.Loading ? (
@@ -57,6 +58,7 @@ const Home: NextPage = () => {
             {recentUsers.map((e: Artists) => (
               <div
                 key={e.id}
+                onClick={() => router.push(`/artist/${e.id}`)}
                 onMouseEnter={() => setColor(e.avatar.color)}
                 onMouseLeave={() => setColor(recentUsers[0].avatar.color)}
                 className="flex flex-row items-center

@@ -105,7 +105,7 @@ function FullScreenPlayer({
                   className="w-8 h-8 shadow flex 
                     items-center justify-center rounded-full cursor-pointer"
                 >
-                  <i className="icon-more-horizontal text-[22px] text-gray-400"></i>
+                  <i className="icon-more-horizontal text-[22px] text-gray-400 hover:text-white"></i>
                 </div>
               </div>
               <FullScreenCoverImage
@@ -172,11 +172,18 @@ function FullScreenPlayer({
                     volume={volume}
                   />
                   <div>
-                    <i
-                      className="icon-share text-gray-400 text-[20px]
+                    <Link
+                      href={activeSong.src + `?filename=${activeSong.src}.mp3`}
+                      download={`${activeSong.id}.mp3`}
+                      target="_blank"
+                    >
+                      <i
+                        className="icon-download text-gray-400 text-[20px]
                 hover:text-white cursor-pointer mx-3 mobile:text-[14px]"
-                    ></i>
+                      ></i>
+                    </Link>
                     <i
+                      onClick={() => router.push("/queue")}
                       className="icon-queue text-gray-400 text-[18px]
                 hover:text-white cursor-pointer ml-3 mobile:text-[14px]"
                     ></i>

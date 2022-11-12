@@ -2,12 +2,14 @@ import React from "react";
 import LikeButton from "./LikeButton";
 import VolumeControls from "./VolumeControls";
 import { useRouter } from "next/router";
+import Link from "next/link";
 interface IProps {
   volume: number;
   updateVolume: (e: any) => void;
   className: string;
   showVolumeSeekBar: boolean;
   track_id: number;
+  download_url: string;
 }
 
 function Buttons({
@@ -16,6 +18,7 @@ function Buttons({
   className,
   showVolumeSeekBar,
   track_id,
+  download_url,
 }: IProps) {
   const router = useRouter();
   return (
@@ -32,10 +35,17 @@ function Buttons({
         }}
       >
         <LikeButton track_id={track_id} />
-        <i
-          className="icon-share text-gray-400 text-[16px]
+        <Link
+          href={download_url + `?filename=${track_id}.mp3`}
+          download={`${track_id}.mp3`}
+          target="_blank"
+        >
+          <i
+            className="icon-download text-gray-400 text-[16px]
            hover:text-white cursor-pointer mx-2"
-        ></i>
+          ></i>
+        </Link>
+
         <i
           onClick={(e) => {
             e.stopPropagation();

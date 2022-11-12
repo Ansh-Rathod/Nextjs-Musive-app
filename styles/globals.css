@@ -142,7 +142,15 @@ i {
 .icon-search:before {
   content: "\e906";
 }
-
+.icon-download:before {
+  content: "\e912";
+}
+.icon-verified:before {
+  content: "\e91a";
+}
+.icon-arrow_back:before {
+  content: "\e916";
+}
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -165,25 +173,24 @@ input[type="range"]:hover::-webkit-slider-thumb {
   width: 0.6rem;
   border-radius: 50%;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 5px;
+  z-index: 400;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #70707000;
+  background: #000000;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888787;
+  background: #656565;
   border-radius: 20px;
+  z-index: 100;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
+} */
 
 .noDrag {
   user-drag: none;

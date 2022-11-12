@@ -10,7 +10,6 @@ import { tags } from "../interfaces/genres";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveSong } from "../stores/player/currentAudioPlayer";
 import { PlayPauseButton } from "../components/HorizontalTrackCard";
-import LikeButton from "../components/AudioPlayer/LikeButton";
 import ListItem from "../components/ListItem";
 
 function Search() {
@@ -73,7 +72,7 @@ function Search() {
       <div className="w-full">
         <div
           className="py-4 px-6 mobile:py-2 mobile:px-4 tablet:px-4 fixed z-10 bg-[#121212] flex flex-row 
-        w-[calc(100vw_-_14rem_-_5px)] mini-laptop:w-[calc(100vw_-_55px_-_5px)] 
+        w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 
         tablet:w-screen mobile:w-screen border-b-[#242424] border-b items-center
         "
         >
@@ -91,70 +90,83 @@ function Search() {
 
       {isFocus ? (
         <div>
-          <div className="pt-24 mobile:pt-14 tablet:pt-14"></div>
+          {searchResult.length == 0 ? (
+            <div className="w-full text-center pt-10">Searching....</div>
+          ) : (
+            <div>
+              <div className="pt-24 mobile:pt-14 tablet:pt-14"></div>
 
-          <div
-            className="flex px-8 mini-laptop:px-4 
+              <div
+                className="overflow-y-hidden flex px-8 mini-laptop:px-4 
           justify-items-stretch items-stretch tablet:flex-col mobile:flex-col mobile:px-4 tablet:px-6"
-          >
-            <div className="laptop:w-[26rem] w-[32rem] tablet:w-full mobile:w-full">
-              <h1 className="mobile:hidden tablet:hidden my-4 text-xl font-ProximaBold">
-                Top Result
-              </h1>
+              >
+                <div className="laptop:w-[26rem] w-[32rem] tablet:w-full mobile:w-full">
+                  <h1 className="mobile:hidden tablet:hidden my-4 text-xl font-ProximaBold">
+                    Top Result
+                  </h1>
 
-              {topResult && (
-                <TopResult
-                  object={topResult}
-                  onTap={() =>
-                    dispatch(setActiveSong({ tracks: searchResult, index: 0 }))
-                  }
-                />
-              )}
-            </div>
-            <div className="w-full ml-6 tablet:m-0 tablet:mt-2 mobile:mt-2 mobile:ml-0">
-              <h1 className="my-4 text-xl font-ProximaBold">Top Tracks</h1>
+                  {topResult && (
+                    <TopResult
+                      object={topResult}
+                      onTap={() =>
+                        dispatch(
+                          setActiveSong({ tracks: searchResult, index: 0 })
+                        )
+                      }
+                    />
+                  )}
+                </div>
+                <div className="w-full ml-6 tablet:m-0 tablet:mt-2 mobile:mt-2 mobile:ml-0">
+                  <h1 className="my-4 text-xl font-ProximaBold">Top Tracks</h1>
 
-              {searchResult.slice(0, 4).map((track: TrackProps, i: number) => {
-                return (
-                  <ListItem
-                    onTap={() =>
-                      dispatch(
-                        setActiveSong({ tracks: searchResult, index: i })
-                      )
-                    }
-                    key={track.id}
-                    track={track}
-                  />
-                );
-              })}
+                  {searchResult
+                    .slice(0, 4)
+                    .map((track: TrackProps, i: number) => {
+                      return (
+                        <ListItem
+                          onTap={() =>
+                            dispatch(
+                              setActiveSong({ tracks: searchResult, index: i })
+                            )
+                          }
+                          key={track.id}
+                          track={track}
+                        />
+                      );
+                    })}
+                </div>
+              </div>
+              <div>
+                <h1 className="font-ProximaBold px-8 mini-laptop:px-4 py-6 text-xl">
+                  Related Artists
+                </h1>
+                <HorizontalArtistsList artists={artists} />
+              </div>
+              <div className="px-8 mini-laptop:px-4 mobile:px-4 tablet:px-4">
+                <h1 className="font-ProximaBold py-6 text-xl ml-3">
+                  {" "}
+                  Top Tracks
+                </h1>
+                {searchResult.slice(4).map((track: TrackProps, i: any) => {
+                  return (
+                    <ListItem
+                      onTap={() =>
+                        dispatch(
+                          setActiveSong({
+                            tracks: searchResult,
+                            index: searchResult.indexOf(track),
+                          })
+                        )
+                      }
+                      key={track.id}
+                      track={track}
+                      showNumber={i + 1}
+                    />
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          <div>
-            <h1 className="font-ProximaBold px-8 mini-laptop:px-4 py-6 text-xl">
-              Related Artists
-            </h1>
-            <HorizontalArtistsList artists={artists} />
-          </div>
-          <div className="px-8 mini-laptop:px-4 mobile:px-4 tablet:px-4">
-            <h1 className="font-ProximaBold py-6 text-xl ml-3"> Top Tracks</h1>
-            {searchResult.slice(4).map((track: TrackProps, i: any) => {
-              return (
-                <ListItem
-                  onTap={() =>
-                    dispatch(
-                      setActiveSong({
-                        tracks: searchResult,
-                        index: searchResult.indexOf(track),
-                      })
-                    )
-                  }
-                  key={track.id}
-                  track={track}
-                  showNumber={i + 1}
-                />
-              );
-            })}
-          </div>
+          )}
         </div>
       ) : (
         <div>

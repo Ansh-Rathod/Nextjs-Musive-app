@@ -245,6 +245,7 @@ function AudioPlayer({ className }: { className: string }) {
           />
         </div>
         <Buttons
+          download_url={activeSong!.src}
           track_id={activeSong!.id}
           updateVolume={updateVolume}
           showVolumeSeekBar

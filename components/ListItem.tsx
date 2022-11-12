@@ -10,13 +10,15 @@ function ListItem({ track, showNumber, onTap }: any) {
     <div
       onClick={onTap}
       className="cursor-pointer hover:bg-[#5f5d5d60] flex flex-row justify-between 
-              items-center py-2 w-full rounded-md group"
+              items-center py-2 w-full rounded-md group mobile:hover:bg-transparent tablet:hover:bg-transparent"
     >
       <div className="flex-grow flex flex-row items-center">
-        {showNumber && <p className="mx-2 ml-4">{showNumber}</p>}
+        {showNumber && (
+          <p className="mx-2 ml-4 mobile:ml-0 tablet:ml-0">{showNumber}</p>
+        )}
         <div>
           <div
-            className="relative w-12 h-12 min-w-12 mx-2 "
+            className="relative w-12 h-12 min-w-12 mx-2 mobile:w-10 mobile:h-10"
             style={{ backgroundColor: track.cover_image.color }}
           >
             <CustomImage
