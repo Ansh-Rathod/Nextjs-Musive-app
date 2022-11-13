@@ -13,6 +13,7 @@ import {
 import { TrackProps } from "../../interfaces/Track";
 import ListItem from "../../components/ListItem";
 import HorizontalTracksList from "../../components/HorizontalTracksList";
+import { useEffect, useState } from "react";
 
 function ArtistProfile({
   data,
@@ -84,7 +85,7 @@ function ArtistProfile({
         <div
           className="h-full bg-gradient-to-t from-[#121212]
                  via-[#121212f0] to-[#12121298] w-full transition-colors
-                  px-8 pt-6 mini-laptop:px-6 tablet:px-6 mobile:px-4"
+                  px-8 pt-6 mini-laptop:px-6 tablet:px-6 mobile:px-5"
         >
           <div
             onClick={() => dispatch(playPause(!isPlaying))}
@@ -123,10 +124,10 @@ function ArtistProfile({
           </div>
         </div>
         <HorizontalTracksList tracks={tracks.slice(5, 15)} />
-        <div className="pt-6 px-8 tablet:px-6 mobile:px-4">
+        <div className="pt-6 px-8 tablet:px-6 mobile:px-5">
           <h1 className="text-2xl font-ProximaBold">All</h1>
           <div className="pt-4">
-            {tracks.slice(15).map((e: TrackProps, i: number) => (
+            {tracks.map((e: TrackProps, i: number) => (
               <ListItem
                 key={e.id}
                 track={e}

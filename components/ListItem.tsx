@@ -30,16 +30,18 @@ function ListItem({ track, showNumber, onTap }: any) {
 
         <div className="">
           <p
-            className={`line-clamp-1 ${
+            className={`mobile:text-sm line-clamp-1 ${
               activeSong.id == track.id && "text-[#2bb540] font-ProximaBold"
             }`}
           >
             {track.track_name}
           </p>
-          <p className="text-sm text-gray-300">{track.artist_name}</p>
+          <p className="text-sm mobile:text-xs text-gray-300">
+            {track.artist_name}
+          </p>
         </div>
       </div>
-      <div className="mx-2 flex flex-row items-center">
+      <div className="ml-2 flex flex-row items-center">
         <div className="group-hover:visible invisible mobile:visible tablet:visible ">
           <LikeButton track_id={track.id} />
         </div>
@@ -49,7 +51,7 @@ function ListItem({ track, showNumber, onTap }: any) {
         </p>
         <i
           className="group-hover:visible invisible mobile:visible
-         tablet:visible icon-more-horizontal mobile:icon-more-vertical text-[20px] ml-3 text-gray-200"
+         tablet:visible icon-more-horizontal text-[20px] ml-3 text-gray-200 mr-2"
         ></i>
       </div>
     </div>

@@ -6,7 +6,7 @@ import Head from "next/head";
 import { useLogin } from "../hooks/useLogin";
 
 function AppLayout({ children, title, color }: any) {
-  useLogin();
+  // useLogin();
   return (
     <div>
       <Head>
