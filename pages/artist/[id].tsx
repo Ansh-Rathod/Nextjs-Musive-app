@@ -13,7 +13,6 @@ import {
 import { TrackProps } from "../../interfaces/Track";
 import ListItem from "../../components/ListItem";
 import HorizontalTracksList from "../../components/HorizontalTracksList";
-import { useEffect, useState } from "react";
 
 function ArtistProfile({
   data,
