@@ -161,7 +161,7 @@ function Controls({
         className="icon-Previous cursor-pointer text-gray-300 text-[14px]
          hover:text-white mobile:hidden"
       ></i>
-      <div className="mx-6 scale-100 hover:scale-110">
+      <div className="mx-6 scale-100 hover:scale-110 mobile:mx-0">
         {!isPlaying ? (
           <div
             onClick={(e) => {

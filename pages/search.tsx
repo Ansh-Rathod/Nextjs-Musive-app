@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActiveSong } from "../stores/player/currentAudioPlayer";
 import { PlayPauseButton } from "../components/HorizontalTrackCard";
 import ListItem from "../components/ListItem";
+import Link from "next/link";
 
 function Search() {
   const [searchResult, setSearchResult] = useState<TrackProps[]>([]);
@@ -72,8 +73,8 @@ function Search() {
       <div className="w-full">
         <div
           className="py-4 px-6 mobile:py-2 mobile:px-4 tablet:px-4 fixed z-10 bg-[#121212] flex flex-row 
-        w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 
-        tablet:w-screen mobile:w-screen border-b-[#242424] border-b items-center
+        w-[calc(100vw_-_14rem_-_16px)] mini-laptop:w-[calc(100vw_-_55px)] 
+        tablet:w-screen mobile:w-screen items-center
         "
         >
           <div className="items-center flex bg-white rounded-3xl px-4 mobile:rounded-md tablet:w-full mobile:w-full">
@@ -182,23 +183,24 @@ function Search() {
           >
             {tags.map((tag: any) => {
               return (
-                <div
-                  key={tag.tag}
-                  className="hover:scale-105 transition-all cursor-pointer relative h-44 tablet:h-40 mobile:h-28 overflow-hidden rounded-md "
-                  style={{ backgroundColor: "#" + tag.color.toString(16) }}
-                >
-                  <div className="p-4 capitalize">
-                    <p className="font-ProximaBold text-xl">{tag.tag}</p>
-                    <div className="absolute -right-4 -bottom-2">
-                      <div className="shadow-xl relative mobile:w-[70px] rounded mobile:h-[70px] w-24 h-24 rotate-[30deg]">
-                        <CustomImage
-                          src={tag.coverImage}
-                          className="rounded-md"
-                        />
+                <Link href={`/genre/${tag.tag}`} key={tag.tag}>
+                  <div
+                    className="hover:scale-105 transition-all cursor-pointer relative h-44 tablet:h-40 mobile:h-28 overflow-hidden rounded-md "
+                    style={{ backgroundColor: "#" + tag.color.toString(16) }}
+                  >
+                    <div className="p-4 capitalize">
+                      <p className="font-ProximaBold text-xl">{tag.tag}</p>
+                      <div className="absolute -right-4 -bottom-2">
+                        <div className="shadow-xl relative mobile:w-[70px] rounded mobile:h-[70px] w-24 h-24 rotate-[30deg]">
+                          <CustomImage
+                            src={tag.coverImage}
+                            className="rounded-md"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -263,29 +265,31 @@ function TopResult({ object, onTap }: any) {
     );
   } else {
     return (
-      <div
-        className=" mobile:hidden tablet:hidden h-[250px] flex flex-col p-6 bg-[#5f5d5d2f] 
-              hover:bg-[#5f5d5d72] rounded-md tablet:h-full mobile:h-full"
-      >
+      <Link href={`/artist/${object.artist_id}`}>
         <div
-          className="rounded-full relative w-24 h-24"
-          style={{
-            backgroundColor: object.avatar.color,
-            boxShadow:
-              "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
-          }}
+          className=" mobile:hidden tablet:hidden h-[250px] flex flex-col p-6 bg-[#5f5d5d2f] 
+              hover:bg-[#5f5d5d72] rounded-md tablet:h-full mobile:h-full"
         >
-          <CustomImage
-            src={object.avatar.urls.small}
-            className="rounded-full"
-          />
-        </div>
+          <div
+            className="rounded-full relative w-24 h-24"
+            style={{
+              backgroundColor: object.avatar.color,
+              boxShadow:
+                "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
+            }}
+          >
+            <CustomImage
+              src={object.avatar.urls.small}
+              className="rounded-full"
+            />
+          </div>
 
-        <p className="mt-4 text-2xl font-ProximaBold line-clamp-1">
-          {object.artist_name}
-        </p>
-        <p>Artist</p>
-      </div>
+          <p className="mt-4 text-2xl font-ProximaBold line-clamp-1">
+            {object.artist_name}
+          </p>
+          <p>Artist</p>
+        </div>
+      </Link>
     );
   }
 }

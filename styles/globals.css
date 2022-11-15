@@ -173,11 +173,11 @@ input[type="range"]:hover::-webkit-slider-thumb {
   width: 0.6rem;
   border-radius: 50%;
 }
-/* ::-webkit-scrollbar {
-  width: 5px;
+/* 
+::-webkit-scrollbar {
+  width: 4px;
   z-index: 400;
 }
-
 ::-webkit-scrollbar-track {
   background: #000000;
 }

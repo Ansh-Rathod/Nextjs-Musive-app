@@ -9,7 +9,7 @@ function ListItem({ track, showNumber, onTap }: any) {
   return (
     <div
       onClick={onTap}
-      className="cursor-pointer hover:bg-[#5f5d5d60] flex flex-row justify-between 
+      className="relative cursor-pointer hover:bg-[#5f5d5d60] flex flex-row justify-between 
               items-center py-2 w-full rounded-md group mobile:hover:bg-transparent tablet:hover:bg-transparent"
     >
       <div className="flex-grow flex flex-row items-center">
@@ -50,9 +50,21 @@ function ListItem({ track, showNumber, onTap }: any) {
           {getTime(track.duration)}
         </p>
         <i
-          className="group-hover:visible invisible mobile:visible
+          className="group-hover:visible invisible mobile:visible relative
          tablet:visible icon-more-horizontal text-[20px] ml-3 text-gray-200 mr-2"
         ></i>
+      </div>
+      <div
+        className="w-fit bg-[#212121] absolute border rounded shadow 
+      border-[#323232] hidden group-hover:block right-8 top-8 z-30"
+      >
+        <div className="px-4 py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]">
+          Add to Queue
+        </div>
+        <div className="px-4 py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]">
+          Play Next
+        </div>
+        <div className="px-4 py-1.5 hover:bg-[#323232] ">Add to Playlist</div>
       </div>
     </div>
   );
