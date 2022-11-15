@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToQueue } from "../stores/player/currentAudioPlayer";
+import {
+  addToQueue,
+  removeFromQueue,
+} from "../stores/player/currentAudioPlayer";
 import LikeButton from "./AudioPlayer/LikeButton";
 import CustomImage from "./CustomImage";
 
 function ListItem({ track, showNumber, onTap, isScrolling }: any) {
-  const { activeSong } = useSelector((state: any) => state.player);
+  const { activeSong, tracks } = useSelector((state: any) => state.player);
   const dropdown = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
   const dispatch = useDispatch();
@@ -96,30 +99,33 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
         {showDropdown && (
           <div
             ref={dropdown}
-            className="w-44 bg-[#212121] absolute border rounded shadow 
-      border-[#323232] right-2 top-10 z-30"
+            className="w-fit bg-[#212121] absolute  rounded shadow 
+ right-2 top-10 z-30"
           >
             <div
               onClick={() => {
                 setShowDropdown(false);
-
-                dispatch(addToQueue(track));
+                if (!tracks.includes(track)) {
+                  dispatch(addToQueue(track));
+                } else {
+                  dispatch(removeFromQueue(tracks.indexOf(track)));
+                }
               }}
-              className="px-4 py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
+              className="px-4 rounded py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
             >
-              Add to Queue
+              {!tracks.includes(track) ? "Add to Queue" : "Remove from Queue"}
             </div>
             <div
               onClick={() => {
                 setShowDropdown(false);
                 dispatch(addToQueue(track));
               }}
-              className="px-4 py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
+              className="px-4 rounded py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
             >
               Play Next
             </div>
-            <div className="px-4 py-1.5 hover:bg-[#323232] ">
-              Add to Playlist
+            <div className="rounded px-4 py-1.5 hover:bg-[#323232] ">
+              Add to Collection
             </div>
           </div>
         )}

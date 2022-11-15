@@ -4,7 +4,7 @@ import CustomImage from "./CustomImage";
 import { TrackProps } from "../interfaces/Track";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { shadeColor } from "../configs/shadeColor";
+import { shadeColor } from "../configs/utils";
 
 function HorizontalTrackCard({
   track,

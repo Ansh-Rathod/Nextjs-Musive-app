@@ -3,7 +3,7 @@ import AppLayout from "../layouts/appLayout";
 
 function Library() {
   return (
-    <AppLayout title="Library" color="#2bb440">
+    <AppLayout title="Your Library" color="#2bb440">
       <div className="w-full h-screen">library</div>
     </AppLayout>
   );

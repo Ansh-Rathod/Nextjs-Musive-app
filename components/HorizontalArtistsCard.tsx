@@ -2,7 +2,7 @@ import React from "react";
 import CustomImage from "./CustomImage";
 import { TrackProps } from "../interfaces/Track";
 import { Artists } from "../interfaces/artist";
-import { shadeColor } from "../configs/shadeColor";
+import { shadeColor } from "../configs/utils";
 
 function HorizontalArtistCard({
   artist,

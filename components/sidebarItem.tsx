@@ -24,14 +24,14 @@ const SidebarItem = ({ name, label }: IProps) => {
   return (
     <Link href={`/${name.toLowerCase()}`}>
       <div
-        className="select-none cursor-pointer mt-5 flex flex-row items-center mobile:flex-col tablet:flex-col
+        className="group select-none cursor-pointer mt-4 flex flex-row items-center mobile:flex-col tablet:flex-col
        mini-laptop:w-full mini-laptop:mt-6 mobile:mt-0 tablet:mt-0 mobile:mx-8 tablet:mx-10"
       >
         <i
           className={classnames(
             iconName(),
             {
-              "opacity-70": !isActive(),
+              "opacity-70 group-hover:opacity-100": !isActive(),
             },
             "mr-4 mobile:mr-0 tablet:mr-0 mobile:mb-1 tablet:mb-1"
           )}
@@ -40,7 +40,7 @@ const SidebarItem = ({ name, label }: IProps) => {
           className={classnames(
             "mini-laptop:hidden text-white mobile:text-[10px] tablet:text-[10px] mobile:font-ProximaRegular tablet:font-ProximaRegular",
             {
-              "opacity-70 ": !isActive(),
+              "opacity-70 group-hover:opacity-100": !isActive(),
             },
             { "font-ProximaBold": isActive() }
           )}

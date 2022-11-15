@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  addLike,
   getLikedSongs,
   IStateProps,
   LikedStatus,

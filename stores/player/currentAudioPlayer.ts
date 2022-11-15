@@ -5,56 +5,6 @@ import likeService from "./likeServices";
 
 const tracks: TrackProps[] = [
   {
-    id: 24886,
-    duration: 132.022844,
-    track_name: "Space Popcorn",
-    src: "https://cdn.pixabay.com/audio/2022/03/09/audio_7ba1c4c9bb.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1436397543931-01c4a5162bdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxN3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1436397543931-01c4a5162bdb",
-      },
-      color: "#c04026",
-      blur_hash: "LDLB9Ct,9ZM0y@IoXStlCSv~fiO?",
-      unsplash_photo_id: "HALe2SmkWAI",
-    },
-    artist_name: "Stacey Witting",
-    artist_id: 25235210,
-  },
-  {
-    id: 121456,
-    duration: 182.98775,
-    track_name: "Beautiful Corporate Inspiration",
-    src: "https://cdn.pixabay.com/audio/2022/10/01/audio_3155385c87.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1519225254375-0217eaa536c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwzMDN8fGZsb3dlcnN8ZW58MHx8fHwxNjY2Mjc5MzYx&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1519225254375-0217eaa536c8",
-      },
-      color: "#d9d9d9",
-      blur_hash: "LTKw,[IV-=t6_4a{baj[MxofD%WB",
-      unsplash_photo_id: "mjtc0khBqls",
-    },
-    artist_name: "Laura Konopelski",
-    artist_id: 24397640,
-  },
-  {
     id: 115479,
     duration: 139.493875,
     track_name: "Crazy Energy",
@@ -331,6 +281,12 @@ const playerSlice = createSlice({
       state.tracks.splice(state.currentIndex + 1, 0, action.payload);
       state.tracks = state.tracks;
     },
+    removeFromQueue: (state, action) => {
+      if (action.payload > -1) {
+        state.tracks.splice(action.payload, 1);
+      }
+      state.tracks = state.tracks;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getLikedSongs.fulfilled, (state, action) => {
@@ -389,6 +345,7 @@ export const {
   addToQueue,
   onRepeat,
   setTrackProgress,
+  removeFromQueue,
   addLike,
   removeLike,
   reorderQueue,

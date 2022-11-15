@@ -12,7 +12,7 @@ import { setActiveSong } from "../stores/player/currentAudioPlayer";
 import { PlayPauseButton } from "../components/HorizontalTrackCard";
 import ListItem from "../components/ListItem";
 import Link from "next/link";
-import { removeDuplicate } from "../configs/shadeColor";
+import { removeDuplicate } from "../configs/utils";
 
 function Search() {
   const [searchResult, setSearchResult] = useState<TrackProps[]>([]);

@@ -16,7 +16,8 @@ import HorizontalTracksList from "../../components/HorizontalTracksList";
 import { tags } from "../../interfaces/genres";
 import HorizontalArtistsList from "../../components/HorizontalArtistsList";
 import { useRef, useEffect, useState } from "react";
-import { shadeColor } from "../../configs/shadeColor";
+import { capitalize, shadeColor } from "../../configs/utils";
+import NavBar from "../../components/backButton";
 
 function GenrePage({
   artists,
@@ -43,38 +44,16 @@ function GenrePage({
 
   return (
     <AppLayout
-      title={tag.tag}
+      title={capitalize(tag.tag)}
       color={"#" + tag.color.toString(16)}
       onScroll={onScroll}
     >
       <div>
-        <div
-          style={{
-            backgroundColor:
-              srcollPosition >= 300
-                ? shadeColor("#" + tag.color.toString(16).substring(0, 6), -50)
-                : "transparent",
-          }}
-          className="absolute px-8 py-4 z-20 mobile:px-4 tablet:px-6 mini-laptop:px-7
-          w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 
-        tablet:w-screen mobile:w-screen overflow-x-hidden flex items-center mobile:py-2
-          "
-        >
-          <div
-            onClick={() => router.back()}
-            className="w-fit bg-black  text-center 
-            flex items-center justify-center rounded-full px-1 bg-opacity-25 hover:bg-opacity-50 cursor-pointer"
-          >
-            <i className="icon-arrow_back text-[20px] text-center pl-2 py-2 mobile:text-base mobile:py-1"></i>
-          </div>
-          <div className="mx-4">
-            {srcollPosition >= 300 && (
-              <h1 className="text-2xl capitalize font-ProximaBold mobile:text-xl">
-                {tag.tag}
-              </h1>
-            )}
-          </div>
-        </div>
+        <NavBar
+          condition={srcollPosition >= 300}
+          color={"#" + tag.color.toString(16)}
+          title={tag.tag}
+        />
       </div>
       <div className="px-10 pt-32 mobile:pt-20 mini-laptop:px-6 tablet:px-6 mobile:px-4">
         <h1

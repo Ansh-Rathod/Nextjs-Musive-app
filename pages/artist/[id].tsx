@@ -13,8 +13,9 @@ import {
 import { TrackProps } from "../../interfaces/Track";
 import ListItem from "../../components/ListItem";
 import HorizontalTracksList from "../../components/HorizontalTracksList";
-import { shadeColor } from "../../configs/shadeColor";
+import { shadeColor } from "../../configs/utils";
 import { useState } from "react";
+import NavBar from "../../components/backButton";
 
 function ArtistProfile({
   data,
@@ -47,34 +48,11 @@ function ArtistProfile({
       onScroll={onScroll}
     >
       <div>
-        <div
-          style={{
-            backgroundColor:
-              srcollPosition >= 300
-                ? shadeColor(artist.avatar.color, -50)
-                : "transparent",
-          }}
-          className="absolute px-8 py-4 z-20 mobile:px-4 tablet:px-6 mini-laptop:px-7
-          w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 
-        tablet:w-screen mobile:w-screen overflow-x-hidden flex items-center mobile:py-2
-          "
-        >
-          <div
-            onClick={() => router.back()}
-            className="w-fit bg-black  text-center 
-            flex items-center justify-center rounded-full px-1 bg-opacity-25 
-            hover:bg-opacity-50 cursor-pointer"
-          >
-            <i className="icon-arrow_back text-[20px] text-center pl-2 py-2 mobile:text-base mobile:py-1"></i>
-          </div>
-          <div className="mx-4">
-            {srcollPosition >= 300 && (
-              <h1 className="text-2xl capitalize font-ProximaBold mobile:text-xl tablet:text-sl">
-                {artist.display_name}
-              </h1>
-            )}
-          </div>
-        </div>
+        <NavBar
+          condition={srcollPosition >= 300}
+          color={artist.avatar.color}
+          title={artist.display_name}
+        />
       </div>
 
       <div

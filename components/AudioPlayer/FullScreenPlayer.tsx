@@ -14,7 +14,7 @@ import { TrackProps, CoverImage } from "../../interfaces/Track";
 import Link from "next/link";
 import CustomImage from "../CustomImage";
 import LikeButton from "./LikeButton";
-import { shadeColor } from "../../configs/shadeColor";
+import { shadeColor } from "../../configs/utils";
 
 interface IProps {
   trackProgress: number;
