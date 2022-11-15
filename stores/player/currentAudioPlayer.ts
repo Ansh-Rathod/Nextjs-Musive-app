@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { stat } from "fs";
 import { TrackProps } from "../../interfaces/Track";
 import likeService from "./likeServices";
 
@@ -326,6 +327,10 @@ const playerSlice = createSlice({
     reorderQueue: (state, action) => {
       state.tracks = action.payload;
     },
+    addToQueue: (state, action) => {
+      state.tracks.splice(state.currentIndex + 1, 0, action.payload);
+      state.tracks = state.tracks;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getLikedSongs.fulfilled, (state, action) => {
@@ -381,6 +386,7 @@ export const {
   prevSong,
   playPause,
   onShuffle,
+  addToQueue,
   onRepeat,
   setTrackProgress,
   addLike,

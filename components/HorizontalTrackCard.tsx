@@ -4,6 +4,7 @@ import CustomImage from "./CustomImage";
 import { TrackProps } from "../interfaces/Track";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { shadeColor } from "../configs/shadeColor";
 
 function HorizontalTrackCard({
   track,
@@ -32,7 +33,7 @@ function HorizontalTrackCard({
       >
         <div
           style={{
-            background: track.cover_image.color,
+            background: shadeColor(track.cover_image.color, -40),
             boxShadow:
               "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
           }}

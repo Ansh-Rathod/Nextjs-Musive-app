@@ -173,7 +173,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
   width: 0.6rem;
   border-radius: 50%;
 }
-/* 
+
 ::-webkit-scrollbar {
   width: 4px;
   z-index: 400;
@@ -190,7 +190,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-} */
+}
 
 .noDrag {
   user-drag: none;

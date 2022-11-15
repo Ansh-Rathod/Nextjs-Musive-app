@@ -5,15 +5,15 @@ import Image from "next/image";
 import Head from "next/head";
 import { useLogin } from "../hooks/useLogin";
 
-function AppLayout({ children, title, color }: any) {
-  // useLogin();
+function AppLayout({ children, title, color, onScroll }: any) {
+  useLogin();
   return (
     <div>
       <Head>
         <title>{"Musive - " + title}</title>
       </Head>
       <div className="font-ProximaRegular text-white bg-[#121212]">
-        <div className="flex flex-row h-screen ">
+        <div className="flex flex-row h-screen w-screen max-w-full">
           <div
             className="w-[14rem] mini-laptop:w-[55px] bg-black p-3
            border-r-[#242424] border-r mini-laptop:p-0 tablet:hidden mobile:hidden"
@@ -45,6 +45,7 @@ function AppLayout({ children, title, color }: any) {
             </div>
           </div>
           <div
+            onScroll={onScroll}
             className="h-screen scroll overflow-y-scroll transition-colors"
             style={{
               background: `linear-gradient(180deg, ${color} 0%, rgba(18,18,18,1) 60%)`,

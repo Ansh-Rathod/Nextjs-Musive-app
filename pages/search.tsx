@@ -12,6 +12,7 @@ import { setActiveSong } from "../stores/player/currentAudioPlayer";
 import { PlayPauseButton } from "../components/HorizontalTrackCard";
 import ListItem from "../components/ListItem";
 import Link from "next/link";
+import { removeDuplicate } from "../configs/shadeColor";
 
 function Search() {
   const [searchResult, setSearchResult] = useState<TrackProps[]>([]);
@@ -55,21 +56,20 @@ function Search() {
     setSearchResult(toTrackProps(data.hits));
   };
 
-  const removeDuplicate = (array: any) => {
-    let dups: any[] = [];
-    var newArray = array.filter(function (el: any) {
-      if (dups.indexOf(el.id) == -1) {
-        dups.push(el.id);
-        return true;
-      }
+  const [isScrolling, setScrolling] = useState(false);
 
-      return false;
-    });
-    return newArray;
+  const onScroll = (e: any) => {
+    setScrolling(true);
   };
 
+  //
+  setTimeout(() => {
+    setScrolling(false);
+  }, 100);
+
+  //
   return (
-    <AppLayout title="Search" color="#121212">
+    <AppLayout title="Search" color="#121212" onScroll={onScroll}>
       <div className="w-full">
         <div
           className="py-4 px-6 mobile:py-2 mobile:px-4 tablet:px-4 fixed z-10 bg-[#121212] flex flex-row 
@@ -125,6 +125,7 @@ function Search() {
                     .map((track: TrackProps, i: number) => {
                       return (
                         <ListItem
+                          isScrolling={isScrolling}
                           onTap={() =>
                             dispatch(
                               setActiveSong({ tracks: searchResult, index: i })
@@ -145,12 +146,12 @@ function Search() {
               </div>
               <div className="px-8 mini-laptop:px-4 mobile:px-4 tablet:px-4">
                 <h1 className="font-ProximaBold py-6 text-xl ml-3">
-                  {" "}
                   Top Tracks
                 </h1>
                 {searchResult.slice(4).map((track: TrackProps, i: any) => {
                   return (
                     <ListItem
+                      isScrolling={isScrolling}
                       onTap={() =>
                         dispatch(
                           setActiveSong({

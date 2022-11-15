@@ -13,44 +13,73 @@ import {
 import { TrackProps } from "../../interfaces/Track";
 import ListItem from "../../components/ListItem";
 import HorizontalTracksList from "../../components/HorizontalTracksList";
+import { shadeColor } from "../../configs/shadeColor";
+import { useState } from "react";
 
 function ArtistProfile({
   data,
   tracks,
+  counts,
 }: {
   data: Artists;
   tracks: TrackProps[];
+  counts: number;
 }) {
   const artist = data;
   const router = useRouter();
   const dispatch = useDispatch();
-  const { isPlaying } = useSelector((state: any) => state.player);
+  const { isPlaying, activeSong } = useSelector((state: any) => state.player);
+  const [srcollPosition, setScrollPosition] = useState(0);
+  const [isScrolling, setScrolling] = useState(false);
 
-  function getRndInteger(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  const onScroll = (e: any) => {
+    setScrolling(true);
+    setScrollPosition(e.target.scrollTop);
+  };
+  setTimeout(() => {
+    setScrolling(false);
+  }, 100);
+
   return (
-    <AppLayout title={data.display_name} color={artist.avatar.color}>
+    <AppLayout
+      title={data.display_name}
+      color={artist.avatar.color}
+      onScroll={onScroll}
+    >
       <div>
         <div
+          style={{
+            backgroundColor:
+              srcollPosition >= 300
+                ? shadeColor(artist.avatar.color, -50)
+                : "transparent",
+          }}
           className="absolute px-8 py-4 z-20 mobile:px-4 tablet:px-6 mini-laptop:px-7
           w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 
-        tablet:w-screen mobile:w-screen overflow-x-hidden
+        tablet:w-screen mobile:w-screen overflow-x-hidden flex items-center mobile:py-2
           "
         >
           <div
             onClick={() => router.back()}
             className="w-fit bg-black  text-center 
-            flex items-center justify-center rounded-full px-1 bg-opacity-25 hover:bg-opacity-50 cursor-pointer"
+            flex items-center justify-center rounded-full px-1 bg-opacity-25 
+            hover:bg-opacity-50 cursor-pointer"
           >
-            <i className="icon-arrow_back text-[20px] text-center pl-2 py-2 "></i>
+            <i className="icon-arrow_back text-[20px] text-center pl-2 py-2 mobile:text-base mobile:py-1"></i>
+          </div>
+          <div className="mx-4">
+            {srcollPosition >= 300 && (
+              <h1 className="text-2xl capitalize font-ProximaBold mobile:text-xl tablet:text-sl">
+                {artist.display_name}
+              </h1>
+            )}
           </div>
         </div>
       </div>
 
       <div
         className="relative w-full h-[400px]  mobile:h-[350px]"
-        style={{ backgroundColor: artist.avatar.color }}
+        style={{ backgroundColor: shadeColor(artist.avatar.color, -40) }}
       >
         <div className="flex flex-col justify-end absolute w-full h-full bg-black bg-opacity-40 z-10">
           <div
@@ -67,10 +96,7 @@ function ArtistProfile({
             >
               {artist.display_name}
             </h1>
-            <p>
-              {getRndInteger(20000000, 500000000).toLocaleString()} monthly
-              downloads
-            </p>
+            <p>{counts.toLocaleString()} monthly downloads</p>
           </div>
         </div>
 
@@ -78,7 +104,10 @@ function ArtistProfile({
       </div>
       <div
         style={{
-          background: `linear-gradient(180deg, ${artist.avatar.color} 0%, rgba(18,18,18,1) 15%)`,
+          background: `linear-gradient(180deg, ${shadeColor(
+            artist.avatar.color,
+            -30
+          )} 0%, rgba(18,18,18,1) 15%)`,
         }}
       >
         <div
@@ -86,23 +115,34 @@ function ArtistProfile({
                  via-[#121212f0] to-[#12121298] w-full transition-colors
                   px-8 pt-6 mini-laptop:px-6 tablet:px-6 mobile:px-5"
         >
-          <div
-            onClick={() => dispatch(playPause(!isPlaying))}
-            className="bg-[#2bb540] rounded-full cursor-pointer hover:scale-110
-                     w-[45px] h-[45px] flex justify-center items-center mobile:w-[30px] mobile:h-[30px]"
-          >
-            {!isPlaying ? (
-              <i className="icon-play text-[20px] ml-1 text-black mobile:text-[16px]" />
-            ) : (
-              <i className="icon-pause text-[20px] text-black mobile:text-[16px]" />
-            )}
-          </div>
-
           <div className="pt-6">
-            <h1 className="text-2xl font-ProximaBold">Popular</h1>
+            <div className="w-full flex justify-between">
+              <h1 className="text-2xl font-ProximaBold">Popular</h1>
+              <div
+                onClick={() => {
+                  if (!isPlaying) {
+                    dispatch(setActiveSong({ tracks: tracks, index: 0 }));
+                  } else {
+                    dispatch(playPause(!isPlaying));
+                  }
+                }}
+                className="bg-[#2bb540] rounded-full cursor-pointer hover:scale-110
+                     w-[45px] h-[45px] flex justify-center items-center mobile:w-[30px] mobile:h-[30px]"
+              >
+                {activeSong.artist_id != artist.id ? (
+                  <i className="icon-play text-[20px] ml-1 text-black mobile:text-[16px]" />
+                ) : !isPlaying ? (
+                  <i className="icon-play text-[20px] ml-1 text-black mobile:text-[16px]" />
+                ) : (
+                  <i className="icon-pause text-[20px] text-black mobile:text-[16px]" />
+                )}
+              </div>
+            </div>
+
             <div className="max-w-[700px] pt-4">
               {tracks.slice(0, 5).map((e: TrackProps, i: number) => (
                 <ListItem
+                  isScrolling={isScrolling}
                   key={e.id}
                   track={e}
                   showNumber={i + 1}
@@ -128,6 +168,7 @@ function ArtistProfile({
           <div className="pt-4">
             {tracks.map((e: TrackProps, i: number) => (
               <ListItem
+                isScrolling={isScrolling}
                 key={e.id}
                 track={e}
                 showNumber={i + 1}
@@ -149,6 +190,10 @@ function ArtistProfile({
   );
 }
 
+function getRndInteger(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export async function getServerSideProps(context: any) {
   try {
     const { data } = await axios.get(API_URL + "/artists/" + context.params.id);
@@ -160,6 +205,7 @@ export async function getServerSideProps(context: any) {
         success: true,
         data: data.data[0],
         tracks: tracks.data.data,
+        counts: getRndInteger(20000000, 500000000),
       },
     };
   } catch (e) {

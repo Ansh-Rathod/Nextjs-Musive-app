@@ -15,6 +15,8 @@ import ListItem from "../../components/ListItem";
 import HorizontalTracksList from "../../components/HorizontalTracksList";
 import { tags } from "../../interfaces/genres";
 import HorizontalArtistsList from "../../components/HorizontalArtistsList";
+import { useRef, useEffect, useState } from "react";
+import { shadeColor } from "../../configs/shadeColor";
 
 function GenrePage({
   artists,
@@ -26,15 +28,36 @@ function GenrePage({
   tracks: TrackProps[];
 }) {
   const dispatch = useDispatch();
-
   const router = useRouter();
+  const [srcollPosition, setScrollPosition] = useState(0);
+  const [isScrolling, setScrolling] = useState(false);
+
+  const onScroll = (e: any) => {
+    setScrolling(true);
+    setScrollPosition(e.target.scrollTop);
+  };
+
+  setTimeout(() => {
+    setScrolling(false);
+  }, 100);
+
   return (
-    <AppLayout title={tag.tag} color={"#" + tag.color.toString(16)}>
+    <AppLayout
+      title={tag.tag}
+      color={"#" + tag.color.toString(16)}
+      onScroll={onScroll}
+    >
       <div>
         <div
+          style={{
+            backgroundColor:
+              srcollPosition >= 300
+                ? shadeColor("#" + tag.color.toString(16).substring(0, 6), -50)
+                : "transparent",
+          }}
           className="absolute px-8 py-4 z-20 mobile:px-4 tablet:px-6 mini-laptop:px-7
           w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 
-        tablet:w-screen mobile:w-screen overflow-x-hidden
+        tablet:w-screen mobile:w-screen overflow-x-hidden flex items-center mobile:py-2
           "
         >
           <div
@@ -42,11 +65,18 @@ function GenrePage({
             className="w-fit bg-black  text-center 
             flex items-center justify-center rounded-full px-1 bg-opacity-25 hover:bg-opacity-50 cursor-pointer"
           >
-            <i className="icon-arrow_back text-[20px] text-center pl-2 py-2 "></i>
+            <i className="icon-arrow_back text-[20px] text-center pl-2 py-2 mobile:text-base mobile:py-1"></i>
+          </div>
+          <div className="mx-4">
+            {srcollPosition >= 300 && (
+              <h1 className="text-2xl capitalize font-ProximaBold mobile:text-xl">
+                {tag.tag}
+              </h1>
+            )}
           </div>
         </div>
       </div>
-      <div className="px-10 pt-32 mini-laptop:px-6 tablet:px-6 mobile:px-4">
+      <div className="px-10 pt-32 mobile:pt-20 mini-laptop:px-6 tablet:px-6 mobile:px-4">
         <h1
           className="pb-6 text-[70px] laptop:text-[60px] 
             mini-laptop:text-[60px] tablet:text-[45px] mobile:text-[40px] capitalize font-ProximaBold"
@@ -65,6 +95,7 @@ function GenrePage({
         {tracks.map((track: TrackProps, i: number) => {
           return (
             <ListItem
+              isScrolling={isScrolling}
               onTap={() => {
                 dispatch(setActiveSong({ tracks: tracks, index: i }));
               }}
