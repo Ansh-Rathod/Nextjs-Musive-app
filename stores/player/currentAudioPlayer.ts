@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { stat } from "fs";
 import { TrackProps } from "../../interfaces/Track";
-import likeService from "./likeServices";
+import ApiService from "./ApiServices";
 
 const tracks: TrackProps[] = [
   {
@@ -210,6 +209,11 @@ export enum LikedStatus {
   success,
   error,
 }
+export enum CollectionsStatus {
+  Initial,
+  success,
+  error,
+}
 export interface IStateProps {
   tracks: TrackProps[];
   liked: number[];
@@ -220,13 +224,23 @@ export interface IStateProps {
   trackProgress: number;
   isShuffle: boolean;
   isRepeat: boolean;
+  collections: [];
+  isModelOpen: boolean;
   fetchlikedStatus: LikedStatus;
+  collectionStatus: CollectionsStatus;
+  passedDataToModel: string;
 }
+
 const initialState: IStateProps = {
   tracks: tracks,
   currentIndex: 0,
+  isModelOpen: false,
+
   liked: [],
+  collections: [],
   fetchlikedStatus: LikedStatus.Initial,
+  collectionStatus: CollectionsStatus.Initial,
+  passedDataToModel: "",
   isShuffle: false,
   isRepeat: false,
   showBanner: false,
@@ -259,7 +273,6 @@ const playerSlice = createSlice({
     setTrackProgress: (state, action) => {
       state.trackProgress = action.payload;
     },
-    prevSong: (state, action) => {},
 
     playPause: (state, action) => {
       state.isPlaying = action.payload;
@@ -287,33 +300,61 @@ const playerSlice = createSlice({
       }
       state.tracks = state.tracks;
     },
+
+    toggleModel: (state, action) => {
+      state.isModelOpen = action.payload.data;
+      state.passedDataToModel = action.payload.track_id;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getLikedSongs.fulfilled, (state, action) => {
       state.fetchlikedStatus = LikedStatus.success;
       state.liked = action.payload.data;
     });
+    builder.addCase(getCollections.fulfilled, (state, action) => {
+      state.collectionStatus = CollectionsStatus.success;
+      state.collections = action.payload.data;
+    });
+    builder.addCase(createNewCollection.fulfilled, (state, action) => {
+      let collections = state.collections;
+      // @ts-ignore
+      collections.push(action.payload.data[0]);
+      state.collections = collections;
+    });
+    builder.addCase(getCollections.rejected, (state, action) => {
+      state.collectionStatus = CollectionsStatus.error;
+    });
     builder.addCase(getLikedSongs.rejected, (state, action) => {
-      state.fetchlikedStatus = LikedStatus.success;
+      state.fetchlikedStatus = LikedStatus.error;
     });
   },
 });
 
 export const getLikedSongs = createAsyncThunk(
-  "likeServices/idsOflikedSongs",
+  "ApiServices/idsOflikedSongs",
   async (token: string, thunkAPI) => {
     try {
-      return await likeService.idsOflikedTracks(token);
+      return await ApiService.idsOflikedTracks(token);
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
+export const getCollections = createAsyncThunk(
+  "ApiServices/getCollections",
+  async (token: string, thunkAPI) => {
+    try {
+      return await ApiService.getCollections(token);
     } catch (error) {
       // console.log(error);
     }
   }
 );
 export const Like = createAsyncThunk(
-  "likeServices/addlike",
+  "ApiServices/addlike",
   async ({ track_id, token }: any, thunkAPI) => {
     try {
-      return await likeService.like({
+      return await ApiService.like({
         track_id,
         token,
       });
@@ -323,12 +364,38 @@ export const Like = createAsyncThunk(
   }
 );
 export const unLike = createAsyncThunk(
-  "likeServices/removelike",
+  "ApiServices/removelike",
   async ({ track_id, token }: any, thunkAPI) => {
     try {
-      return await likeService.unLike({
+      return await ApiService.unLike({
         track_id,
         token,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
+export const addTrackToCollection = createAsyncThunk(
+  "ApiServices/addTrackToCollection",
+  async ({ collection_id, track_id, token }: any, thunkAPI) => {
+    try {
+      return await ApiService.addTrackToCollection(token, {
+        collection_id,
+        track_id,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
+export const createNewCollection = createAsyncThunk(
+  "ApiServices/createNewCollection",
+  async ({ name, track_id, token }: any, thunkAPI) => {
+    try {
+      return await ApiService.createNewCollection(token, {
+        name,
+        track_id,
       });
     } catch (error) {
       // console.log(error);
@@ -339,7 +406,6 @@ export const unLike = createAsyncThunk(
 export const {
   setActiveSong,
   nextSong,
-  prevSong,
   playPause,
   onShuffle,
   addToQueue,
@@ -348,6 +414,7 @@ export const {
   removeFromQueue,
   addLike,
   removeLike,
+  toggleModel,
   reorderQueue,
 } = playerSlice.actions;
 

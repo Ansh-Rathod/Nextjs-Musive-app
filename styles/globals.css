@@ -179,7 +179,7 @@ input[type="range"]:hover::-webkit-slider-thumb {
   z-index: 400;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {

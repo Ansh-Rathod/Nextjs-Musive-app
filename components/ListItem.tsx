@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   addToQueue,
   removeFromQueue,
+  toggleModel,
 } from "../stores/player/currentAudioPlayer";
 import LikeButton from "./AudioPlayer/LikeButton";
 import CustomImage from "./CustomImage";
@@ -43,13 +44,15 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
       className="relative"
     >
       <div
-        className={` cursor-pointer hover:bg-[#5f5d5d60] flex flex-row justify-between 
+        className={`cursor-default hover:bg-[#5f5d5d60] flex flex-row justify-between 
               items-center py-2 w-full rounded-md group mobile:hover:bg-transparent tablet:hover:bg-transparent 
               ${showDropdown && "bg-[#5f5d5d60]"}`}
       >
         <div className="flex-grow flex flex-row items-center">
           {showNumber && (
-            <p className="mx-2 ml-4 mobile:ml-0 tablet:ml-0">{showNumber}</p>
+            <p className="mx-2 ml-4 mobile:ml-0 tablet:ml-0 text-slate-300">
+              {showNumber}
+            </p>
           )}
           <div>
             <div
@@ -78,7 +81,7 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
         </div>
         <div className="ml-2 flex flex-row items-center">
           <div className="group-hover:visible invisible mobile:visible tablet:visible ">
-            <LikeButton track_id={track.id} />
+            <LikeButton track_id={track.id} isList={true} />
           </div>
 
           <p className="text-gray-300 text-sm w-[25px] text-right ml-3 mobile:hidden">
@@ -91,8 +94,8 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
             }}
           >
             <i
-              className="group-hover:visible invisible mobile:visible relative
-         tablet:visible icon-more-horizontal text-[20px] ml-3 text-gray-200 mr-2"
+              className="cursor-pointer group-hover:visible invisible mobile:visible relative
+         tablet:visible icon-more-horizontal text-[20px] ml-3 text-gray-200 mr-2.5"
             ></i>
           </div>
         </div>
@@ -100,7 +103,7 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
           <div
             ref={dropdown}
             className="w-fit bg-[#212121] absolute  rounded shadow 
- right-2 top-10 z-30"
+             right-2 top-10 z-30"
           >
             <div
               onClick={() => {
@@ -124,7 +127,12 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
             >
               Play Next
             </div>
-            <div className="rounded px-4 py-1.5 hover:bg-[#323232] ">
+            <div
+              className="rounded px-4 py-1.5 hover:bg-[#323232]"
+              onClick={() =>
+                dispatch(toggleModel({ data: true, track_id: track.id }))
+              }
+            >
               Add to Collection
             </div>
           </div>

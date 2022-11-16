@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  CollectionsStatus,
   getLikedSongs,
   IStateProps,
   LikedStatus,
@@ -20,6 +21,7 @@ import { useRouter } from "next/router";
 import FullScreenPlayer from "./FullScreenPlayer";
 import Link from "next/link";
 import CustomImage from "../CustomImage";
+import { getCollections } from "../../stores/player/currentAudioPlayer";
 
 function AudioPlayer({ className }: { className: string }) {
   const router = useRouter();
@@ -30,6 +32,8 @@ function AudioPlayer({ className }: { className: string }) {
     currentIndex,
     trackProgress,
     fetchlikedStatus,
+    collectionStatus,
+
     tracks,
     isShuffle,
     isRepeat,
@@ -122,6 +126,11 @@ function AudioPlayer({ className }: { className: string }) {
         dispatch(getLikedSongs(user.token));
       }
     } // Pause and clean up on unmount
+    if (collectionStatus == CollectionsStatus.Initial) {
+      if (user) {
+        dispatch(getCollections(user.token));
+      }
+    }
     return () => {
       audioRef.current!.pause();
       clearInterval(intervalRef.current);

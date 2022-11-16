@@ -9,6 +9,7 @@ import SidebarItem from "../components/sidebarItem";
 import Head from "next/head";
 
 import useDetectKeyboardOpen from "use-detect-keyboard-open";
+import AddToCollectionModel from "@/components/AddToCollectionModel";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -42,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         height={3}
         options={{ showSpinner: false }}
       />
+
       <Component {...pageProps} />
       <AudioPlayerComponent />
     </Provider>
@@ -53,6 +55,7 @@ function AudioPlayerComponent() {
   const isKeyboardOpen = useDetectKeyboardOpen();
   return (
     <div>
+      <AddToCollectionModel />
       {router.pathname !== "/login" &&
       router.pathname !== "/register" &&
       router.pathname !== "/_error" &&

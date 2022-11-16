@@ -8,7 +8,7 @@ import {
   Like,
 } from "../../stores/player/currentAudioPlayer";
 
-function LikeButton({ track_id, size }: any) {
+function LikeButton({ track_id, size, isList }: any) {
   const [like, setLike] = useState(false);
   const dispatch = useDispatch<any>();
   const { liked } = useSelector((state: any) => state.player);
@@ -18,7 +18,14 @@ function LikeButton({ track_id, size }: any) {
     setLike(liked.includes(track_id));
   }, [track_id, liked, like]);
   return (
-    <div>
+    <div
+      className={
+        isList &&
+        (like
+          ? "visible"
+          : "invisible group-hover:visible mobile:visible tablet:visible")
+      }
+    >
       {!like ? (
         <i
           onClick={(e) => {
