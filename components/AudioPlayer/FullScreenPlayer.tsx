@@ -10,11 +10,11 @@ import {
   onShuffle,
   playPause,
 } from "../../stores/player/currentAudioPlayer";
-import { TrackProps, CoverImage } from "../../interfaces/Track";
+import { TrackProps, CoverImage } from "@/interfaces/Track";
 import Link from "next/link";
 import CustomImage from "../CustomImage";
 import LikeButton from "./LikeButton";
-import { shadeColor } from "../../configs/utils";
+import { shadeColor } from "@/configs/utils";
 
 interface IProps {
   trackProgress: number;

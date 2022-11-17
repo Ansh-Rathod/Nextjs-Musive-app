@@ -1,5 +1,5 @@
 import React from "react";
-import AppLayout from "../layouts/appLayout";
+import AppLayout from "@/layouts/appLayout";
 
 function Library() {
   return (

@@ -1,28 +1,31 @@
 import React from "react";
-import AppLayout from "../../layouts/appLayout";
+import AppLayout from "@/layouts/appLayout";
 import axios from "axios";
-import API_URL from "../../configs/apiUrl";
-import CustomImage from "../../components/CustomImage";
-import { Artists } from "../../interfaces/artist";
+import API_URL from "@/configs/apiUrl";
+import CustomImage from "@/components/CustomImage";
+import { Artists } from "@/interfaces/artist";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import {
   playPause,
   setActiveSong,
 } from "../../stores/player/currentAudioPlayer";
-import { TrackProps } from "../../interfaces/Track";
-import ListItem from "../../components/ListItem";
-import HorizontalTracksList from "../../components/HorizontalTracksList";
-import { shadeColor } from "../../configs/utils";
+import { TrackProps } from "@/interfaces/Track";
+import ListItem from "@/components/ListItem";
+import HorizontalTracksList from "@/components/HorizontalTracksList";
+import { shadeColor } from "@/configs/utils";
 import { useState } from "react";
-import NavBar from "../../components/backButton";
+import NavBar from "@/components/backButton";
+import ErrorComponent from "@/components/error";
 
 function ArtistProfile({
+  success,
   data,
   tracks,
   counts,
 }: {
   data: Artists;
+  success: boolean;
   tracks: TrackProps[];
   counts: number;
 }) {
@@ -41,6 +44,13 @@ function ArtistProfile({
     setScrolling(false);
   }, 100);
 
+  if (!success) {
+    return (
+      <AppLayout>
+        <ErrorComponent />
+      </AppLayout>
+    );
+  }
   return (
     <AppLayout
       title={data.display_name}
@@ -105,14 +115,14 @@ function ArtistProfile({
                   }
                 }}
                 className="bg-[#2bb540] rounded-full cursor-pointer hover:scale-110
-                     w-[45px] h-[45px] flex justify-center items-center mobile:w-[30px] mobile:h-[30px]"
+                     w-[45px] h-[45px] flex justify-center items-center"
               >
                 {activeSong.artist_id != artist.id ? (
-                  <i className="icon-play text-[20px] ml-1 text-black mobile:text-[16px]" />
+                  <i className="icon-play text-[20px] ml-1 text-black " />
                 ) : !isPlaying ? (
-                  <i className="icon-play text-[20px] ml-1 text-black mobile:text-[16px]" />
+                  <i className="icon-play text-[20px] ml-1 text-black" />
                 ) : (
-                  <i className="icon-pause text-[20px] text-black mobile:text-[16px]" />
+                  <i className="icon-pause text-[20px] text-black" />
                 )}
               </div>
             </div>

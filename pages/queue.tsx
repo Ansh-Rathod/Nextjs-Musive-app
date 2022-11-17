@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import ListItem from "../components/ListItem";
 import { TrackProps } from "../interfaces/Track";
-import AppLayout from "../layouts/appLayout";
+import AppLayout from "@/layouts/appLayout";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import {
   reorderQueue,

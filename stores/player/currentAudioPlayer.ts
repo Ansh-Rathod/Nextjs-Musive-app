@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { TrackProps } from "../../interfaces/Track";
+import { TrackProps } from "@/interfaces/Track";
 import ApiService from "./ApiServices";
 
 const tracks: TrackProps[] = [

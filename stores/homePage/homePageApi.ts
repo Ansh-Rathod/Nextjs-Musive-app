@@ -1,5 +1,5 @@
 import axios from "axios";
-import API_URL from "../../configs/apiUrl";
+import API_URL from "@/configs/apiUrl";
 
 // Register user
 const getRandomArtists = async () => {

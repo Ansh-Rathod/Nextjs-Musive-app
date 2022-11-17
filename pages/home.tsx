@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import type { NextPage } from "next";
 
-import AppLayout from "../layouts/appLayout";
+import AppLayout from "@/layouts/appLayout";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Artists } from "../interfaces/artist";
@@ -14,6 +14,7 @@ import CustomImage from "../components/CustomImage";
 import HorizontalTracksList from "../components/HorizontalTracksList";
 import HorizontalArtistsList from "../components/HorizontalArtistsList";
 import { useRouter } from "next/router";
+import ErrorComponent from "@/components/error";
 
 const Home: NextPage = () => {
   const {
@@ -43,9 +44,11 @@ const Home: NextPage = () => {
   return (
     <AppLayout title="Home" color={color}>
       {status == RequestStatus.Loading ? (
-        <div> loading...</div>
+        <div className="w-full h-screen flex items-center justify-center">
+          <span className="loader"></span>
+        </div>
       ) : status == RequestStatus.Error ? (
-        <div>error</div>
+        <ErrorComponent />
       ) : status == RequestStatus.Success ? (
         <div className="pt-10 mini-laptop:pt-2 mobile:pt-1 tablet:pt-2">
           <h1 className="select-none pt-6 tablet:px-6 px-8 mobile:px-4 pb-6 text-3xl font-ProximaBold mini-laptop:text-2xl tablet:text-2xl mobile:text-xl">
@@ -63,7 +66,7 @@ const Home: NextPage = () => {
                 onMouseLeave={() => setColor(recentUsers[0].avatar.color)}
                 className="flex flex-row items-center
                       font-ProximaBold w-full bg-[#5f5d5d60]
-                      rounded-md shadow-[#121212a9] cursor-pointer hover:bg-[#5f5d5da1]"
+                      rounded-md cursor-pointer hover:bg-[#5f5d5da1]"
               >
                 <div
                   style={{

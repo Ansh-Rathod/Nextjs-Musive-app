@@ -1,30 +1,28 @@
 import React from "react";
-import AppLayout from "../../layouts/appLayout";
+import AppLayout from "@/layouts/appLayout";
 import axios from "axios";
-import API_URL from "../../configs/apiUrl";
-import CustomImage from "../../components/CustomImage";
-import { Artists } from "../../interfaces/artist";
+import API_URL from "@/configs/apiUrl";
+import { Artists } from "@/interfaces/artist";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  playPause,
-  setActiveSong,
-} from "../../stores/player/currentAudioPlayer";
-import { TrackProps, CoverImage } from "../../interfaces/Track";
-import ListItem from "../../components/ListItem";
-import HorizontalTracksList from "../../components/HorizontalTracksList";
-import { tags } from "../../interfaces/genres";
-import HorizontalArtistsList from "../../components/HorizontalArtistsList";
-import { useRef, useEffect, useState } from "react";
-import { capitalize, shadeColor } from "../../configs/utils";
-import NavBar from "../../components/backButton";
+import { useDispatch } from "react-redux";
+import { setActiveSong } from "../../stores/player/currentAudioPlayer";
+import { TrackProps } from "@/interfaces/Track";
+import ListItem from "@/components/ListItem";
+import { tags } from "@/interfaces/genres";
+import HorizontalArtistsList from "@/components/HorizontalArtistsList";
+import { useState } from "react";
+import { capitalize } from "@/configs/utils";
+import NavBar from "@/components/backButton";
+import ErrorComponent from "@/components/error";
 
 function GenrePage({
   artists,
   tracks,
   tag,
+  success,
 }: {
   tag: any;
+  success: boolean;
   artists: Artists[];
   tracks: TrackProps[];
 }) {
@@ -41,7 +39,13 @@ function GenrePage({
   setTimeout(() => {
     setScrolling(false);
   }, 100);
-
+  if (!success) {
+    return (
+      <AppLayout>
+        <ErrorComponent />
+      </AppLayout>
+    );
+  }
   return (
     <AppLayout
       title={capitalize(tag.tag)}
@@ -110,7 +114,6 @@ export async function getServerSideProps(context: any) {
       },
     };
   } catch (e) {
-    console.log(e);
     return {
       props: {
         success: false,

@@ -1,5 +1,5 @@
 import React from "react";
-import AppLayout from "../layouts/appLayout";
+import AppLayout from "@/layouts/appLayout";
 import algoliaClient from "../configs/algolia";
 import { toTrackProps, TrackProps, CoverImage } from "../interfaces/Track";
 import { useState } from "react";

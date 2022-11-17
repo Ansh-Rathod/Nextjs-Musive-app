@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { setCookie } from "cookies-next";
-import API_URL from "../../configs/apiUrl";
+import API_URL from "@/configs/apiUrl";
 
 // Register user
 const register = async (userData: any) => {

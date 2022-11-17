@@ -1,5 +1,5 @@
 import React from "react";
-import { TrackProps } from "../../interfaces/Track";
+import { TrackProps } from "@/interfaces/Track";
 
 interface IProps {
   trackProgress: number;

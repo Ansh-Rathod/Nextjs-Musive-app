@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import homePageApi from "./homePageApi";
-import { Artists } from "../../interfaces/artist";
-import { TrackProps } from "../../interfaces/Track";
+import { Artists } from "@/interfaces/artist";
+import { TrackProps } from "@/interfaces/Track";
 
 export enum RequestStatus {
   Loading,
