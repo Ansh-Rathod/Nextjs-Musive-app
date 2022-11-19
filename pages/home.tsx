@@ -44,7 +44,7 @@ const Home: NextPage = () => {
   return (
     <AppLayout title="Home" color={color}>
       {status == RequestStatus.Loading ? (
-        <div className="w-full h-[calc(100vh_-_100px)] flex items-center justify-center">
+        <div className="w-full h-[calc(100vh_-_50px)] flex items-center justify-center">
           <span className="loader"></span>
         </div>
       ) : status == RequestStatus.Error ? (

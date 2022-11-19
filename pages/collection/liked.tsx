@@ -40,7 +40,7 @@ function Liked({
   }, 100);
   if (!success) {
     return (
-      <AppLayout>
+      <AppLayout title="Liked Tracks">
         <ErrorComponent />
       </AppLayout>
     );

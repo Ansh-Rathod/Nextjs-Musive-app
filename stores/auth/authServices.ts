@@ -13,7 +13,7 @@ const register = async (userData: any) => {
       token: response.data.token,
     };
     if (response.data) {
-      setCookie("user", JSON.stringify(user), { maxAge: 60 * 60 * 24 });
+      setCookie("user", JSON.stringify(user), { maxAge: 60 * 60 * 24 * 30 });
     }
 
     return user;
@@ -38,7 +38,7 @@ const login = async (userData: any) => {
       token: response.data.token,
     };
     if (response.data) {
-      setCookie("user", JSON.stringify(user), { maxAge: 60 * 60 * 24 });
+      setCookie("user", JSON.stringify(user), { maxAge: 60 * 60 * 24 * 30 });
     }
     return user;
   } catch (error: any) {
