@@ -250,7 +250,10 @@ function TopResult({ object, onTap }: any) {
               }}
             >
               <CustomImage
-                src={object.cover_image.urls.small}
+                src={
+                  object.cover_image.url +
+                  "&auto=format&fit=crop&w=400&q=50&h=400"
+                }
                 className="rounded-md"
               />
             </div>
@@ -280,7 +283,7 @@ function TopResult({ object, onTap }: any) {
             }}
           >
             <CustomImage
-              src={object.avatar.urls.small}
+              src={object.avatar.url + "&auto=format&fit=crop&w=400&q=50&h=400"}
               className="rounded-full"
             />
           </div>

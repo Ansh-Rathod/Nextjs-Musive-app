@@ -88,7 +88,9 @@ function ArtistProfile({
           </div>
         </div>
 
-        <CustomImage src={artist.avatar.urls.regular} />
+        <CustomImage
+          src={artist.avatar.url + "&auto=format&fit=crop&w=1280&q=80"}
+        />
       </div>
       <div
         style={{

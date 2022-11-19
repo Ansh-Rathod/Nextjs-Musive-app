@@ -2,12 +2,14 @@ import React from "react";
 import { shadeColor } from "../configs/utils";
 import { useRouter } from "next/router";
 
-function NavBar({ condition, color, title }: any) {
+function NavBar({ condition, color, title, inactiveColor }: any) {
   const router = useRouter();
   return (
     <div
       style={{
-        backgroundColor: condition ? shadeColor(color, -60) : "transparent",
+        backgroundColor: condition
+          ? shadeColor(color, -40)
+          : inactiveColor ?? "transparent",
       }}
       className="absolute px-8 py-4 z-20 mobile:px-4 tablet:px-6 mini-laptop:px-7
           w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 

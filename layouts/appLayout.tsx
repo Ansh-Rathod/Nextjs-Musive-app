@@ -4,8 +4,12 @@ import SidebarItem from "../components/sidebarItem";
 import Image from "next/image";
 import Head from "next/head";
 import { useLogin } from "../hooks/useLogin";
-
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { toggleModel } from "@/stores/player/currentAudioPlayer";
 function AppLayout({ children, title, color, onScroll }: any) {
+  const router = useRouter();
+  const dispatch = useDispatch();
   useLogin();
   return (
     <div>
@@ -44,27 +48,35 @@ function AppLayout({ children, title, color, onScroll }: any) {
               <SidebarItem name="library" label="Your Library" />
               <div className="my-6 border-b border-slate-800 "></div>
               <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  dispatch(toggleModel({ data: true, track_id: "NEW" }));
+                  console.log("call");
+                }}
                 className="group select-none cursor-pointer mt-4 flex flex-row items-center 
                mini-laptop:hidden tablet:hidden mobile:hidden"
               >
                 <i className="icon-create_new text-[26px] opacity-70 mr-3 group-hover:opacity-100"></i>
-
                 <p className="group-hover:opacity-100 text-white opacity-70">
                   Create Collection
                 </p>
               </div>
-              <div
-                className=" mini-laptop:hidden tablet:hidden mobile:hidden group select-none cursor-pointer mt-4 flex flex-row items-center 
-               mini-laptop:w-full mini-laptop:mt-6 mobile:mt-0 tablet:mt-0 mobile:mx-8 tablet:mx-10"
-              >
-                <div className="opacity-70 group-hover:opacity-100 rounded bg-gradient-to-tl to-[#4C17F3] from-[#ddd7d7] px-2 py-2 flex items-center mr-3">
-                  <i className="icon-heart text-[12px]"></i>
-                </div>
+              <Link href={`/collection/liked`}>
+                <div
+                  className={`${
+                    router.pathname == "/collection/liked"
+                      ? "opacity-100 font-ProximaBold"
+                      : "opacity-70"
+                  } hover:opacity-100 mini-laptop:hidden tablet:hidden mobile:hidden group select-none cursor-pointer mt-4 flex flex-row items-center 
+               mini-laptop:w-full mini-laptop:mt-6 mobile:mt-0 tablet:mt-0 mobile:mx-8 tablet:mx-10`}
+                >
+                  <div className=" rounded bg-gradient-to-tl to-[#4C17F3] from-[#ddd7d7] px-2 py-2 flex items-center mr-3">
+                    <i className="icon-heart text-[12px]"></i>
+                  </div>
 
-                <p className="group-hover:opacity-100 text-white opacity-70">
-                  Liked Tracks
-                </p>
-              </div>
+                  <p className=" text-white ">Liked Tracks</p>
+                </div>
+              </Link>
             </div>
           </div>
           <div

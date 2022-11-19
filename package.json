@@ -23,6 +23,7 @@
     "react-dom": "18.2.0",
     "react-indiana-drag-scroll": "^2.2.0",
     "react-redux": "^8.0.4",
+    "react-toastify": "^9.1.1",
     "use-detect-keyboard-open": "^0.2.0"
   },
   "devDependencies": {

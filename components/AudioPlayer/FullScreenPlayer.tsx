@@ -219,7 +219,9 @@ function FullScreenCoverImage({ activeSong, className }: any) {
       }
     >
       <CustomImage
-        src={activeSong!.cover_image.urls.regular}
+        src={
+          activeSong!.cover_image.url + "&auto=format&fit=crop&w=800&q=80&h=800"
+        }
         className="rounded-md shadow-2xl"
       />
     </div>

@@ -204,7 +204,10 @@ function AudioPlayer({ className }: { className: string }) {
            mobile:h-[35px] cursor-pointer rounded-sm"
           >
             <CustomImage
-              src={activeSong!.cover_image.urls.small}
+              src={
+                activeSong!.cover_image.url +
+                "&auto=format&fit=crop&w=400&q=50&h=400"
+              }
               className="rounded-sm w-[50px] h-[50px]"
             />
           </div>

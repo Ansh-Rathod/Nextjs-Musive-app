@@ -31,7 +31,7 @@ function HorizontalArtistCard({
           tablet:w-[130px] tablet:h-[130px] mobile:w-[100px] mobile:h-[100px]"
         >
           <CustomImage
-            src={artist.avatar.urls.small}
+            src={artist.avatar.url + "&auto=format&fit=crop&w=400&q=50&h=400"}
             className="rounded-full"
           />
         </div>

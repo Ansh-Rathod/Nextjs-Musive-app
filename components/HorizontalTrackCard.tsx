@@ -54,7 +54,9 @@ function HorizontalTrackCard({
             />
           ) : null}
           <CustomImage
-            src={track.cover_image.urls.small}
+            src={
+              track.cover_image.url + "&auto=format&fit=crop&w=400&q=50&h=400"
+            }
             className="rounded-md"
           />
         </div>

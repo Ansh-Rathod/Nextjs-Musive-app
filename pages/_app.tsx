@@ -7,9 +7,10 @@ import { useRouter } from "next/router";
 import AudioPlayer from "../components/AudioPlayer/AudioPlayer";
 import SidebarItem from "../components/sidebarItem";
 import Head from "next/head";
-
+import "react-toastify/dist/ReactToastify.css";
 import useDetectKeyboardOpen from "use-detect-keyboard-open";
 import AddToCollectionModel from "@/components/AddToCollectionModel";
+import { ToastContainer } from "react-toastify";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -55,6 +56,18 @@ function AudioPlayerComponent() {
   const isKeyboardOpen = useDetectKeyboardOpen();
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <AddToCollectionModel />
       {router.pathname !== "/login" &&
       router.pathname !== "/register" &&

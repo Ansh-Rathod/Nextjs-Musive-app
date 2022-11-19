@@ -9,199 +9,12 @@ const tracks: TrackProps[] = [
     track_name: "Crazy Energy",
     src: "https://cdn.pixabay.com/audio/2022/07/23/audio_5cf955aff9.mp3",
     cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1635007920037-fde83e0d8dc4",
-      },
+      url: "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3",
+
       color: "#73c0d9",
-      blur_hash: "LcAo+_ysRiRPyERkemozR5R5e-g3",
-      unsplash_photo_id: "GWx_jaQ5rc4",
     },
     artist_name: "Veronica Homenick",
     artist_id: 22579021,
-  },
-  {
-    id: 9716,
-    duration: 136.437531,
-    track_name: "Heroic Story - Inspiring Theme",
-    src: "https://cdn.pixabay.com/audio/2021/10/22/audio_5c12de550d.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1454982523318-4b6396f39d3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNjF8fG5hdHVyZXxlbnwwfHx8fDE2NjYyNzkzNDg&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1454982523318-4b6396f39d3a",
-      },
-      color: "#26260c",
-      blur_hash: "LRCsXBN1D$sj%%R-RNV?%OWUn#jZ",
-      unsplash_photo_id: "mWRR1xj95hg",
-    },
-    artist_name: "Veronica Homenick",
-    artist_id: 22579021,
-  },
-  {
-    id: 11545,
-    duration: 200.280813,
-    track_name: "Endless Beauty (Main)",
-    src: "https://cdn.pixabay.com/audio/2021/12/01/audio_2fe16fd258.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1557592923-9f721b5daa29?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1",
-        full: "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80",
-        small:
-          "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1557592923-9f721b5daa29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwxNjN8fG1pbmRmdWxuZXNzfGVufDB8fHx8MTY2NjE3MzYyMw&ixlib=rb-1.2.1&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1557592923-9f721b5daa29",
-      },
-      color: "#d9d9d9",
-      blur_hash: "LkNv[7E1M{Rj*0t7WBWB?Hxtt7t7",
-      unsplash_photo_id: "7-4cIpUbgtQ",
-    },
-    artist_name: "Leah Blick",
-    artist_id: 22836301,
-  },
-  {
-    id: 21921,
-    duration: 195.265281,
-    track_name: "Phenix",
-    src: "https://cdn.pixabay.com/audio/2022/03/02/audio_39fc06ca6c.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1559608622-d443df453289?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1559608622-d443df453289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHwyNDh8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTY2MQ&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1559608622-d443df453289",
-      },
-      color: "#d9d9d9",
-      blur_hash: "L#HU%y%MxaR*~pozofWVx]RjWBs:",
-      unsplash_photo_id: "SrunqRT0A34",
-    },
-    artist_name: "Jan Johnston",
-    artist_id: 25958799,
-  },
-  {
-    id: 116035,
-    duration: 201.552,
-    track_name: "Caribbean Travel Vacation Music",
-    src: "https://cdn.pixabay.com/audio/2022/07/31/audio_af6afcd502.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1509210459313-17feefdff5cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1OTB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjY2MzI5NzM4&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1509210459313-17feefdff5cd",
-      },
-      color: "#f3f3f3",
-      blur_hash: "LGP?{wWA-=kBt7D%WB?b~Xj[-;t7",
-      unsplash_photo_id: "INjdgkCwHp0",
-    },
-    artist_name: "Pamela Swaniawski",
-    artist_id: 23180933,
-  },
-  {
-    id: 20567,
-    duration: 158.6155,
-    track_name: "Dragon",
-    src: "https://cdn.pixabay.com/audio/2022/02/11/audio_f42e8263b9.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1469406396016-013bfae5d83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjQwNTF8MHwxfHNlYXJjaHw1MjV8fGhhcHB5fGVufDB8fHx8MTY2NjMyOTc0Mg&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1469406396016-013bfae5d83e",
-      },
-      color: "#f3f3f3",
-      blur_hash: "LVHLF:-.4.Mxl8E2RPMy~Dr^InNY",
-      unsplash_photo_id: "SAHBl2UpXco",
-    },
-    artist_name: "Jacquelyn Collins",
-    artist_id: 24653570,
-  },
-  {
-    id: 16525,
-    duration: 121.626094,
-    track_name: "Positive Hopeful Upbeat Fun Ukulele Hope Pleasure Music",
-    src: "https://cdn.pixabay.com/audio/2022/02/05/audio_3289942575.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1516617442634-75371039cb3a?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1516617442634-75371039cb3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHwxM3x8YmFja2dyb3VuZHxlbnwwfHx8fDE2NjYzMjk1MTY&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1516617442634-75371039cb3a",
-      },
-      color: "#262626",
-      blur_hash: "LH9j$MiwMwM{V@a{ofay4mg4tRs;",
-      unsplash_photo_id: "wuc-KEIBrdE",
-    },
-    artist_name: "Elmer Stamm",
-    artist_id: 970568,
-  },
-  {
-    id: 20744,
-    duration: 169.639156,
-    track_name: "Michael Ihde - R.B.T.Y - Pop Pophouse Synthwave",
-    src: "https://cdn.pixabay.com/audio/2022/02/12/audio_341c7e5d12.mp3",
-    cover_image: {
-      urls: {
-        raw: "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3",
-        full: "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80",
-        small:
-          "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80&w=400",
-        thumb:
-          "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80&w=200",
-        regular:
-          "https://images.unsplash.com/photo-1610120310588-99bcffc7bf09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw2MzF8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Mw&ixlib=rb-4.0.3&q=80&w=1080",
-        small_s3:
-          "https://s3.us-west-2.amazonaws.com/images.unsplash.com/small/photo-1610120310588-99bcffc7bf09",
-      },
-      color: "#404040",
-      blur_hash: "L37BAjRjIooy01a#j[t74-Rioej[",
-      unsplash_photo_id: "jbTQq7e2MDY",
-    },
-    artist_name: "Michele Nienow",
-    artist_id: 5962636,
   },
 ];
 export enum LikedStatus {
@@ -212,6 +25,12 @@ export enum LikedStatus {
 export enum CollectionsStatus {
   Initial,
   success,
+  error,
+}
+export enum CreateCollectionStatus {
+  waiting,
+  done,
+  Initial,
   error,
 }
 export interface IStateProps {
@@ -225,22 +44,26 @@ export interface IStateProps {
   isShuffle: boolean;
   isRepeat: boolean;
   collections: [];
+  createCollectionStatus: CreateCollectionStatus;
   isModelOpen: boolean;
+  playingPlaylist: string;
   fetchlikedStatus: LikedStatus;
   collectionStatus: CollectionsStatus;
-  passedDataToModel: string;
+  passedDataToModel: object;
 }
 
 const initialState: IStateProps = {
   tracks: tracks,
   currentIndex: 0,
   isModelOpen: false,
-
+  playingPlaylist: "",
   liked: [],
   collections: [],
   fetchlikedStatus: LikedStatus.Initial,
+  createCollectionStatus: CreateCollectionStatus.Initial,
+
   collectionStatus: CollectionsStatus.Initial,
-  passedDataToModel: "",
+  passedDataToModel: {},
   isShuffle: false,
   isRepeat: false,
   showBanner: false,
@@ -258,6 +81,11 @@ const playerSlice = createSlice({
       state.tracks = action.payload.tracks;
       state.currentIndex = action.payload.index;
       state.activeSong = action.payload.tracks[action.payload.index];
+      if (action.payload.playlist) {
+        state.playingPlaylist = action.payload.playlist;
+      } else {
+        state.playingPlaylist = "";
+      }
     },
 
     nextSong: (state, action) => {
@@ -303,7 +131,7 @@ const playerSlice = createSlice({
 
     toggleModel: (state, action) => {
       state.isModelOpen = action.payload.data;
-      state.passedDataToModel = action.payload.track_id;
+      state.passedDataToModel = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -315,11 +143,35 @@ const playerSlice = createSlice({
       state.collectionStatus = CollectionsStatus.success;
       state.collections = action.payload.data;
     });
+    builder.addCase(createNewCollection.pending, (state, action) => {
+      state.createCollectionStatus = CreateCollectionStatus.waiting;
+    });
+    builder.addCase(createNewCollection.rejected, (state, action) => {
+      state.createCollectionStatus = CreateCollectionStatus.error;
+    });
+    builder.addCase(renameCollection.fulfilled, (state, action) => {
+      const collection = state.collections.find(
+        (e: any) => e.id == action.payload!.collection_id
+      );
+      if (collection)
+        // @ts-ignore
+        collection.name = action.payload!.collection_name;
+
+      state.collections = state.collections;
+    });
+    builder.addCase(deleteCollection.fulfilled, (state, action) => {
+      const collections = state.collections.filter(
+        (e: any) => e.id !== action.payload!.collection_id
+      );
+      //@ts-ignore
+      state.collections = collections;
+    });
     builder.addCase(createNewCollection.fulfilled, (state, action) => {
       let collections = state.collections;
       // @ts-ignore
       collections.push(action.payload.data[0]);
       state.collections = collections;
+      state.createCollectionStatus = CreateCollectionStatus.done;
     });
     builder.addCase(getCollections.rejected, (state, action) => {
       state.collectionStatus = CollectionsStatus.error;
@@ -389,6 +241,19 @@ export const addTrackToCollection = createAsyncThunk(
     }
   }
 );
+export const removeTrackFromCollection = createAsyncThunk(
+  "ApiServices/removeTrackFromCollection",
+  async ({ collection_id, track_id, token }: any, thunkAPI) => {
+    try {
+      return await ApiService.removeTrackFromCollection(token, {
+        collection_id,
+        track_id,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
 export const createNewCollection = createAsyncThunk(
   "ApiServices/createNewCollection",
   async ({ name, track_id, token }: any, thunkAPI) => {
@@ -396,6 +261,34 @@ export const createNewCollection = createAsyncThunk(
       return await ApiService.createNewCollection(token, {
         name,
         track_id,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
+export const renameCollection = createAsyncThunk(
+  "ApiServices/renameCollection",
+  async ({ collection_id, collection_name, token }: any, thunkAPI) => {
+    try {
+      console.log({ collection_id, collection_name, token });
+
+      return await ApiService.renameCollection(token, {
+        collection_id,
+        collection_name,
+      });
+    } catch (error) {
+      // console.log(error);
+    }
+  }
+);
+
+export const deleteCollection = createAsyncThunk(
+  "ApiServices/deleteCollection",
+  async ({ collection_id, token }: any, thunkAPI) => {
+    try {
+      return await ApiService.deleteCollection(token, {
+        collection_id,
       });
     } catch (error) {
       // console.log(error);

@@ -9,19 +9,8 @@ export interface TrackProps {
 }
 
 export interface CoverImage {
-  urls: Urls;
+  url: string;
   color: string;
-  blur_hash: string;
-  unsplash_photo_id: string;
-}
-
-export interface Urls {
-  raw: string;
-  full: string;
-  small: string;
-  thumb: string;
-  regular: string;
-  small_s3: string;
 }
 
 export const toTrackProps = (tracks: any): TrackProps[] => {

@@ -44,7 +44,7 @@ const Home: NextPage = () => {
   return (
     <AppLayout title="Home" color={color}>
       {status == RequestStatus.Loading ? (
-        <div className="w-full h-screen flex items-center justify-center">
+        <div className="w-full h-[calc(100vh_-_100px)] flex items-center justify-center">
           <span className="loader"></span>
         </div>
       ) : status == RequestStatus.Error ? (
@@ -78,7 +78,9 @@ const Home: NextPage = () => {
                         rounded-tl-md rounded-bl tablet:w-16 tablet:h-16 mobile:w-14 mobile:h-14"
                 >
                   <CustomImage
-                    src={e.avatar.urls.thumb}
+                    src={
+                      e.avatar.url + "&auto=format&fit=crop&w=200&q=50&h=200"
+                    }
                     className="rounded-tl rounded-bl shadow-2xl shadow-black"
                   />
                 </div>
@@ -115,7 +117,9 @@ const Home: NextPage = () => {
           </div>
           <div className="h-40"></div>
         </div>
-      ) : null}
+      ) : (
+        <div className="w-full h-screen"></div>
+      )}
     </AppLayout>
   );
 };

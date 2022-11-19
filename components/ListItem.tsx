@@ -7,12 +7,22 @@ import {
 } from "../stores/player/currentAudioPlayer";
 import LikeButton from "./AudioPlayer/LikeButton";
 import CustomImage from "./CustomImage";
+import { removeTrackFromCollection } from "../stores/player/currentAudioPlayer";
+import { toast } from "react-toastify";
 
-function ListItem({ track, showNumber, onTap, isScrolling }: any) {
+function ListItem({
+  track,
+  showNumber,
+  onTap,
+  isScrolling,
+
+  collection,
+}: any) {
   const { activeSong, tracks } = useSelector((state: any) => state.player);
+  const { user } = useSelector((state: any) => state.auth);
   const dropdown = useRef(null);
   const [showDropdown, setShowDropdown] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<any>();
   const getTime = (time: any) =>
     `${Math.floor(time / 60)}:${`0${Math.floor(time % 60)}`.slice(-2)}`;
 
@@ -60,7 +70,10 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
               style={{ backgroundColor: track.cover_image.color }}
             >
               <CustomImage
-                src={track.cover_image.urls.small_s3}
+                src={
+                  track.cover_image.url +
+                  "&auto=format&fit=crop&w=400&q=50&h=400"
+                }
                 className="w-12 min-w-12"
               />
             </div>
@@ -127,14 +140,32 @@ function ListItem({ track, showNumber, onTap, isScrolling }: any) {
             >
               Play Next
             </div>
-            <div
-              className="rounded px-4 py-1.5 hover:bg-[#323232]"
-              onClick={() =>
-                dispatch(toggleModel({ data: true, track_id: track.id }))
-              }
-            >
-              Add to Collection
-            </div>
+            {collection ? (
+              <div
+                className="rounded px-4 py-1.5 hover:bg-[#323232]"
+                onClick={() => {
+                  dispatch(
+                    removeTrackFromCollection({
+                      token: user.token,
+                      collection_id: collection,
+                      track_id: track.id,
+                    })
+                  );
+                  toast.success("Removed from collection!");
+                }}
+              >
+                Remove from collection
+              </div>
+            ) : (
+              <div
+                className="rounded px-4 py-1.5 hover:bg-[#323232]"
+                onClick={() =>
+                  dispatch(toggleModel({ data: true, track_id: track.id }))
+                }
+              >
+                Add to Collection
+              </div>
+            )}
           </div>
         )}
       </div>
