@@ -46,12 +46,12 @@ const getCollections = async (token: string) => {
   return response.data;
 };
 const addTrackToCollection = async (token: string, data: any) => {
-  const response = await axios.put(API_URL + "/collections/add/track", data, {
+  await axios.put(API_URL + "/collections/add/track", data, {
     headers: {
       authorization: "Bearer " + token,
     },
   });
-  return response.data;
+  return data;
 };
 const removeTrackFromCollection = async (token: string, data: any) => {
   const response = await axios.put(
@@ -63,7 +63,6 @@ const removeTrackFromCollection = async (token: string, data: any) => {
       },
     }
   );
-  console.log("done");
   return response.data;
 };
 const createNewCollection = async (token: string, data: any) => {
@@ -75,7 +74,7 @@ const createNewCollection = async (token: string, data: any) => {
   return response.data;
 };
 const renameCollection = async (token: string, data: any) => {
-  const response = await axios.put(
+  await axios.put(
     API_URL +
       "/collections/rename/" +
       data.collection_id +

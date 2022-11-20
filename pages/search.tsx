@@ -92,7 +92,7 @@ function Search() {
       {isFocus ? (
         <div>
           {searchResult.length == 0 ? (
-            <div className="w-full text-center pt-10">Searching....</div>
+            <div className="w-full text-center pt-10"></div>
           ) : (
             <div>
               <div className="pt-24 mobile:pt-14 tablet:pt-14"></div>

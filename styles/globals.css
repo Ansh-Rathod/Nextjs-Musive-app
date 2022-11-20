@@ -174,24 +174,6 @@ input[type="range"]:hover::-webkit-slider-thumb {
   border-radius: 50%;
 }
 
-::-webkit-scrollbar {
-  width: 4px;
-  z-index: 400;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #656565;
-  border-radius: 20px;
-  z-index: 100;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 .noDrag {
   user-drag: none;
   -webkit-user-drag: none;
@@ -206,42 +188,59 @@ input[type="range"]:hover::-webkit-slider-thumb {
   -webkit-tap-highlight-color: transparent;
 }
 .loader {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #2bb540;
+  border-bottom-color: #2bb54099;
   border-radius: 50%;
-  position: relative;
-  animation: rotate 1s linear infinite;
-}
-.loader::before {
-  content: "";
+  display: inline-block;
   box-sizing: border-box;
-  position: absolute;
-  inset: 0px;
-  border-radius: 50%;
-  border: 5px solid #2bb540;
-  animation: prixClipFix 2s linear infinite;
+  animation: rotation 1s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
   100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes prixClipFix {
-  0% {
-    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
-  }
-  25% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
-  }
-  50% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
-  }
-  75% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
-  }
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #121212;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 100vh;
+  border: 3px solid #333333;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c0a0b9;
+}
+
+.cliped {
+  clip-path: polygon(
+    59% 0,
+    49% 100%,
+    100% 30%,
+    0 100%,
+    100% 0,
+    0 66%,
+    0 37%,
+    100% 80%,
+    0 0,
+    100% 20%,
+    80% 0%,
+    87% 100%
+  );
+  transform: rotate(190deg);
 }

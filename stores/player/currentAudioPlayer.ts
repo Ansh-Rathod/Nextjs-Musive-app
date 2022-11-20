@@ -135,6 +135,15 @@ const playerSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(addTrackToCollection.fulfilled, (state, action) => {
+      const collection = state.collections.find(
+        (e: any) => e.id == action.payload.collection_id
+      );
+
+      //@ts-ignore
+      if (collection) collection.total_tracks = collection.total_tracks + 1;
+      state.collections = state.collections;
+    });
     builder.addCase(getLikedSongs.fulfilled, (state, action) => {
       state.fetchlikedStatus = LikedStatus.success;
       state.liked = action.payload.data;
@@ -271,8 +280,6 @@ export const renameCollection = createAsyncThunk(
   "ApiServices/renameCollection",
   async ({ collection_id, collection_name, token }: any, thunkAPI) => {
     try {
-      console.log({ collection_id, collection_name, token });
-
       return await ApiService.renameCollection(token, {
         collection_id,
         collection_name,

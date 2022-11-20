@@ -115,7 +115,7 @@ const Login: NextPage = () => {
   };
 
   return (
-    <div className="font-ProximaRegular text-white">
+    <div className="font-ProximaRegular text-white bg-[#000000]">
       <Head>
         <title>Musive - login</title>
       </Head>

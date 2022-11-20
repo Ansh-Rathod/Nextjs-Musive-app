@@ -148,7 +148,6 @@ function AddToCollectionModel() {
                   <input
                     type="search"
                     onChange={(e) => {
-                      console.log(e);
                       if (e.target.value.length !== 0) {
                         setShowResults(true);
                         setResults(
@@ -184,7 +183,7 @@ function AddToCollectionModel() {
                   </div>
 
                   <div className="border-b border-slate-700 py-1"></div>
-                  <div className="h-[400px] overflow-y-scroll scroll">
+                  <div className="h-[400px] overflow-y-scroll scroll scrollbar">
                     {!showResults ? (
                       <div>
                         {collections.map((e: any) => (

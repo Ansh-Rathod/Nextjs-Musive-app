@@ -12,7 +12,7 @@ function NavBar({ condition, color, title, inactiveColor }: any) {
           : inactiveColor ?? "transparent",
       }}
       className="absolute px-8 py-4 z-20 mobile:px-4 tablet:px-6 mini-laptop:px-7
-          w-[calc(100vw_-_14rem)] mini-laptop:w-[calc(100vw_-_55px)] 
+           w-[calc(100vw_-_14rem_-_16px)] mini-laptop:w-[calc(100vw_-_55px)] 
         tablet:w-screen mobile:w-screen overflow-x-hidden flex items-center mobile:py-2
           "
     >

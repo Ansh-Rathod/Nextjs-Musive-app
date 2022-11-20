@@ -96,7 +96,7 @@ function Liked({
           <div className="w-full flex justify-between mb-2">
             <div
               onClick={() => {
-                if (!isPlaying && playingPlaylist !== "LIKED") {
+                if (playingPlaylist !== "LIKED") {
                   dispatch(
                     setActiveSong({
                       tracks: tracks,
@@ -155,7 +155,6 @@ export async function getServerSideProps(context: any) {
         authorization: "Bearer " + token,
       },
     });
-    console.log(tracks.data);
     return {
       props: {
         success: true,
@@ -164,7 +163,6 @@ export async function getServerSideProps(context: any) {
       },
     };
   } catch (e) {
-    console.log(e);
     return {
       props: {
         success: false,

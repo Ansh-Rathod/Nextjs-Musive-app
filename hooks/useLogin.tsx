@@ -7,7 +7,7 @@ export const useLogin = () => {
 
   useEffect(() => {
     if (!user) {
-      router.push("/login");
+      router.push("/");
     }
   }, [router, user, status]);
 };

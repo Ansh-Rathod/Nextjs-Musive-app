@@ -9,12 +9,14 @@ import {
   onRepeat,
   onShuffle,
   playPause,
+  toggleModel,
 } from "../../stores/player/currentAudioPlayer";
 import { TrackProps, CoverImage } from "@/interfaces/Track";
 import Link from "next/link";
 import CustomImage from "../CustomImage";
 import LikeButton from "./LikeButton";
 import { shadeColor } from "@/configs/utils";
+import { useRef, useEffect, useState } from "react";
 
 interface IProps {
   trackProgress: number;
@@ -52,6 +54,21 @@ function FullScreenPlayer({
 }: IProps) {
   const dispatch = useDispatch();
   const router = useRouter();
+  const dropdown = useRef(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(() => {
+    if (!showDropdown) return;
+    function handleClick(event: any) {
+      // @ts-ignore-comment
+      if (dropdown.current && !dropdown.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    }
+    window.addEventListener("click", handleClick);
+    return () => window.removeEventListener("click", handleClick);
+  }, [showDropdown]);
+
   return (
     <div
       style={{ backgroundColor: activeSong!.cover_image.color }}
@@ -92,7 +109,7 @@ function FullScreenPlayer({
                   className="w-8 h-8  hover:bg-white hover:text-black text-gray-100 shadow flex 
                     items-center justify-center rounded-full cursor-pointer mobile:w-6 mobile:h-6"
                 >
-                  <i className="icon-chevron-down text-[16px] mobile:text-[12px]"></i>
+                  <i className="icon-chevron-down text-[20px] mobile:text-[20px]"></i>
                 </div>
                 <div className="flex flex-row items-center">
                   <h1
@@ -106,7 +123,48 @@ function FullScreenPlayer({
                   className="w-8 h-8 shadow flex 
                     items-center justify-center rounded-full cursor-pointer"
                 >
-                  <i className="icon-more-horizontal text-[22px] text-gray-400 hover:text-white"></i>
+                  <div className="relative">
+                    <i
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowDropdown(true);
+                      }}
+                      className=" icon-more-horizontal text-[22px] text-gray-300 hover:text-white"
+                    ></i>
+
+                    {showDropdown && (
+                      <div
+                        ref={dropdown}
+                        className="w-52 bg-[#212121] absolute  rounded shadow 
+             right-2 top-10 z-30"
+                      >
+                        <div
+                          className="border-b border-b-slate-700 rounded px-4 py-1.5 hover:bg-[#323232]"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            router.push(`/artist/${activeSong.artist_id}`);
+                          }}
+                        >
+                          Go to Artist
+                        </div>
+                        <div
+                          className="rounded px-4 py-1.5 hover:bg-[#323232]"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            dispatch(
+                              toggleModel({
+                                data: true,
+                                track_id: activeSong.id,
+                              })
+                            );
+                            setShowDropdown(false);
+                          }}
+                        >
+                          Add to Collection
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
               <FullScreenCoverImage
@@ -205,8 +263,7 @@ function FullScreenCoverImage({ activeSong, className }: any) {
     <div
       style={{
         backgroundColor: shadeColor(activeSong!.cover_image.color, -40),
-        boxShadow:
-          "rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset",
+        boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
       }}
       className={
         `w-[450px] h-[450px] min-w-[450px]

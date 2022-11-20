@@ -51,7 +51,6 @@ function AppLayout({ children, title, color, onScroll }: any) {
                 onClick={(e) => {
                   e.stopPropagation();
                   dispatch(toggleModel({ data: true, track_id: "NEW" }));
-                  console.log("call");
                 }}
                 className="group select-none cursor-pointer mt-4 flex flex-row items-center 
                mini-laptop:hidden tablet:hidden mobile:hidden"

@@ -44,15 +44,22 @@ const Home: NextPage = () => {
   return (
     <AppLayout title="Home" color={color}>
       {status == RequestStatus.Loading ? (
-        <div className="w-full h-[calc(100vh_-_50px)] flex items-center justify-center">
+        <div
+          className=" w-[calc(100vw_-_14rem_-_16px)] mini-laptop:w-[calc(100vw_-_55px)] 
+        tablet:w-screen mobile:w-screen overflow-x-hidden  h-screen mobile:h-[calc(100vh_-_50px)] 
+        tablet:h-[calc(100vh_-_50px)] flex flex-col items-center justify-center"
+        >
           <span className="loader"></span>
+          <p className="text-sm text-white my-3 font-ProximaRegular">
+            Loading...
+          </p>
         </div>
       ) : status == RequestStatus.Error ? (
         <ErrorComponent />
       ) : status == RequestStatus.Success ? (
         <div className="pt-10 mini-laptop:pt-2 mobile:pt-1 tablet:pt-2">
           <h1 className="select-none pt-6 tablet:px-6 px-8 mobile:px-4 pb-6 text-3xl font-ProximaBold mini-laptop:text-2xl tablet:text-2xl mobile:text-xl">
-            Good Morning
+            {getGreetings()}
           </h1>
           <div
             className="select-none px-8 tablet:px-6 mobile:px-4 grid grid-cols-3 gap-x-6 gap-y-5 mini-laptop:gap-x-3 
@@ -122,6 +129,19 @@ const Home: NextPage = () => {
       )}
     </AppLayout>
   );
+};
+
+const getGreetings = () => {
+  var myDate = new Date();
+  var hrs = myDate.getHours();
+
+  var greet;
+
+  if (hrs < 12) greet = "Good Morning";
+  else if (hrs >= 12 && hrs <= 17) greet = "Good Afternoon";
+  else if (hrs >= 17 && hrs <= 24) greet = "Good Evening";
+
+  return greet;
 };
 
 export default Home;

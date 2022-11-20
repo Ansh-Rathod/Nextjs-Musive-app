@@ -16,7 +16,6 @@ function Queue() {
   const dispatch = useDispatch<any>();
 
   const onDragHandle = (result: any) => {
-    console.log(result);
     if (!result.destination) {
       return;
     }

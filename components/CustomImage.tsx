@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useState } from "react";
 
-function CustomImage({ src, className }: any) {
+function CustomImage({ src, className, objectFit }: any) {
   const [isError, setError] = useState(false);
   return !isError ? (
     <Image
@@ -13,7 +13,7 @@ function CustomImage({ src, className }: any) {
       }}
       className={className + " select-none noDrag"}
       layout="fill"
-      objectFit="cover"
+      objectFit={objectFit ?? "cover"}
     />
   ) : null;
 }
