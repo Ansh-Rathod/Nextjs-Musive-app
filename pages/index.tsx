@@ -47,7 +47,7 @@ const Home: NextPage = () => {
 
       <div className="relative">
         <div
-          className="overflow-hidden pt-32 pb-20 mobile:pb-16  w-full 
+          className="overflow-hidden pt-36 pb-20 mobile:pb-16  w-full 
         flex justify-center items-center "
         >
           <div
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
           ></div>
         </div>
         <div
-          className="bg-[#121212] bg-opacity-40 pt-32 pb-20 mobile:pb-16 backdrop-blur-[50px] 
+          className="bg-[#121212] bg-opacity-40 pt-36 pb-20 mobile:pb-16 backdrop-blur-[50px] 
         absolute z-10 inset-0 max-w-[1280px] mx-auto 
          flex justify-center flex-col items-center"
         >
