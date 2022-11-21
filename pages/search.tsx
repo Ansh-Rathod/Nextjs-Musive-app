@@ -72,7 +72,7 @@ function Search() {
     <AppLayout title="Search" color="#121212" onScroll={onScroll}>
       <div className="w-full">
         <div
-          className="py-4 px-6 mobile:py-2 mobile:px-4 tablet:px-4 fixed z-10 bg-[#121212] flex flex-row 
+          className="py-4 px-6 mobile:py-2 mobile:px-4 tablet:px-4 fixed z-40 bg-[#121212] flex flex-row 
         w-[calc(100vw_-_14rem_-_16px)] mini-laptop:w-[calc(100vw_-_55px)] 
         tablet:w-screen mobile:w-screen items-center
         "
