@@ -1,8 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Musive Web App
+
+Explore & download free stock music and use it anywhere you like with spotify web player experience.
+
+Fully working Music player web app built in nextjs with typescript support and tailwindCSS. Used Algolia for fastest search response. Backend is written in nodejs with PostgreSQL (more info vist backend repo).
+
+<br/>
+
+## Demo
+
+<p align="center">
+<img src="public/logo.jpeg" alt="logo" width="30%"/>
+
+<h3 align="center"><a href="https://musive.vercel.app/">Visit deployed web version</a></h3>
+</p>
+
+<br/>
+
+## Features
+
+- App includes all Working features that spotify client provides.
+- Available for all screen Mobile, tablet, laptop and desktop.
+- The app is made to give a user full experience of spotify client.
+- It has almost same UI as Spotify for every page.
+- 10,000+ stock music for added.
+- Recordable list for queue management with react-beautiful-dnd.
+
+# Image Gallery
+
+<p align="center">
+
+<br/>
+
+### Authentication Page
+
+<hr/>
+<br/>
+<img src="./public/screenshots/0.png" alt="Gallery Image" width="90%" />
+
+<br/>
+
+### Home Page
+
+<hr/>
+<br/>
+<img src="./public/screenshots/1.png" alt="Gallery Image" width="90%" />
+
+<br/>
+
+### Artist Profile Page
+
+<hr/>
+<br/>
+<img src="./public/screenshots/2.png" alt="Gallery Image" width="90%" />
+
+<br/>
+
+### Search Page
+
+<hr/>
+<br/>
+<img src="./public/screenshots/3.png" alt="Gallery Image" width="90%" />
+<img src="./public/screenshots/4.png" alt="Gallery Image" width="90%" />
+
+<br/>
+
+### Genre Page
+
+<hr/>
+<br/>
+<img src="./public/screenshots/5.png" alt="Gallery Image" width="90%" />
+
+<br/>
+
+### Library Page
+
+<hr/>
+<br/>
+<img src="./public/screenshots/6.png" alt="Gallery Image" width="90%" />
+
+<br/>
+
+### Collections Page
+
+<hr/>
+<br/>
+<img src="./public/screenshots/7.png" alt="Gallery Image" width="90%" />
+<img src="./public/screenshots/8.png" alt="Gallery Image" width="90%" />
+
+</p>
 
 ## Getting Started
 
-First, run the development server:
+First, Deploy the backend server from instractions are in backend repo:
+
+- Change the <code>url</code> variable in file <code>config/url.ts</code>
+- Check out the Algolia integration section in backend repo for search feature.
 
 ```bash
 npm run dev
@@ -11,24 +103,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
