@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import Image from "next/image";
-import CustomImage from "@/components/CustomImage";
-import classnames from "classnames";
+import Head from "next/head";
+
 const Home: NextPage = () => {
   const { status, user } = useSelector((state: any) => state.auth);
   const router = useRouter();
@@ -19,6 +19,49 @@ const Home: NextPage = () => {
 
   return (
     <div className="font-ProximaRegular bg-[#0d0d0d] text-white">
+      <Head>
+        <meta
+          property="og:title"
+          content="Musive - Download & use free music anywhere."
+        />
+        <meta
+          property="og:site_name"
+          content="Musive - Download & use free music anywhere."
+        />
+        <meta property="og:url" content="https://musive.vercel.app" />
+
+        <meta
+          property="og:description"
+          content="Explore & download free stock music and use it anywhere you like
+            with spotify web player experience."
+        />
+
+        <meta
+          property="og:image"
+          itemProp="image"
+          content="/musive_intro_card.png"
+        />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="musive.vercel.app" />
+        <meta name="twitter:creator" content="@AnshhRathod" />
+        <meta
+          name="twitter:title"
+          content="Musive - Download & use free music anywhere."
+        />
+        <meta
+          name="twitter:description"
+          content="Explore & download free stock music and use it anywhere you like
+            with spotify web player experience."
+        />
+        <meta
+          name="twitter:image"
+          itemProp="image"
+          content="/musive_intro_card.png"
+        />
+        <title>Musive - Download & use free music anywhere.</title>
+      </Head>
       <div className="fixed top-0 left-0 right-0 z-40 bg-[#0d0d0d]">
         <div className="flex flex-row max-w-[1280px] justify-between items-center mx-auto p-2">
           <div className="flex flex-row items-center">
