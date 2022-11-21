@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         <meta
           property="og:image"
           itemProp="image"
-          content="/musive_intro_card.png"
+          content="https://musive.vercel.app/musive_intro_card.png"
         />
 
         <meta property="og:type" content="article" />
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
         <meta
           name="twitter:image"
           itemProp="image"
-          content="/musive_intro_card.png"
+          content="https://musive.vercel.app/musive_intro_card.png"
         />
         <title>Musive - Download & use free music anywhere.</title>
       </Head>
