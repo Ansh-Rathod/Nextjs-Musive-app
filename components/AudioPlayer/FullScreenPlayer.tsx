@@ -184,14 +184,20 @@ function FullScreenPlayer({
                     >
                       {activeSong!.track_name}
                     </p>
-                    <Link href={`/artist/${activeSong.artist_id}`}>
-                      <p
-                        className="text-gray-400 text-sm mini-laptop:text-sm
+                    <p
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (activeSong?.artist_id == 120) {
+                          window.open(`https://anshrathod.com`, "_blank");
+                        } else {
+                          router.push(`/artist/${activeSong?.artist_id}`);
+                        }
+                      }}
+                      className="text-gray-400 text-sm mini-laptop:text-sm
                        tablet:text-sm mobile:text-xs hover:underline cursor-pointer"
-                      >
-                        {activeSong.artist_name}
-                      </p>
-                    </Link>
+                    >
+                      {activeSong.artist_name}
+                    </p>
                   </div>
                   <div className="w-10 h-10 flex items-center justify-center">
                     <LikeButton track_id={activeSong.id} size={"text-[24px]"} />

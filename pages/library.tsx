@@ -43,7 +43,7 @@ function Library() {
                 className="cursor-pointer  rounded-lg hover:from-[#bdb6d3] hover:to-[#4C17F3]
             bg-gradient-to-tl to-[#4C17F3] from-[#a79ccc]
              flex justify-center items-center w-full h-full 
-             tablet:w-full mobile:w-full "
+             tablet:w-full mobile:w-full min-h-[180px]"
               >
                 <i className="icon-heart text-[70px] mobile:text-[70px] laptop:text-[100px]"></i>
               </div>

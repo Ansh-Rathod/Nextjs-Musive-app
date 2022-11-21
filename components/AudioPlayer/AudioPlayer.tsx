@@ -225,7 +225,11 @@ function AudioPlayer({ className }: { className: string }) {
             hover:underline cursor-pointer"
               onClick={(e) => {
                 e.stopPropagation();
-                router.push(`/artist/${activeSong?.artist_id}`);
+                if (activeSong?.artist_id == 120) {
+                  window.open(`https://anshrathod.com`, "_blank");
+                } else {
+                  router.push(`/artist/${activeSong?.artist_id}`);
+                }
               }}
             >
               {activeSong!.artist_name}

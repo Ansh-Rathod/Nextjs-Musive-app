@@ -6,15 +6,15 @@ const tracks: TrackProps[] = [
   {
     id: 115479,
     duration: 139.493875,
-    track_name: "Crazy Energy",
+    track_name: "Welcome here",
     src: "https://cdn.pixabay.com/audio/2022/07/23/audio_5cf955aff9.mp3",
     cover_image: {
-      url: "https://images.unsplash.com/photo-1635007920037-fde83e0d8dc4?ixid=MnwzNzM5Nzh8MHwxfHNlYXJjaHw3NTB8fGFsYnVtfGVufDB8fHx8MTY2NjMyOTM3Nw&ixlib=rb-4.0.3",
+      url: "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
 
-      color: "#73c0d9",
+      color: "#2bb540",
     },
-    artist_name: "Veronica Homenick",
-    artist_id: 22579021,
+    artist_name: "Ansh Rathod",
+    artist_id: 120,
   },
 ];
 export enum LikedStatus {
