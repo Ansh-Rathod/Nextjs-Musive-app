@@ -201,7 +201,7 @@ const Login: NextPage = () => {
                   type="password"
                   value={password}
                   name="password"
-                  placeholder="!@#$#$@"
+                  placeholder="*******"
                   onChange={onChange}
                   className="bg-[#3B3B3B]  rounded-3xl border-none
                    text-white outline-none py-2 px-4 w-80 mt-1 mobile:w-64"
@@ -219,10 +219,14 @@ const Login: NextPage = () => {
               <button
                 disabled={status == AuthStatus.Loading}
                 className="w-full mt-10  p-2 rounded-3xl bg-[#2bb540] font-ProximaBold
-                uppercase hover:bg-[#289e39] disabled:bg-opacity-20 disabled:text-gray-300"
+                uppercase hover:bg-[#289e39] disabled:hover:bg-opacity-20 disabled:bg-opacity-20 disabled:text-gray-300"
                 type="submit"
               >
-                Login
+                {status == AuthStatus.Loading ? (
+                  <span className="inline-loader"></span>
+                ) : (
+                  <div>login</div>
+                )}
               </button>
               <p
                 className="text-center mt-6 font-thin font-ProximaRegular

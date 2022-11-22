@@ -244,3 +244,30 @@ input[type="range"]:hover::-webkit-slider-thumb {
   );
   transform: rotate(190deg);
 }
+.inline-loader {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  margin: 8px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -20px 0 #fff, 20px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 1s linear infinite;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #fff;
+    box-shadow: -20px 0 #2bb540, 20px 0 #fff;
+  }
+  66% {
+    background: #2bb540;
+    box-shadow: -20px 0 #fff, 20px 0 #fff;
+  }
+  100% {
+    background: #fff;
+    box-shadow: -20px 0 #fff, 20px 0 #2bb540;
+  }
+}
