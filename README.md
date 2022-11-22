@@ -2,7 +2,7 @@
 
 Explore & download free stock music and use it anywhere you like with spotify web player experience.
 
-Fully working Music player web app built in nextjs with typescript support and tailwindCSS. Used Algolia for fastest search response. Backend is written in nodejs with PostgreSQL (more info vist backend repo).
+Fully working Music player web app built in nextjs with typescript support and tailwindCSS. Used Algolia for fastest search response. [Backend](https://github.com/Ansh-Rathod/Musive-backend-2.0) is written in nodejs with PostgreSQL (more info vist backend repo).
 
 <br/>
 
@@ -91,10 +91,10 @@ Fully working Music player web app built in nextjs with typescript support and t
 
 ## Getting Started
 
-First, Deploy the backend server from instractions are in backend repo:
+First, Deploy the backend server from instractions are in [backend repo](https://github.com/Ansh-Rathod/Musive-backend-2.0):
 
 - Change the <code>url</code> variable in file <code>config/url.ts</code>
-- Check out the Algolia integration section in backend repo for search feature.
+- Check out the Algolia integration section in [backend repo](https://github.com/Ansh-Rathod/Musive-backend-2.0) for search feature.
 
 ```bash
 npm run dev
