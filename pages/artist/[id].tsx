@@ -32,7 +32,9 @@ function ArtistProfile({
   const artist = data;
   const router = useRouter();
   const dispatch = useDispatch();
-  const { isPlaying, activeSong } = useSelector((state: any) => state.player);
+  const { isPlaying, activeSong, playingPlaylist } = useSelector(
+    (state: any) => state.player
+  );
   const [srcollPosition, setScrollPosition] = useState(0);
   const [isScrolling, setScrolling] = useState(false);
 
@@ -110,8 +112,14 @@ function ArtistProfile({
               <h1 className="text-2xl font-ProximaBold">Popular</h1>
               <div
                 onClick={() => {
-                  if (!isPlaying) {
-                    dispatch(setActiveSong({ tracks: tracks, index: 0 }));
+                  if (playingPlaylist !== data.id) {
+                    dispatch(
+                      setActiveSong({
+                        tracks: tracks,
+                        index: 0,
+                        playlist: data.id,
+                      })
+                    );
                   } else {
                     dispatch(playPause(!isPlaying));
                   }
@@ -141,6 +149,7 @@ function ArtistProfile({
                       setActiveSong({
                         tracks: tracks,
                         index: tracks.indexOf(e),
+                        playlist: data.id,
                       })
                     );
                   }}
@@ -167,6 +176,7 @@ function ArtistProfile({
                     setActiveSong({
                       tracks: tracks,
                       index: tracks.indexOf(e),
+                      playlist: data.id,
                     })
                   );
                 }}

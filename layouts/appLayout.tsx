@@ -7,6 +7,7 @@ import { useLogin } from "../hooks/useLogin";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { toggleModel } from "@/stores/player/currentAudioPlayer";
+import { shadeColor } from "@/configs/utils";
 function AppLayout({ children, title, color, onScroll }: any) {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function AppLayout({ children, title, color, onScroll }: any) {
                     layout="fill"
                     objectFit="contain"
                     alt="logo"
+                    unoptimized={true}
                   />
                 </div>
 
@@ -82,7 +84,10 @@ function AppLayout({ children, title, color, onScroll }: any) {
             onScroll={onScroll}
             className="h-screen scroll overflow-y-scroll transition-colors"
             style={{
-              background: `linear-gradient(180deg, ${color} 0%, rgba(18,18,18,1) 60%)`,
+              background: `linear-gradient(180deg, ${shadeColor(
+                color,
+                30
+              )} 0%, rgba(18,18,18,1) 60%)`,
             }}
           >
             <div

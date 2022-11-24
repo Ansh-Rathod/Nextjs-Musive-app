@@ -14,12 +14,10 @@ import {
 } from "../../stores/player/currentAudioPlayer";
 import { useEffect } from "react";
 import Controls from "./Controls";
-import Image from "next/image";
 import SeekBar from "./SeekBar";
 import Buttons from "./Buttons";
 import { useRouter } from "next/router";
 import FullScreenPlayer from "./FullScreenPlayer";
-import Link from "next/link";
 import CustomImage from "../CustomImage";
 import { getCollections } from "../../stores/player/currentAudioPlayer";
 

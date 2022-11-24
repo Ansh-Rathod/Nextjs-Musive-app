@@ -14,6 +14,7 @@ function CustomImage({ src, className, objectFit }: any) {
       className={className + " select-none noDrag"}
       layout="fill"
       objectFit={objectFit ?? "cover"}
+      unoptimized={true}
     />
   ) : null;
 }

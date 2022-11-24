@@ -214,11 +214,11 @@ input[type="range"]:hover::-webkit-slider-thumb {
 
 .scrollbar::-webkit-scrollbar-track {
   border-radius: 100vh;
-  background: #121212;
+  background: transparent;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #7d7d7d;
   border-radius: 100vh;
   border: 3px solid #333333;
 }
