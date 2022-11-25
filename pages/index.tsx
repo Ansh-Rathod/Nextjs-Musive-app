@@ -138,6 +138,7 @@ const Home: NextPage = () => {
               layout="responsive"
               className="rounded-md noDrag m-0 p-0"
               alt="image"
+              unoptimized={true}
             />
           </div>
         </div>
@@ -149,6 +150,7 @@ const Home: NextPage = () => {
               layout="fill"
               className="rounded-md noDrag m-0 p-0"
               alt="image"
+              unoptimized={true}
             />
           </div>
         </div>
@@ -240,6 +242,7 @@ const Home: NextPage = () => {
                   layout="fill"
                   className="noDrag"
                   objectFit="contain"
+                  unoptimized={true}
                 />
               </div>
               <div className="relative w-[70px] h-[30px] ">
@@ -249,6 +252,7 @@ const Home: NextPage = () => {
                   className="noDrag"
                   layout="fill"
                   objectFit="contain"
+                  unoptimized={true}
                 />
               </div>
             </div>

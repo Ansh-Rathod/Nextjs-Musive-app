@@ -146,11 +146,11 @@ const playerSlice = createSlice({
     });
     builder.addCase(getLikedSongs.fulfilled, (state, action) => {
       state.fetchlikedStatus = LikedStatus.success;
-      state.liked = action.payload.data;
+      if (action.payload) state.liked = action.payload.data;
     });
     builder.addCase(getCollections.fulfilled, (state, action) => {
       state.collectionStatus = CollectionsStatus.success;
-      state.collections = action.payload.data;
+      if (action.payload) state.collections = action.payload.data;
     });
     builder.addCase(createNewCollection.pending, (state, action) => {
       state.createCollectionStatus = CreateCollectionStatus.waiting;
@@ -179,6 +179,13 @@ const playerSlice = createSlice({
       let collections = state.collections;
       // @ts-ignore
       collections.push(action.payload.data[0]);
+
+      const collection = collections.find(
+        (e: any) => e.id == action.payload.data[0].id
+      );
+
+      //@ts-ignore
+      if (collection) collection.total_tracks = collection.total_tracks + 1;
       state.collections = collections;
       state.createCollectionStatus = CreateCollectionStatus.done;
     });
