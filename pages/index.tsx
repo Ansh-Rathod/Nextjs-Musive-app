@@ -8,14 +8,29 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Head from "next/head";
 
+export async function getServerSideProps(ctx: any) {
+  const token = ctx.req.cookies.user;
+  if (token) {
+    return {
+      redirect: {
+        destination: `/home`,
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {},
+  };
+}
+
 const Home: NextPage = () => {
   const { status, user } = useSelector((state: any) => state.auth);
-  const router = useRouter();
-  useEffect(() => {
-    if (user) {
-      router.push("/home");
-    }
-  }, [router, user, status]);
+  // const router = useRouter();
+  // useEffect(() => {
+  //   if (user) {
+  //     router.push("/home");
+  //   }
+  // }, [router, user, status]);
 
   return (
     <div className="font-ProximaRegular bg-[#0d0d0d] text-white">

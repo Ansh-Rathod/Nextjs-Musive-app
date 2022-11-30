@@ -21,7 +21,7 @@ function ErrorComponent() {
 
         <div
           onClick={() => router.reload()}
-          className="cursor-pointer font-ProximaBold mt-6 w-52 bg-[#2bb540] p-2 text-center rounded-3xl"
+          className="select-none cursor-pointer font-ProximaBold mt-6 w-52 bg-[#2bb540] p-2 text-center rounded-3xl"
         >
           Try Again
         </div>

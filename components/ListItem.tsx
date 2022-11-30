@@ -84,9 +84,8 @@ function ListItem({
               className={`mobile:text-sm line-clamp-1 ${
                 activeSong.id == track.id && "text-[#2bb540] font-ProximaBold"
               }`}
-            >
-              {track.track_name}
-            </p>
+              dangerouslySetInnerHTML={{ __html: track.track_name }}
+            ></p>
             <p className="text-sm mobile:text-xs text-gray-300">
               {track.artist_name}
             </p>
@@ -127,7 +126,7 @@ function ListItem({
                   dispatch(removeFromQueue(tracks.indexOf(track)));
                 }
               }}
-              className="px-4 rounded py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
+              className="cursor-pointer px-4 rounded py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
             >
               {!tracks.includes(track) ? "Add to Queue" : "Remove from Queue"}
             </div>
@@ -136,13 +135,13 @@ function ListItem({
                 setShowDropdown(false);
                 dispatch(addToQueue(track));
               }}
-              className="px-4 rounded py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
+              className="cursor-pointer  px-4 rounded py-1.5 hover:bg-[#323232] border-b border-b-[#3e3e3e]"
             >
               Play Next
             </div>
             {collection ? (
               <div
-                className="rounded px-4 py-1.5 hover:bg-[#323232]"
+                className="cursor-pointer  rounded px-4 py-1.5 hover:bg-[#323232]"
                 onClick={() => {
                   dispatch(
                     removeTrackFromCollection({
@@ -158,7 +157,7 @@ function ListItem({
               </div>
             ) : (
               <div
-                className="rounded px-4 py-1.5 hover:bg-[#323232]"
+                className="cursor-pointer  rounded px-4 py-1.5 hover:bg-[#323232]"
                 onClick={() =>
                   dispatch(toggleModel({ data: true, track_id: track.id }))
                 }

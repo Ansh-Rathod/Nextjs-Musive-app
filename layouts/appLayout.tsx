@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { toggleModel } from "@/stores/player/currentAudioPlayer";
 import { shadeColor } from "@/configs/utils";
+
 function AppLayout({ children, title, color, onScroll }: any) {
   const router = useRouter();
   const dispatch = useDispatch();

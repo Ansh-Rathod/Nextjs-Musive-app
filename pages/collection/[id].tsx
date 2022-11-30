@@ -241,6 +241,16 @@ function Liked({
 }
 
 export async function getServerSideProps(context: any) {
+  const token = context.req.cookies.user;
+
+  if (!token) {
+    return {
+      redirect: {
+        destination: `/login`,
+        permanent: false,
+      },
+    };
+  }
   try {
     const token = JSON.parse(context.req.cookies.user).token;
     const { data } = await axios.get(

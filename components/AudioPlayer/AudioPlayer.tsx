@@ -48,7 +48,7 @@ function AudioPlayer({ className }: { className: string }) {
 
   useEffect(() => {
     if (isPlaying) {
-      audioRef.current!.play();
+      if (audioRef.current) audioRef.current!.play();
       startTimer();
     } else {
       audioRef.current!.pause();

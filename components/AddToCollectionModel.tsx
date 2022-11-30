@@ -177,7 +177,7 @@ function AddToCollectionModel() {
                       dispatch(toggleModel({ data: false, track_id: "" }));
                       toast.success("Created new collection!");
                     }}
-                    className="font-ProximaBold  hover:bg-[#464646] px-2 py-2 text-white rounded"
+                    className="font-ProximaBold cursor-pointer hover:bg-[#464646] px-2 py-2 text-white rounded"
                   >
                     <p> Create collection</p>
                   </div>
