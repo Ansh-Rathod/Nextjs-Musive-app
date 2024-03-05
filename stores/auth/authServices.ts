@@ -31,7 +31,10 @@ const register = async (userData: any) => {
 };
 const login = async (userData: any) => {
   try {
-    const response = await axios.post(API_URL + "/auth/login", userData);
+    const response = await axios.post(API_URL + "/auth/login", userData,{headers:{
+     "Access-Control-Allow-Origin": "*"
+      
+    }});
 
     const user = {
       username: response.data.username,
