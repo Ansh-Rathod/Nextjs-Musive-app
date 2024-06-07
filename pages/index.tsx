@@ -236,7 +236,7 @@ const Home: NextPage = () => {
         >
           <p className="text-center">
             2022, Made by{" "}
-            <Link href="https://anshrathod.com">
+            <Link href="https://x.com/anshrathodfr">
               <span className="underline text-[#2bb540] cursor-pointer">
                 Ansh Rathod
               </span>
